@@ -1,6 +1,6 @@
 # borinorge
 
-> This website is about the history of the integration of Ukrainians into Norwegian society, about activities that are going on, about the people and organizations that help.
+> "Vi bor i Norge" is a website for those who have recently moved to Norway and wish to actively participate in Norwegian society.
 
 ## Features
 
@@ -8,9 +8,6 @@
 - [Metadata API](https://nextjs.org/docs/app/building-your-application/optimizing/metadata) for the new version of Next.js 13/14 app directory, opengraph and favicon support;
 - custom fonts support [with Tailwind CSS](https://nextjs.org/docs/app/building-your-application/optimizing/fonts#with-tailwind-css);
 - use ChatGPT 4 for image generation and text translation.
-
-The website is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
 
 ## Getting Started
 
@@ -46,7 +43,11 @@ Run in detached mode:
 docker-compose up -d
 ```
 
-## Learn More
+## Next.js standard info 
+
+The website is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+### Learn More
 
 To learn more about Next.js, take a look at the following resources:
 
@@ -55,7 +56,7 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+### Deploy on Vercel
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
