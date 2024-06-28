@@ -12,6 +12,30 @@ const nextConfig = {
     }
     return config
   },
+  async redirects() {
+    return [
+      {
+        source: '/vadym',
+        destination: '/folk/vadym',
+        permanent: true,
+      },
+      {
+        source: '/olena',
+        destination: '/folk/olena',
+        permanent: true,
+      },
+      {
+        source: '/oksana',
+        destination: '/folk/oksana',
+        permanent: true,
+      },
+      {
+        source: '/kazka',
+        destination: '/projects/kazka',
+        permanent: true,
+      },
+    ]
+  },
 }
 
 module.exports = nextConfig

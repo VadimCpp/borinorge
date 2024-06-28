@@ -1,12 +1,12 @@
 import type { Metadata } from 'next'
+import { metadataTranslation } from '../../../i18n'
 
 // Dynamic metadata
-export async function generateMetadata({params: {lng}}:{params: {lng: string}}) {
-  const title = "Norsklett — Норвежский? Легко!"
-  // const description = "Cообщество для изучающих норвежский язык. Разговорные кафе, помощь, игры. Круглосуточная поддержка ChatGPT. Словарный запас и вебинары по грамматике. Присоединяйтесь!"
-  const description = "Давайте вместе соберем все полезные ресурсы для изучения норвежского языка! Все просто. Отправьте ссылку в группу."
+export async function generateMetadata() {
+  const title = "Запрошуємо у казку ❤️"
+  const description = "📚🇳🇴 Школа норвезької мови Karense «NoTe» та російськомовне товариство «Казка» організовують безкоштовні курси норвезької мови для членів товариства за програмою Kompetansepluss frivillighet."
   const metadataBase = new URL('https://www.borinorge.no')
-  
+
   const metadata: Metadata = {
     title: title,
     description: description,

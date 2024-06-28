@@ -9,6 +9,14 @@ import { ProjectCard, type Project } from './components/project-card'
 export default async function Page({ params: { lng } }: { params: { lng: string } }) {
   const { t } = await useTranslation(lng)
 
+  const verboseLanguages: { [key: string]: string } = {
+    'no': 'Bokmål',
+    'nn': 'Nynorsk',
+    'en': 'English',
+    'ru': 'Русский',
+    'uk': 'Українська'
+  }
+
   return (
     <>
       <header className="header header--home">
@@ -28,7 +36,7 @@ export default async function Page({ params: { lng } }: { params: { lng: string 
               {languages.filter((l) => lng !== l).map((l) => (
                 <div key={l} className="p-2">
                   <Link href={`/${l}`} className="header__nav-link">
-                    {t(l)}
+                    {verboseLanguages[l]}
                   </Link>
                 </div>
               ))}
@@ -47,7 +55,12 @@ export default async function Page({ params: { lng } }: { params: { lng: string 
           <div className="projects__grid">
             {[
               {
-                id: 'ordbokene',
+                id: 'norsklett',
+                title: t('project-norsklett'),
+                imageUrl: '/images/preview/norsklett/noun_1200_630.jpeg',
+              },
+              {
+                id: 'projects/ordbokene',
                 title: t('project-ordbokene'),
                 imageUrl: '/images/preview/ordbokene_1200_630_v3.jpeg',
               },
@@ -57,7 +70,7 @@ export default async function Page({ params: { lng } }: { params: { lng: string 
   //              imageUrl: '/images/preview/it_kunnskap_1200_630.jpeg',
   //            },
             ].map((p: Project) => (
-              <Link key={p.id} href={`/${lng}/projects/${p.id}`}>
+              <Link key={p.id} href={`/${lng}/${p.id}`}>
                 <ProjectCard project={p} />
               </Link>
             ))}

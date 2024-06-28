@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { greatVibes } from '../../fonts'
 import { Breadcrumbs } from '../components/breadcrumbs'
 
@@ -12,6 +13,33 @@ export default async function ChatNorsklett({ params: { lng } }: { params: { lng
       </header>
       <main className="project">
         <Breadcrumbs currentPage={"Норвежский? Легко!"} lng={lng} />
+
+        <h2 className="project__subtitle justify-center pb-8 pt-12 flex font-weight-100">
+          <span className="">Дугнад</span>
+          <Image
+            className="mr-4 -mt-1 rounded-full"
+            src={"/images/norsklett/dugnad.png"}
+            alt="Oksana Donets"
+            width={40}
+            height={40}
+            priority
+          />
+        </h2>
+
+        <p className="project__paragraph">
+          Давайте вместе соберем все полезные ресурсы для изучения норвежского языка!
+          Все просто. Отправьте ссылку в группу. Вот сюда:
+        </p>
+        
+        <div className="target-action">
+          <Link href="https://t.me/NorskLett/106132" className="target-action__link">
+            Норвежский? Легко!
+          </Link>
+        </div>
+
+        <hr className="mb-4 mt-8" />
+
+        <h2 className="project__subtitle text-center py-4">Norsklett</h2>
 
         <p className="project__paragraph">
           Привет всем, кто присоединяется к группе!

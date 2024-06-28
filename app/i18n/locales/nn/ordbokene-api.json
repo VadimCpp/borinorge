@@ -1,0 +1,18 @@
+{
+    "meta-title": "Burinoreg — Ordbøkene API",
+    "meta-description": "Ordbøkene API gjev tilgang til alle registrerte ord i Bokmålsordboka og Nynorskordboka, og eigast i fellesskap av Språkrådet og Universitetet i Bergen (UiB).",
+    "title": "Ordbøkene API",
+    "about-api": "Ordbøkene API gjev tilgang til alle registrerte ord i ordbøkene, Nynorskordboka og Bokmålsordboka fungerer som to sjølvstendige eittspråklege ordbøker, og eiges i fellesskapar av Språkrådet og Universitetet i Bergen (UiB).",
+    "about-api-2": "Denne nettsida viser eit populært bruksområde. Ho hentar bøyinga og betydinga av eit ord.",
+    "label-test": "Teste det ut",
+    "request-description": "Me inviterer deg til å testa API-en. Skriv inn førespurnaden din i tekstfeltet. Bruk artiklar til substantiva. Til dømes:",
+    "random-label":"Random ord",
+    "test-label": "Test",
+    "unexpected-error": "Noko gjekk gale, beklagar. Prøv å oppfriske nettsida og gjenta operasjonen.",
+    "placeholder1": "Skriv inn prompten",
+    "placeholder2": "Resultatet vil verta vist her",
+    "author-info": "Denne sida er oppretta som ein del av utforskinga av digitale tenester i Noreg. Me høyrer gjerne frå deg dersom du har forslag til forbetringar eller har spørsmål.",
+    "contact-us": "Kontakt oss"
+  
+  }
+  

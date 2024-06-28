@@ -23,7 +23,7 @@
   }
 
   .header__title--home {
-    @apply text-6xl font-vibes font-thin mb-12
+    @apply text-5xl font-thin mb-8
   }
 
   .header__nav {
@@ -53,7 +53,7 @@
   }
 
   .project__subtitle {
-    @apply text-2xl font-semibold pt-4 pb-2
+    @apply text-2xl font-light pt-4 pb-2 
   }
 
   .project__paragraph {
