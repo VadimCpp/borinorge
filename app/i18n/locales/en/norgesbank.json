@@ -1,0 +1,19 @@
+{
+  "meta-title": "Borinorge — Norges Bank API",
+  "meta-description": "Norges Bank's API for open data offers programmatic access to selected datasets published by the bank. The service is free to use and requires no authentication.",
+  "title": "Norges Bank API",
+  "about-api": "Norges Bank's API for open data offers programmatic access to selected datasets published by the bank. The service is implemented as a REST interface for querying data and metadata and offers a variety of formats for the retrieved data. The service is free to use and requires no authentication.",
+  "exchange-rates": "Norges Bank publishes exchange rates for approximately 40 currencies daily, and the publication time of these rates is usually at 16:00 Central European Time (CET). Let's try to retrieve these data together using the Norges Bank API.",
+  "get-exchange-rates": "Get exchange rates",
+  "getting-exchange-rate": "Get exchange rate for",
+  "table-explanation": "Done! The RATE value in the table indicates the spot exchange rate in Norwegian kroner, rounded to 5 decimal places.",
+  "exchange-description": "We invite you to test currency exchange using our new algorithm. Enter your request in the text field. For example:",
+  "example-link-1": "Convert 15 euros to kroner and dollars",
+  "example-link-2": "45 usd til nok, sek og dkk",
+  "exchange-label": "Exchange",
+  "unexpected-error": "Something went wrong, we are sorry. Please try refreshing the website page and repeat the operation.",
+  "placeholder1": "Enter the prompt",
+  "placeholder2": "The result will be displayed here",
+  "author-info": "This page is created as part of exploring digital services in Norway. We would be happy to hear your opinion if you have any suggestions for improvement or questions.",
+  "contact-us": "Contact us"
+}

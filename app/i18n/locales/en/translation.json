@@ -1,0 +1,207 @@
+{
+  "meta-title": "Borinorge — Home",
+  "meta-description": "Vi bor i Norge is a website for those who have recently moved to Norway and wish to actively participate in Norwegian society. The goal is to bridge cultures through ideas for meeting places and volunteer work, and to assist those who have recently moved to Norway with answers to questions related to integration.",
+  "hello": "Hi, everyone 👋",
+  "description-part-1": "Vi bor i Norge is a website for those who have recently moved to Norway and wish to actively participate in Norwegian society. The goal is to bridge cultures through ideas for meeting places and volunteer work, and to assist those who have recently moved to Norway with answers to questions related to integration.",
+  "description-part-2": "As an immigrant to Norway, most people have a desire to contribute to society, but how to get started? A great start might be to participate in a volunteer project. It offers the opportunity to meet new people, and is at the same time both exciting and meaningful. Such projects can also serve as a ticket to the regular job market by showcasing one's skills and building a resume.",
+  "privacy-statement": "Privacy Statement",
+  "privacy-policy": "Borinorge collects anonymized information about visitors to the website using Vercel Web Analytics. This technology does not use cookie files and stores only anonymized information. The statistics are collected to improve and further develop the website. Examples of what the statistics provide answers to include the number of people visiting different pages, which browsers are used, and from which countries visits are made. Vercel Web Analytics complies with the GDPR law.",
+  "coming-soon": "Projects are coming soon...",
+  "projects": "Projects",
+  "project-alias": "Alias Online",
+  "project-norsklett": "Norsk? Easy!",
+  "project-ordbokene": "Ordbøkene",
+  "project-it-kunnskap": "IT marathon",
+  "project-redaksjon": "Redaction",
+  "project-direkte-stotte": "Direct support",
+  "about-us": "About us",
+  "about-us-description-part-1": "Vi bor i Norge is an Urban common project that is operated through volunteer work on a non-profit basis. The initiator is Vadym Kaninskyi who started the website in 2022. Below you will find more information about who we are.",
+  "about-us-description-part-2": "Do you have feedback for the website? Please feel free to contact one of us:",
+  "oksana-donets": "Oksana Donets",
+  "olena-varlamova": "Olena Varlamova",
+  "vadym-kaninskyi": "Vadym Kaninskyi",
+  "history": "History",
+  "history-info": "This section of the website tells about projects that have been completed before. The work on them is finished, but they remain important to us.",
+  "norsklett": {
+    "norsklett": "Norsk? Easy!",
+    "description": "The best language learning materials for you.",
+    "filter-description": "Use the buttons below to filter the data.",
+    "reading": "Reading",
+    "listening": "Listening",
+    "writing": "Writing",
+    "oral-test": "Speaking",
+    "created-by": "Created by",
+    "total-resources": "Total resources for learning Norwegian:",
+    "found-resources": "Resources found:",
+    "out-of": "out of",
+    "bildetema": {
+      "title": "Bildetema",
+      "description": "Bildetema is a multilingual picture dictionary with images, text, and sound divided by themes. The picture dictionary can be a starting point for language work in kindergarten, school, and adult education. It contains a basic vocabulary consisting mainly of nouns and adjectives.",
+      "link": "https://nybildetema.oslomet.no/#/nob",
+      "author": "OsloMet"
+    },
+    "now": {
+      "title": "LearnNoW",
+      "description": "LearnNoW is a free online course in Norwegian for beginners.",
+      "link": "https://www.ntnu.edu/learnnow-ua",
+      "author": "LearnNoW (NTNU)"
+    },
+    "now2": {
+      "title": "NoW2",
+      "description": "The course \"Norwegian on the Web 2\" consists of a website with texts, grammar, self-correcting grammar exercises, and information about the Norwegian language and society in general. In addition, there is a workbook with more grammar exercises and communicative tasks for use together with other students.",
+      "link": "https://www.ntnu.edu/web/now2",
+      "author": "Heidi B. Helgå, Olaf Husby og Lena Hveding (NTNU)"
+    },
+    "ordbokene": {
+      "title": "Ordbøkene",
+      "description": "The Bokmål Dictionary and the Nynorsk Dictionary are the standard dictionaries. They contain explanations of words and expressions, correct inflections, and are available online and as an app.",
+      "link": "https://ordbokene.no/",
+      "author": "University of Bergen and the Language Council of Norway"
+    },
+    "igin": {
+      "title": "IGIN",
+      "description": "Interactive grammar exercises for international students, Bokmål and Nynorsk.",
+      "link": "https://tekstlab.uio.no/igin/",
+      "author": "University of Oslo"
+    },
+    "hkdir": {
+      "title": "HK-dir",
+      "description": "On these pages, you can read about the tests and sign up. Remember to read who the tests are suitable for and what you need to know before signing up.",
+      "link": "https://prove.hkdir.no/",
+      "author": "Directorate for Higher Education and Competence"
+    },
+    "lexin": {
+      "title": "LEXIN Dictionaries",
+      "description": "The LEXIN dictionaries are developed especially for minority-language pupils in primary, secondary and adult education. The dictionaries contain words and expressions that are useful to know when you live in Norway.",
+      "link": "https://lexin.oslomet.no/",
+      "author": "OsloMet"
+    },
+    "norskappen": {
+      "title": "Norwegian.app",
+      "description": "Mobile app and a collection of nearly every resource for learning Norwegian.",
+      "link": "https://www.norwegian.app/",
+      "author": "Martin Jenssen"
+    },
+    "klartale": {
+      "title": "Klar Tale",
+      "description": "Klar Tale is Norway's only easy-to-read newspaper. Large print and simple language make the newspaper easier to read than other newspapers. We provide you with daily news about Norway, the world, culture, and sports.",
+      "link": "https://www.klartale.no/",
+      "author": "Klar Tale Foundation"
+    },
+    "laernorsknaa": {
+      "title": "Lær Norsk Nå",
+      "description": "The podcast with engaging content in authentic Norwegian.",
+      "link": "https://laernorsknaa.com/",
+      "author": "Marius Stangeland"
+    },
+    "snl": {
+      "title": "Great Norwegian Encyclopedia",
+      "description": "The Great Norwegian Encyclopedia is a free and freely accessible reference work where the content is written by experts and based on science.",
+      "link": "https://snl.no/",
+      "author": "The Great Norwegian Encyclopedia Association"
+    },
+    "naob": {
+      "title": "Naob",
+      "description": "The Norwegian Academy's Dictionary which describes the language over a relatively long period, including contemporary language.",
+      "link": "https://naob.no/",
+      "author": "The Norwegian Academy for Language and Literature"
+    },
+    "grammatikk": {
+      "title": "Grammatikk",
+      "description": "Grammatikk.com contains documents with explanations of Norwegian grammar, vocabulary, and pronunciation, in addition to grammatical overviews.",
+      "link": "https://grammatikk.com/",
+      "author": "Kjell Heggvold Ullestad"
+    },
+    "nrk-nyinorge": {
+      "title": "Ny i Norge",
+      "description": "The news playlist on YouTube with the urkaininan subtitles.",
+      "link": "https://www.youtube.com/playlist?list=PL8al_vLUTXD2_egLzdq7qbB0O4UOEJibm",
+      "author": "NRK"
+    }
+  },
+  "folk": {
+    "oksana": {
+      "name": "Oksana Donets",
+      "introduction": "Hi. I am Oksana Donets, an experienced television journalist, producer, and project manager with 20 years of experience in the media sector. I was born in Kyiv, but since March 2022 I have been living in Norway. Over the course of my career, I have collaborated with a number of leading Ukrainian TV channels: I have developed and hosted news and current affairs programs, as well as conducted interviews with experts in politics, economics, public life, and culture. A new stage of my professional activity in Norway is a Ukrainian-language online publication on Telegram, which I created to provide the Ukrainian community and other interested readers with direct and reliable news from Norway.",
+      "quote": "Meet Oksana Donets, a seasoned TV journalist delivering trusted Norwegian news and expert insight for the Ukrainian community and curious readers worldwide.",
+      "ukranianNewspaper": "Ukrainian newspaper",
+      "valuesTitle": "My values and approach to work:",
+      "values": {
+        "objectivity": "I rely on verified sources, maintaining impartiality, objectivity, and accuracy.",
+        "analysis": "Thanks to many years of experience, I quickly navigate complex topics, analyze large volumes of information, and offer well-considered solutions.",
+        "adaptability": "I work effectively in changing conditions, respond promptly to new tasks, adapt to situations, and utilize modern tools.",
+        "ethics": "My journalistic ethical standards include professional integrity, confidentiality, and respect for human rights."
+      },
+      "experienceTitle": "My experience in numbers:",
+      "experienceItems": [
+        "20 years of journalistic experience, primarily in television",
+        "Collaboration with a number of leading media outlets in Ukraine and abroad",
+        "Dozens of successful interviews with influential public figures"
+      ],
+      "contactsTitle": "Contacts",
+      "supportTitle": "Buy me a coffee",
+      "supportDescription": "If you value thoroughly researched and professionally prepared content, I am open to collaboration and new opportunities. And your support, even in the form of a symbolic “cup of coffee,” will help me develop my independent projects and continue creating quality media products.",
+      "otherProjectsTitle": "Other Projects in Norway"
+    },
+    "olena": {
+      "name": "Olena Varlamova",
+      "quote": "Project manager with expertise in IT, finance, automation, and practical experience with artificial intelligence. Ability to learn quickly and collaborate effectively across disciplines. Ready to contribute my experience to your team."
+    },
+    "iryna": {
+      "name": "Iryna Nepotenko",
+      "quote": "My name is Irina Nepotenko, and I work as an Accounting Assistant in Norway. I am a positive person and find the good in any situation. This helps me both in everyday life and at work. I have realized that I am not afraid of challenges and that I see every situation as a lesson and guidance. I am disciplined and responsible. My colleagues know they can rely on me. My work experience has taught me to work both in a team and independently. This helps me handle tasks of varying complexity. At work, I value discipline, accuracy, and self-organization. I am always open to new ideas and opportunities."
+    },
+    "vadym": {
+      "name": "Vadym Kaninskyi",
+      "quote": "Full-stack developer with several years of experience in projects within the public and private sectors. Advanced communication skills and expertise in project management. Possesses strong competence in TypeScript for both back-end, front-end, and mobile applications."
+    }
+  },
+  "nettverk": {
+    "meta-description": "A friendly community in Norway. Our mission is to help new residents successfully integrate into Norwegian society and promote mutual understanding between cultures. Here you can find useful information, share experiences, and make new friends.",
+    "intro": "Nettverk is a friendly community in Norway. Our mission is to help new residents successfully integrate into Norwegian society and promote mutual understanding between cultures. Here you can find useful information, share experiences, and make new friends.",
+    "rules": "We adhere to the usual rules of behavior in public places.",
+    "rule1": "Let's respect each other, speak politely and appropriately. We communicate in different languages and want everyone to feel at home here.",
+    "rule2": "Supporting each other in difficult situations is encouraged; share useful information, ask for help yourself, and assist others.",
+    "rule3": "We are open to any ideas and suggestions to improve our community.",
+    "rule4": "Advertising is allowed (no payment required, but moderation applies).",
+    "chat_oslo": "Oslo Chat",
+    "chat_bergen": "Bergen Chat"
+  },
+  "redaksjon": {
+    "meta-title": "Borinorge — Redaction",
+    "meta-description": "Math for Norwegian grades 1–7 is now offered in Ukrainian, thanks to translators and voice actors who adapted lessons for Ukrainian students across Norway.",
+    "title": "Redaction",
+    "description": "In the spring of 2022, “Redaction” emerged — an initiative group that brought together people who decided to engage in an important and fascinating task: translating and recording educational materials into Ukrainian. Over the course of our work, we managed to help many people and achieve something truly unique!",
+    "fra-teacher": "Once, a teacher at a Norwegian school shared a story about a second grader from Ukraine:",
+    "quote-teacher": "I have a student in 2nd grade from Ukraine. Understands almost nothing Norwegian. Нe didn’t like Campus and refused to put on headphones. I checked the language setting and changed it to Ukrainian. Put the headset on him so he could hear. His instinct was to rip them off again, but as he took them off he stopped again and slowly put them back on. Then he fell silent before lighting up with a huge smile! And then he started counting out loud along with the video in Ukrainian. He really enjoyed himself! It was actually quite touching! It made a big difference!",
+    "campus-reklame": "Today, thanks to the collaboration between Inkrement and Ukrainian volunteers, video lectures and math assignments for grades 1–7 in Campus Math are fully available in Ukrainian. This provides children from Ukraine who attend Norwegian schools the opportunity to learn mathematics in a familiar language environment and helps them adapt more quickly to the new learning format."
+  },
+  "weather": {
+    "meta_title": "Borinorge — Weather",
+    "meta_description": "Weather forecast for Norway. Check the weather in your city.",
+    "title": "Weather",
+    "description": "Weather forecast for Norway. Check the weather in your city.",
+    "feels_like": "Feels like",
+    "precipitation": "Precipitation",
+    "wind": "Wind",
+    "location_errors": {
+      "user_denied_the_request_for_geolocation": "User denied the request for Geolocation.",
+      "location_information_is_unavailable": "Location information is unavailable.",
+      "the_request_to_get_user_location_timed_out": "The request to get user location timed out.",
+      "browser_location_services_disabled": "Browser location services disabled",
+      "browser_permissions_services_unavailable": "Browser permissions services unavailable",
+      "an_unknown_error_occurred": "An unknown error occurred."
+    },
+    "try_again": "Try again",
+    "manual_or_automatically": "We can automatically detect your current location or you can enter it yourself.",
+    "detect_my_location": "Detect my location",
+    "enter_location_manually": "Enter location manually",
+    "enter_norwegian_address": "Enter a city name",
+    "manual_location_error": "Could not retrieve locations. Please check your connection and refresh the page."
+  },
+  "footer": {
+    "weather_data": "Weather data",
+    "icons": "Icons",
+    "under_the": "under the"
+  }
+}

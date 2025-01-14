@@ -1,0 +1,944 @@
+{
+  "meta": {
+    "id": "IREF930336",
+    "prepared": "2024-04-08T16:17:14",
+    "test": false,
+    "datasetId": "c6d639e5-1187-4e86-86f5-4152a2f4f7e0",
+    "sender": {
+      "id": "Unknown"
+    },
+    "receiver": {
+      "id": "guest"
+    },
+    "links": [
+      {
+        "rel": "self",
+        "href": "/data/EXR/B..NOK.SP?format=sdmx-json&lastNObservations=1",
+        "uri": "https://raw.githubusercontent.com/sdmx-twg/sdmx-json/develop/structure-message/tools/schemas/1.0/sdmx-json-structure-schema.json"
+      }
+    ]
+  },
+  "data": {
+    "dataSets": [
+      {
+        "links": [
+          {
+            "rel": "dataflow",
+            "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=NB:EXR(1.0)"
+          }
+        ],
+        "reportingBegin": "2022-03-01T00:00:00",
+        "reportingEnd": "2024-04-08T23:59:59",
+        "action": "Information",
+        "series": {
+          "0:0:0:0": {
+            "attributes": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "observations": {
+              "0": [
+                "2.966"
+              ]
+            }
+          },
+          "0:1:0:0": {
+            "attributes": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "observations": {
+              "0": [
+                "155.39"
+              ]
+            }
+          },
+          "0:2:0:0": {
+            "attributes": [
+              2,
+              0,
+              0,
+              0
+            ],
+            "observations": {
+              "1": [
+                "8.413"
+              ]
+            }
+          },
+          "0:3:0:0": {
+            "attributes": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "observations": {
+              "0": [
+                "0.51"
+              ]
+            }
+          },
+          "0:4:0:0": {
+            "attributes": [
+              3,
+              1,
+              1,
+              0
+            ],
+            "observations": {
+              "0": [
+                "14.19205"
+              ]
+            }
+          },
+          "0:5:0:0": {
+            "attributes": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "observations": {
+              "0": [
+                "33.26"
+              ]
+            }
+          },
+          "0:6:0:0": {
+            "attributes": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "observations": {
+              "0": [
+                "233.3"
+              ]
+            }
+          },
+          "0:7:0:0": {
+            "attributes": [
+              0,
+              0,
+              1,
+              0
+            ],
+            "observations": {
+              "0": [
+                "6.4449"
+              ]
+            }
+          },
+          "0:8:0:0": {
+            "attributes": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "observations": {
+              "0": [
+                "7.0489"
+              ]
+            }
+          },
+          "0:9:0:0": {
+            "attributes": [
+              0,
+              0,
+              1,
+              0
+            ],
+            "observations": {
+              "0": [
+                "1.3674"
+              ]
+            }
+          },
+          "0:10:0:0": {
+            "attributes": [
+              2,
+              0,
+              0,
+              0
+            ],
+            "observations": {
+              "0": [
+                "45.715"
+              ]
+            }
+          },
+          "0:11:0:0": {
+            "attributes": [
+              0,
+              0,
+              1,
+              0
+            ],
+            "observations": {
+              "0": [
+                "7.8767"
+              ]
+            }
+          },
+          "0:12:0:0": {
+            "attributes": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "observations": {
+              "0": [
+                "9.76"
+              ]
+            }
+          },
+          "0:13:0:0": {
+            "attributes": [
+              0,
+              0,
+              1,
+              0
+            ],
+            "observations": {
+              "0": [
+                "10.7091"
+              ]
+            }
+          },
+          "0:14:0:0": {
+            "attributes": [
+              2,
+              0,
+              0,
+              0
+            ],
+            "observations": {
+              "0": [
+                "29.145"
+              ]
+            }
+          },
+          "0:15:0:0": {
+            "attributes": [
+              0,
+              0,
+              1,
+              0
+            ],
+            "observations": {
+              "0": [
+                "2.7098"
+              ]
+            }
+          },
+          "0:16:0:0": {
+            "attributes": [
+              0,
+              0,
+              1,
+              0
+            ],
+            "observations": {
+              "0": [
+                "7.0532"
+              ]
+            }
+          },
+          "0:17:0:0": {
+            "attributes": [
+              0,
+              0,
+              1,
+              0
+            ],
+            "observations": {
+              "0": [
+                "2.2539"
+              ]
+            }
+          },
+          "0:18:0:0": {
+            "attributes": [
+              2,
+              0,
+              0,
+              0
+            ],
+            "observations": {
+              "0": [
+                "12.856"
+              ]
+            }
+          },
+          "0:19:0:0": {
+            "attributes": [
+              4,
+              0,
+              0,
+              0
+            ],
+            "observations": {
+              "0": [
+                "0.067318"
+              ]
+            }
+          },
+          "0:20:0:0": {
+            "attributes": [
+              0,
+              0,
+              1,
+              0
+            ],
+            "observations": {
+              "0": [
+                "13.5095"
+              ]
+            }
+          },
+          "0:21:0:0": {
+            "attributes": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "observations": {
+              "0": [
+                "148.06"
+              ]
+            }
+          },
+          "0:22:0:0": {
+            "attributes": [
+              0,
+              0,
+              1,
+              0
+            ],
+            "observations": {
+              "0": [
+                "2.1148"
+              ]
+            }
+          },
+          "0:23:0:0": {
+            "attributes": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "observations": {
+              "0": [
+                "0.0429"
+              ]
+            }
+          },
+          "0:24:0:0": {
+            "attributes": [
+              0,
+              0,
+              1,
+              0
+            ],
+            "observations": {
+              "0": [
+                "3.2724"
+              ]
+            }
+          },
+          "0:25:0:0": {
+            "attributes": [
+              1,
+              1,
+              1,
+              0
+            ],
+            "observations": {
+              "0": [
+                "132.22"
+              ]
+            }
+          },
+          "0:26:0:0": {
+            "attributes": [
+              0,
+              0,
+              1,
+              0
+            ],
+            "observations": {
+              "0": [
+                "7.9349"
+              ]
+            }
+          },
+          "0:27:0:0": {
+            "attributes": [
+              2,
+              0,
+              0,
+              0
+            ],
+            "observations": {
+              "0": [
+                "3.849"
+              ]
+            }
+          },
+          "0:28:0:0": {
+            "attributes": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "observations": {
+              "0": [
+                "65.1"
+              ]
+            }
+          },
+          "0:29:0:0": {
+            "attributes": [
+              0,
+              0,
+              1,
+              0
+            ],
+            "observations": {
+              "0": [
+                "2.8952"
+              ]
+            }
+          },
+          "0:30:0:0": {
+            "attributes": [
+              1,
+              1,
+              1,
+              0
+            ],
+            "observations": {
+              "0": [
+                "119.93"
+              ]
+            }
+          },
+          "0:31:0:0": {
+            "attributes": [
+              0,
+              0,
+              1,
+              0
+            ],
+            "observations": {
+              "0": [
+                "11.5905"
+              ]
+            }
+          },
+          "0:32:0:0": {
+            "attributes": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "observations": {
+              "0": [
+                "1181.86"
+              ]
+            }
+          },
+          "0:33:0:0": {
+            "attributes": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "observations": {
+              "2": [
+                "139.51"
+              ]
+            }
+          },
+          "0:34:0:0": {
+            "attributes": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "observations": {
+              "0": [
+                "592.62"
+              ]
+            }
+          },
+          "0:35:0:0": {
+            "attributes": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "observations": {
+              "0": [
+                "7.71"
+              ]
+            }
+          },
+          "0:36:0:0": {
+            "attributes": [
+              0,
+              0,
+              1,
+              0
+            ],
+            "observations": {
+              "0": [
+                "0.575"
+              ]
+            }
+          },
+          "0:37:0:0": {
+            "attributes": [
+              2,
+              0,
+              0,
+              0
+            ],
+            "observations": {
+              "0": [
+                "33.343"
+              ]
+            }
+          },
+          "0:38:0:0": {
+            "attributes": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "observations": {
+              "0": [
+                "101.07"
+              ]
+            }
+          },
+          "0:39:0:0": {
+            "attributes": [
+              2,
+              0,
+              0,
+              0
+            ],
+            "observations": {
+              "0": [
+                "18.937"
+              ]
+            }
+          },
+          "0:40:0:0": {
+            "attributes": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "observations": {
+              "0": [
+                "0.7893"
+              ]
+            }
+          }
+        }
+      }
+    ],
+    "structure": {
+      "links": [
+        {
+          "rel": "dataflow",
+          "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=NB:EXR(1.0)"
+        },
+        {
+          "rel": "datastructure",
+          "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=NB:DSD_EXR(1.0)"
+        }
+      ],
+      "name": "Exchange rates",
+      "names": {
+        "en": "Exchange rates"
+      },
+      "description": "Norges Bank exchange rate statistics",
+      "descriptions": {
+        "en": "Norges Bank exchange rate statistics"
+      },
+      "dimensions": {
+        "dataset": [],
+        "series": [
+          {
+            "id": "FREQ",
+            "name": "Frequency",
+            "description": "The time interval at which observations occur over a given time period.",
+            "keyPosition": 0,
+            "role": null,
+            "values": [
+              {
+                "id": "B",
+                "name": "Business",
+                "description": "Business"
+              }
+            ]
+          },
+          {
+            "id": "BASE_CUR",
+            "name": "Base Currency",
+            "description": "The first currency in a currency pair quotation. Also known as the transaction currency.",
+            "keyPosition": 1,
+            "role": null,
+            "values": [
+              {
+                "id": "HUF",
+                "name": "Hungarian forint"
+              },
+              {
+                "id": "DKK",
+                "name": "Danish krone"
+              },
+              {
+                "id": "RUB",
+                "name": "Russian rouble"
+              },
+              {
+                "id": "MMK",
+                "name": "Myanmar kyat"
+              },
+              {
+                "id": "XDR",
+                "name": "IMF, special drawing rights"
+              },
+              {
+                "id": "TRY",
+                "name": "Turkish lira"
+              },
+              {
+                "id": "RON",
+                "name": "New Romanian leu"
+              },
+              {
+                "id": "NZD",
+                "name": "New Zealand dollar"
+              },
+              {
+                "id": "JPY",
+                "name": "Japanese yen"
+              },
+              {
+                "id": "HKD",
+                "name": "Hong Kong dollar"
+              },
+              {
+                "id": "CZK",
+                "name": "Czech koruna"
+              },
+              {
+                "id": "CAD",
+                "name": "Canadian dollar"
+              },
+              {
+                "id": "BDT",
+                "name": "Bangladeshi taka"
+              },
+              {
+                "id": "USD",
+                "name": "US dollar"
+              },
+              {
+                "id": "THB",
+                "name": "Thai baht"
+              },
+              {
+                "id": "PLN",
+                "name": "Polish zloty"
+              },
+              {
+                "id": "AUD",
+                "name": "Australian dollar"
+              },
+              {
+                "id": "MYR",
+                "name": "Malaysian ringgit"
+              },
+              {
+                "id": "INR",
+                "name": "Indian rupee"
+              },
+              {
+                "id": "IDR",
+                "name": "Indonesian rupiah"
+              },
+              {
+                "id": "GBP",
+                "name": "Pound sterling"
+              },
+              {
+                "id": "CNY",
+                "name": "Chinese yuan"
+              },
+              {
+                "id": "BRL",
+                "name": "Brazilian real"
+              },
+              {
+                "id": "VND",
+                "name": "Vietnamese dong"
+              },
+              {
+                "id": "BYN",
+                "name": "Belarusian new rouble"
+              },
+              {
+                "id": "TWI",
+                "name": "Trade-weighted krone exchange rate"
+              },
+              {
+                "id": "SGD",
+                "name": "Singapore dollar"
+              },
+              {
+                "id": "PKR",
+                "name": "Pakistani rupee"
+              },
+              {
+                "id": "MXN",
+                "name": "Mexican peso"
+              },
+              {
+                "id": "ILS",
+                "name": "Israeli new shekel"
+              },
+              {
+                "id": "I44",
+                "name": "Import-weighted krone exchange rate"
+              },
+              {
+                "id": "EUR",
+                "name": "Euro"
+              },
+              {
+                "id": "CHF",
+                "name": "Swiss franc"
+              },
+              {
+                "id": "HRK",
+                "name": "Croatian kuna"
+              },
+              {
+                "id": "BGN",
+                "name": "Bulgarian lev"
+              },
+              {
+                "id": "ISK",
+                "name": "Icelandic krona"
+              },
+              {
+                "id": "ZAR",
+                "name": "South African rand"
+              },
+              {
+                "id": "TWD",
+                "name": "New Taiwan dollar"
+              },
+              {
+                "id": "SEK",
+                "name": "Swedish krona"
+              },
+              {
+                "id": "PHP",
+                "name": "Philippine peso"
+              },
+              {
+                "id": "KRW",
+                "name": "South Korean won"
+              }
+            ]
+          },
+          {
+            "id": "QUOTE_CUR",
+            "name": "Quote Currency",
+            "description": "The second currency in a currency quote pair. Also known as counter currency.",
+            "keyPosition": 2,
+            "role": null,
+            "values": [
+              {
+                "id": "NOK",
+                "name": "Norwegian krone"
+              }
+            ]
+          },
+          {
+            "id": "TENOR",
+            "name": "Tenor",
+            "description": "The amount of time left for the repayment of a loan or until a financial contract expires.",
+            "keyPosition": 3,
+            "role": null,
+            "values": [
+              {
+                "id": "SP",
+                "name": "Spot"
+              }
+            ]
+          }
+        ],
+        "observation": [
+          {
+            "id": "TIME_PERIOD",
+            "name": "Time Period",
+            "description": "The period of time or point in time to which the measured observation refers.",
+            "keyPosition": 4,
+            "role": "time",
+            "values": [
+              {
+                "start": "2024-04-08T00:00:00",
+                "end": "2024-04-08T23:59:59",
+                "id": "2024-04-08",
+                "name": "2024-04-08"
+              },
+              {
+                "start": "2022-03-01T00:00:00",
+                "end": "2022-03-01T23:59:59",
+                "id": "2022-03-01",
+                "name": "2022-03-01"
+              },
+              {
+                "start": "2022-12-30T00:00:00",
+                "end": "2022-12-30T23:59:59",
+                "id": "2022-12-30",
+                "name": "2022-12-30"
+              }
+            ]
+          }
+        ]
+      },
+      "attributes": {
+        "dataset": [],
+        "series": [
+          {
+            "id": "DECIMALS",
+            "name": "Decimals",
+            "description": "The number of digits to the right of a decimal point.",
+            "relationship": {
+              "dimensions": [
+                "BASE_CUR",
+                "QUOTE_CUR",
+                "TENOR"
+              ]
+            },
+            "role": null,
+            "values": [
+              {
+                "id": "4",
+                "name": "4"
+              },
+              {
+                "id": "2",
+                "name": "2"
+              },
+              {
+                "id": "3",
+                "name": "3"
+              },
+              {
+                "id": "5",
+                "name": "5"
+              },
+              {
+                "id": "6",
+                "name": "6"
+              }
+            ]
+          },
+          {
+            "id": "CALCULATED",
+            "name": "Calculated",
+            "description": "Indicates if the value is calculated or an actual observation.",
+            "relationship": {
+              "dimensions": [
+                "BASE_CUR",
+                "QUOTE_CUR",
+                "TENOR"
+              ]
+            },
+            "role": null,
+            "values": [
+              {
+                "id": "false",
+                "name": "false"
+              },
+              {
+                "id": "true",
+                "name": "true"
+              }
+            ]
+          },
+          {
+            "id": "UNIT_MULT",
+            "name": "Unit Multiplier",
+            "description": "Exponent in base 10 specified so that multiplying the observation numeric values by 10^UNIT_MULT gives a value expressed in the UNIT.",
+            "relationship": {
+              "dimensions": [
+                "BASE_CUR",
+                "QUOTE_CUR",
+                "TENOR"
+              ]
+            },
+            "role": null,
+            "values": [
+              {
+                "id": "2",
+                "name": "Hundreds"
+              },
+              {
+                "id": "0",
+                "name": "Units"
+              }
+            ]
+          },
+          {
+            "id": "COLLECTION",
+            "name": "Collection Indicator",
+            "description": "Dates or periods during which the observations have been collected.",
+            "relationship": {
+              "dimensions": [
+                "BASE_CUR",
+                "QUOTE_CUR",
+                "TENOR"
+              ]
+            },
+            "role": null,
+            "values": [
+              {
+                "id": "C",
+                "name": "ECB concertation time 14:15 CET"
+              }
+            ]
+          }
+        ],
+        "observation": []
+      }
+    }
+  }
+}

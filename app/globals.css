@@ -1,0 +1,144 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* BEM styles */
+@layer components {
+  
+  /* Header */
+  .header {
+    @apply bg-gray-800 text-gray-200 text-center p-4 pt-12 pb-8
+  }
+
+  .header--home {
+    @apply bg-transparent text-gray-800 pb-0
+  }
+
+  .header__container {
+    @apply max-w-md mx-auto overflow-hidden md:max-w-2xl
+  }
+
+  .header__title {
+    @apply text-3xl font-bold my-2
+  }
+
+  .header__title--home {
+    @apply text-5xl font-thin mb-8
+  }
+
+  .header__nav {
+    @apply flex justify-center border-t border-b border-gray-200 py-4 md:w-1/2 lg:w-1/3 mx-auto
+  }
+
+  .header__nav-link {
+    @apply text-blue-500 hover:text-blue-700 px-4 py-2
+  }
+
+  .header__nav-link--extra-bg {
+    @apply hover:bg-gray-200
+  }
+
+  /* Dropdown */
+  .dropdown {
+    @apply block relative
+  }
+
+  .dropdown-button {
+    @apply block
+  }
+
+  .dropdown-content {
+    @apply absolute py-2 text-left bg-white border-gray-200 border right-0
+  }
+  
+  /* Project */
+  .project {
+    @apply max-w-md mx-auto overflow-hidden md:max-w-2xl py-8 px-4
+  }
+
+  .project__subtitle {
+    @apply text-2xl font-light pt-4 pb-2 
+  }
+
+  .project__paragraph {
+    @apply text-base pt-2 pb-4 text-gray-700 leading-relaxed
+  }
+
+  .project__image {
+    @apply py-4
+  }
+
+  .project__quote {
+    @apply text-base my-4 italic border-l-4 pl-4 border-gray-400 text-gray-600
+  }
+
+  .project__link {
+    @apply text-blue-600 hover:text-blue-800
+  }
+
+  .project__list {
+    @apply list-disc list-inside pb-4
+  }
+
+  .project__list-item {
+    @apply text-base text-gray-700 leading-relaxed
+  }
+
+  /* Contacts block */
+  .contacts {
+    @apply flex space-x-4 pt-4
+  }
+
+  .contacts--home {
+    @apply pt-0 pl-4 pb-4
+  }
+
+  .contacts__link {
+    @apply text-blue-600 hover:text-blue-800
+  }
+
+  /* Two photos grid on Alias page */
+  .photogrid {
+    @apply py-4 flex items-center space-x-2
+  }
+
+  .photogrid__image {
+    @apply h-36 md:h-64 object-cover
+  }
+
+  /* Projects__grid */
+  .projects__grid {
+    @apply grid grid-cols-1 md:grid-cols-2 
+  }
+  
+  /* Ordbøkene and Redaksjon target action - button link at the bottom */
+  .target-action {
+    @apply py-8 flex justify-center
+  }
+
+  .target-action__link {
+    @apply px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition duration-300 shadow-md
+  }
+
+  /* Card */
+  .card {
+    @apply relative bg-white shadow-lg rounded-sm overflow-hidden mx-4 mb-8 p-4 cursor-pointer transition duration-200 transform hover:top-[-5px] hover:shadow-xl
+  }
+
+  .card__title {
+    @apply text-3xl font-thin
+  }
+
+  /* Filter */
+  .filter-button {
+    @apply shadow-lg border border-gray-200 p-2 bg-white rounded-md cursor-pointer h-12 w-12 text-gray-300 duration-200 transition relative hover:top-[-2px] hover:shadow-xl
+  } 
+
+  .filter-button--active {
+    @apply shadow-sm shadow-inner hover:top-[0px] hover:shadow-inner
+  }
+
+  .filter-button--reset {
+    @apply border-none bg-transparent shadow-none hover:top-[-2px] hover:shadow-none
+  }
+}

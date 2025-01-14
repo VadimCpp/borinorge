@@ -1,0 +1,17 @@
+{
+  "meta-title": "Borinorge — Ordbøkene API",
+  "meta-description": "Ordbøkene API gir tilgang til alle registrerte ord i Bokmålsordboka og Nynorskordboka, og eies i fellesskap av Språkrådet og Universitetet i Bergen (UiB).",
+  "title": "Ordbøkene API",
+  "about-api": "Ordbøkene API gir tilgang til alle registrerte ord i ordbøkene. Bokmålsordboka og Nynorskordboka fungerer som to selvstendige, enspråklige ordbøker, og eies i fellesskap av Språkrådet og Universitetet i Bergen (UiB).",
+  "about-api-2": "Denne nettsiden viser et populært bruksområde. Den henter bøyningen og betydningen av et ord.",
+  "label-test": "Teste det ut",
+  "request-description": "Vi inviterer deg til å teste API-en. Skriv inn forespørselen din i tekstfeltet. Bruk artikler til substantivene. For eksempel:",
+  "random-label":"Random ord",
+  "test-label": "Test",
+  "unexpected-error": "Noe gikk galt, beklager. Prøv å oppfriske nettsidens side og gjenta operasjonen.",
+  "placeholder1": "Skriv inn prompten",
+  "placeholder2": "Resultatet vil bli vist her",
+  "author-info": "Denne siden er opprettet som en del av utforskingen av digitale tjenester i Norge. Vi hører gjerne fra deg dersom du har forslag til forbedringer eller har spørsmål.",
+  "contact-us": "Kontakt oss"
+
+}

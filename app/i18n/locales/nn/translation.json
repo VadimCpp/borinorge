@@ -1,0 +1,207 @@
+{
+  "meta-title": "Borinorge — Heim",
+  "meta-description": "Vi bur i Noreg er ei nettside for deg som nyleg har flytta til Noreg og ønskjer å delta aktivt i det norske samfunnet. Målet er å bygge bru mellom kulturar gjennom idear til møteplassar og frivillig arbeid, og å bistå deg som nyleg har flytta til Noreg med svar på spørsmål relatert til integrering.",
+  "hello": "Hei, alle saman 👋",
+  "description-part-1": "Vi bur i Noreg er ei nettside for deg som nyleg har flytta til Noreg og ønskjer å delta aktivt i det norske samfunnet. Målet er å bygge bru mellom kulturar gjennom idear til møteplassar og frivillig arbeid, og å bistå deg som nyleg har flytta til Noreg med svar på spørsmål relatert til integrering.",
+  "description-part-2": "Som innflyttar til Noreg har dei fleste eit ønskje om å bidra i samfunnet, men korleis kome i gang? Ein fin start kan vere å delta i eit frivillig prosjekt. Det gir moglegheit til å møte nye menneske, og er samtidig både spanande og meiningsfullt. Slike prosjekt kan òg vere ein inngangsbillett til det ordinære arbeidslivet gjennom å vise fram eigne ferdigheiter og bygge ein CV.",
+  "privacy-statement": "Personvernerklæring",
+  "privacy-policy": "Borinorge samlar inn anonymisert informasjon om besøkande på nettsida ved hjelp av Vercel Web Analytics. Denne teknologien brukar ikkje informasjonskapslar og lagrar berre anonymisert informasjon. Statistikken blir samla inn for å forbetre og vidareutvikle nettsida. Døme på kva statistikken gir svar på inkluderer talet på personar som vitjar ulike sider, kva nettlesarar som blir brukt, og frå kva land besøka blir gjort. Vercel Web Analytics følgjer GDPR-lova.",
+  "coming-soon": "Prosjekt kjem snart...",
+  "projects": "Prosjekt",
+  "project-alias": "Alias Online",
+  "project-norsklett": "Lær norsk lett",
+  "project-ordbokene": "Ordbøkene",
+  "project-it-kunnskap": "IT-kunnskapsmaraton",
+  "project-redaksjon": "Redaksjon",
+  "project-direkte-stotte": "Direkte støtte",
+  "about-us": "Om oss",
+  "about-us-description-part-1": "Vi bur i Noreg er eit Urban common-prosjekt som blir drive gjennom frivillig arbeid på ideell basis. Initiativtakar er Vadym Kaninskyj som starta nettsida i 2022. Nedanfor finn du meir informasjon om kven vi er.",
+  "about-us-description-part-2": "Har du innspel til nettsida? Ta gjerne kontakt med ein av oss:",
+  "oksana-donets": "Oksana Donets",
+  "olena-varlamova": "Olena Varlamova",
+  "vadym-kaninskyi": "Vadym Kaninskyj", 
+  "history": "Historie",
+  "history-info": "Denne delen av nettsida handlar om prosjekt som er fullførte tidlegare. Arbeidet med dei er avslutta, men dei er framleis viktige for oss.",
+  "norsklett": {
+    "norsklett": "Lær norsk lett",
+    "description": "Det beste språklæringsmateriell til deg.",
+    "filter-description": "Bruk knappene nede for å filtrere data.",
+    "reading": "Lesing",
+    "listening": "Lytting",
+    "writing": "Skriving",
+    "oral": "Munnleg praksis",
+    "created-by": "Laget av",
+    "total-resources": "Antall ressursar til å lære norsk:",
+    "found-resources": "Ressursar funnet:",
+    "out-of": "av",
+    "bildetema": {
+      "title": "Bildetema",
+      "description": "Bildetema er ei fleirspråkleg biletordbok med bilete, tekst og lyd delt inn etter tema. Biletordboka kan vere eit utgangspunkt for arbeid med språk i barnehage, skule og vaksenopplæring. Ho inneheld eit grunnleggjande ordforråd som hovudsakleg består av substantiv og adjektiv.",
+      "link": "https://nybildetema.oslomet.no/#/nob",
+      "author": "OsloMet"
+    },
+    "now": {
+      "title": "LearnNoW",
+      "description": "LearnNoW er eit gratis nettkurs i norsk for nybyrjarar.",
+      "link": "https://www.ntnu.edu/learnnow-ua",
+      "author": "LearnNoW (NTNU)"
+    },
+    "now2": {
+      "title": "NoW2",
+      "description": "Kurset \"Norwegian on the Web 2\" består av ei nettside med tekstar, grammatikk, sjølvrettande grammatikkoppgåver og informasjon om norsk språk og samfunn generelt. I tillegg finst det ei arbeidsbok med fleire grammatikkoppgåver og kommunikative øvingar til bruk saman med andre studentar.",
+      "link": "https://www.ntnu.edu/web/now2",
+      "author": "Heidi B. Helgå, Olaf Husby og Lena Hveding (NTNU)"
+    },
+    "ordbokene": {
+      "title": "Ordbøkene",
+      "description": "Bokmålsordboka og Nynorskordboka er standardordbøkene. Dei inneheld forklaringar på ord og uttrykk, riktige bøyingsformer, og er tilgjengelege på nett og som app.",
+      "link": "https://ordbokene.no/",
+      "author": "Universitetet i Bergen og Språkrådet"
+    },
+    "igin": {
+      "title": "IGIN",
+      "description": "Interaktive grammatikkoppgåver for internasjonale studentar, Bokmål og Nynorsk.",
+      "link": "https://tekstlab.uio.no/igin/",
+      "author": "Universitetet i Oslo"
+    },
+    "hkdir": {
+      "title": "HK-dir",
+      "description": "På desse sidene kan du lese om prøvene og melde deg på. Hugs å lese kven prøvene passar for og kva du må vite før du melder deg på.",
+      "link": "https://prove.hkdir.no/",
+      "author": "Direktoratet for høgare utdanning og kompetanse"
+    },
+    "lexin": {
+      "title": "LEXIN-ordbøker",
+      "description": "LEXIN-ordbøkene er laga spesielt for minoritetsspråklege elevar i grunnskulen, vidaregåande og vaksenopplæring. Ordbøkene inneheld ord og uttrykk som er nyttige å kunne når ein bur i Noreg.",
+      "link": "https://lexin.oslomet.no/",
+      "author": "OsloMet"
+    },
+    "norskappen": {
+      "title": "Norskappen",
+      "description": "Mobilapp og en samling av nesten alle ressurser for å lære norsk.",
+      "link": "https://www.norwegian.app/",
+      "author": "Martin Jenssen"
+    },
+    "klartale": {
+      "title": "Klar Tale",
+      "description": "Klar Tale er Norges eneste lettleste nyhetsavis. Stor skrift og enkelt språk gjør avisen lettere å lese enn andre aviser. Vi gir deg daglige nyheter om både Norge, verden, kultur og sport.",
+      "link": "https://www.klartale.no/",
+      "author": "Stiftelsen Klar Tale"
+    },
+    "laernorsknaa": {
+      "title": "Lær Norsk Nå",
+      "description": "Podkasten med engasjerande innhald på autentisk norsk.",
+      "link": "https://laernorsknaa.com/",
+      "author": "Marius Stangeland"
+    },
+    "snl": {
+      "title": "Store norske leksikon",
+      "description": "Store norske leksikon er eit gratis og fritt tilgjengeleg oppslagsverk der innhaldet er skrive av fagfolk og bygd på vitskap.",
+      "link": "https://snl.no/",
+      "author": "Foreininga Store norske leksikon"
+    },
+    "naob": {
+      "title": "Naob",
+      "description": "Det Norske Akademis ordbok som skildrar språket gjennom eit relativt langt tidsrom inkludert samtidsspråket.",
+      "link": "https://naob.no/",
+      "author": "Det Norske Akademi for Språk og Litteratur"
+    },
+    "grammatikk": {
+      "title": "Grammatikk",
+      "description": "Grammatikk.com inneheld dokument med forklaringar til norsk grammatikk, vokabular og uttale, i tillegg til grammatiske oversikter.",
+      "link": "https://grammatikk.com/",
+      "author": "Kjell Heggvold Ullestad"
+    },
+    "nrk-nyinorge": {
+      "title": "Ny i Noreg",
+      "description": "Nyheits-spillelista på YouTube med ukrainske undertekstar.",
+      "link": "https://www.youtube.com/playlist?list=PL8al_vLUTXD2_egLzdq7qbB0O4UOEJibm",
+      "author": "NRK"
+    }
+  },
+  "folk": {
+    "oksana": {
+      "name": "Oksana Donets",
+      "introduction": "Hei. Eg heiter Oksana Donets, ein erfaren fjernsynsjournalist, produsent og prosjektleiar med tjue års røynsle frå mediesektoren. Eg er fødd i Kyiv, men har budd i Noreg sidan mars 2022. I løpet av karrieren min har eg samarbeidd med ei rekkje leiande ukrainske TV-kanalar: Eg har utvikla og leia nyheits- og aktualitetsprogram, og òg hatt intervju med ekspertar innan politikk, økonomi, samfunnsliv og kultur. Eit nytt steg i mi profesjonelle verksemd i Noreg er ei ukrainsspråkleg nettpublisering på Telegram, som eg har oppretta for å gje det ukrainske samfunnet og andre interesserte lesarar direkte og pålitelege nyheiter frå Noreg.",
+      "quote": "Møt Oksana Donets, ein erfaren TV-journalist som formidlar pålitelege norske nyheiter og fagleg innsikt til ukrainarar og nyfikne lesarar over heile verda.",
+      "ukranianNewspaper": "Den ukraїnske avisa",
+      "valuesTitle": "Mine verdiar og tilnærming til arbeidet:",
+      "values": {
+        "objectivity": "Eg byggjer på stadfesta kjelder og held fast ved upartiskheit, objektivitet og presisjon.",
+        "analysis": "Med mange års røynsle orienterer eg meg raskt i komplekse emne, analyserer store informasjonsmengder og føreslår velgrunna løysingar.",
+        "adaptability": "Eg arbeider effektivt under skiftande forhold, reagerer raskt på nye oppgåver, tilpassar meg situasjonar og nyttar moderne verktøy.",
+        "ethics": "Mine etiske standardar som journalist er profesjonell integritet, konfidensialitet og respekt for menneskerettane."
+      },
+      "experienceTitle": "Erfaringa mi i tal:",
+      "experienceItems": [
+        "20 år med journalistisk røynsle, hovudsakleg på fjernsyn",
+        "Samarbeid med ei rekkje leiande medium i Ukraina og internasjonalt",
+        "Dusinvis av vellukka intervju med innverknadsrike samfunnsaktørar"
+      ],
+      "contactsTitle": "Kontakt",
+      "supportTitle": "Kjøp ein kaffi",
+      "supportDescription": "Dersom du set pris på grundig gjennomarbeidd og profesjonelt førebudd innhald, er eg open for samarbeid og nye høve. Og di støtte, sjølv i form av ein symbolsk «kopp kaffi», vil hjelpe meg å vidareutvikle dei uavhengige prosjekta mine og halde fram med å skape kvalitetsmedieprodukt.",
+      "otherProjectsTitle": "Andre prosjekt i Noreg"
+    },
+    "olena": {
+      "name": "Olena Varlamova",
+      "quote": "Prosjektleiar med kompetanse innan IT, finans, automatisering og praktisk erfaring med kunstig intelligens. Evne til rask læring og effektivt samarbeid på tvers av fagområde. Klar til å bidraga med min erfaring til dokkar team."
+    },
+    "iryna": {
+      "name": "Iryna Nepotenko",
+      "quote": "Mitt namn er Irina Nepotenko, og eg jobbar som rekneskapsmedarbeidar i Noreg. Eg er ein positivt innstilt person og ser det gode i kvar situasjon. Dette hjelper meg både i kvardagen og på jobben. Eg har forstått at eg ikkje er redd for utfordringar, og eg ser på kvar situasjon som ei læring og ei rettleiing. Eg er disiplinert og ansvarleg. Kollegaene veit at dei kan stole på meg. Arbeidserfaringa har lært meg å jobbe både i team og sjølvstendig. Dette hjelper meg med å takle oppgåver av ulik kompleksitet. På jobben verdset eg disiplin, nøyaktigheit og sjølvorganisering. Eg er alltid open for nye idear og moglegheiter."
+    },
+    "vadym": {
+      "name": "Vadym Kaninskyi",
+      "quote": "Fullstack-utviklar med fleire års erfaring frå prosjekt i offentleg og privat sektor. Avanserte kommunikasjonsevner og ekspertise innan prosjekteleiing. Har god kompetanse i TypeScript både i back-end, front-end og mobile applikasjonar."
+    }
+  },
+  "nettverk": {
+    "meta-description": "Eit vennleg samfunn i Noreg. Vårt oppdrag er å hjelpe nye innbyggjarar med å integrere seg vellukka i det norske samfunnet og fremje gjensidig forståing mellom kulturar. Her kan du finne nyttig informasjon, dele erfaringar og få nye vener.",
+    "intro": "\"Nettverk\" er eit vennleg samfunn i Noreg. Vårt oppdrag er å hjelpe nye innbyggjarar med å integrere seg vellukka i det norske samfunnet og fremje gjensidig forståing mellom kulturar. Her kan du finne nyttig informasjon, dele erfaringar og få nye vener.",
+    "rules": "Vi har dei vanlege reglane for åtferd på offentlege stader.",
+    "rule1": "Lat oss respektere kvarandre, snakke høfleg og korrekt. Vi kommuniserer på ulike språk og ønskjer at alle skal kjenne seg heime her.",
+    "rule2": "Å støtte kvarandre i vanskelege situasjonar vert oppmuntra; del nyttig informasjon, be om hjelp sjølv og hjelp andre.",
+    "rule3": "Vi er opne for alle idear og forslag for å betre vårt samfunn.",
+    "rule4": "Reklame er tillate (ingen betaling nødvendig, men det er moderasjon).",
+    "chat_oslo": "Nettverk i Oslo",
+    "chat_bergen": "Nettverk i Bergen"
+  },
+  "redaksjon": {
+    "meta-title": "Burinoreg — Redaksjon",
+    "meta-description": "Matematikk for norske trinn 1–7 vert tilbydd på ukrainsk, takka vere gode omsetjarar og stemmeskodespelarar som tilpassa opplegg for ukrainske elevar i Noreg.",
+    "title": "Redaksjon",
+    "description": "Våren 2022 dukka «Redaksjonen» opp – ei initiativgruppe som samla folk som bestemte seg for å gjere ein viktig og interessant jobb: omsetjing og innspeling av undervisningsmateriell til ukrainsk. I løpet av arbeidet klarte vi å hjelpe mange og skape noko heilt unikt!",
+    "fra-teacher": "Ein gong delte ein lærar ved ein norsk skule ei historie om ein andreklassing frå Ukraina:",
+    "quote-teacher": "Eg har ein elev på barnetrinnet frå Ukraina. Forstår nesten ikkje noko norsk. Han mislika Campus og nekta å taka på hovudtelefonar. Eg sjekka språkinnstillinga og endra ho til ukrainsk. Tok på han headsettet, slik at han kunne høyra. Instinktet hans var å riva dei av att. So vart han stille før han lyste opp med ein kjempesmil. Og so byrja han å telja høgt saman med videoen på ukrainsk. Han skikkeleg storkosa seg! Det var i grunnen ganske rørande! Det gjorde ein stor skilnad!",
+    "campus-reklame": "I dag, takka vere samarbeidet mellom selskapet Inkrement og ukrainske frivillige, er videoleksjonar og kontrolloppgåver i matematikk for 1.–7. trinn i Campus Math fullt tilgjengelege på ukrainsk. Dette gjev born frå Ukraina som går på norske skular, høve til å lære matematikk i eit språk dei er komfortable med, og hjelper dei å venje seg raskare til den nye læringsforma."
+  },
+  "weather": {
+    "meta_title": "Borinorge — Ver",
+    "meta_description": "Vêrmelding for Noreg. Sjekk vêret i din by.",
+    "title": "Ver",
+    "description": "Vêrmelding for Noreg. Sjekk vêret i din by.",
+    "feels_like": "Kjennest som",
+    "precipitation": "Nedbør",
+    "wind": "Vind",
+    "location_errors": {
+      "user_denied_the_request_for_geolocation": "Brukar avslo førespurnaden om geolokasjon.",
+      "location_information_is_unavailable": "Plasseringinformasjon er utilgjengeleg.",
+      "the_request_to_get_user_location_timed_out": "Førespurnaden om brukarens plassering gjekk ut på tid.",
+      "browser_location_services_disabled": "Nettlesaren sine lokasjonstenester er deaktiverte.",
+      "browser_permissions_services_unavailable": "Nettlesaren sine løyver for tenester er utilgjengelege.",
+      "an_unknown_error_occurred": "Ein ukjend feil oppstod."
+    },
+    "try_again": "Prøv igjen",
+    "manual_or_automatically": "Vi kan automatisk oppdage din noverande posisjon, eller du kan skrive ho inn sjølv.",
+    "detect_my_location": "Oppdag posisjonen min",
+    "enter_location_manually": "Skriv inn posisjonen manuelt",
+    "enter_norwegian_address": "Skriv inn eit bynamn",
+    "manual_location_error": "Klarte ikkje hente stader. Ver venleg å sjå over tilkoplinga di og oppdater sida."
+  },
+  "footer": {
+    "weather_data": "Verdata",
+    "icons": "Ikon",
+    "under_the": "under"
+  }
+}

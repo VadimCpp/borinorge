@@ -1,0 +1,19 @@
+{
+  "meta-title": "Borinorge — Norges Bank API",
+  "meta-description": "Norges Banks API for åpne data gir maskinell tilgang til utvalgt statistikk publisert av banken. Tjenesten kan fritt benyttes og krever ingen autentisering.",
+  "title": "Norges Bank API",
+  "about-api": "Norges Banks API for åpne data gir maskinell tilgang til utvalgt statistikk publisert av banken. Tjenesten er implementert som et REST programmeringsgrensesnitt hvor en kan formulere spørringer mot våre datasett og hente ut data i en rekke formater. Tjenesten kan fritt benyttes og krever ingen autentisering.",
+  "exchange-rates": "Norges Bank publiserer valutakurser for omtrent 40 valutaer daglig, og publiseringstiden for disse kursene er vanligvis kl. 16:00 Sentraleuropeisk tid (CET). La oss prøve å hente disse dataene sammen ved hjelp av Norges Banks API.",
+  "get-exchange-rates": "Få valutakurser",
+  "getting-exchange-rate": "Få valutakurs for",
+  "table-explanation": "Ferdig! RATE-verdien i tabellen indikerer spotvekselkursen i norske kroner, avrundet til 5 desimaler.",
+  "exchange-description": "Vi inviterer deg til å teste valutaveksling med vår nye algoritme. Skriv inn forespørselen din i tekstfeltet. For eksempel:",
+  "example-link-1": "Konvert 15 euro til kroner og dollar",
+  "example-link-2": "45 usd til nok, sek og dkk",
+  "exchange-label": "Konvert",
+  "unexpected-error": "Noe gikk galt, beklager. Prøv å oppfriske nettsidens side og gjenta operasjonen.",
+  "placeholder1": "Skriv inn prompten",
+  "placeholder2": "Resultatet vil bli vist her",
+  "author-info": "Denne siden er opprettet som en del av utforskingen av digitale tjenester i Norge. Vi hører gjerne fra deg dersom du har forslag til forbedringer eller har spørsmål.",
+  "contact-us": "Kontakt oss"
+}

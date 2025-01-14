@@ -1,0 +1,17 @@
+{
+  "meta-title": "Borinorge — Ordbokene API",
+  "meta-description": "The Ordbøkene API provides access to all registered words in the Bokmålsordboka and Nynorskordboka, and is jointly owned by the Language Council of Norway and the University of Bergen (UiB).",
+  "title": "Ordbokene API",
+  "about-api": "The Ordbøkene API provides access to all registered words in the dictionaries. The Bokmål Dictionary and the Nynorsk Dictionary function as two independent, monolingual dictionaries and are jointly owned by the Language Council of Norway and the University of Bergen (UiB).",
+  "about-api-2": "This webpage shows a popular use case. It retrieves the inflection and meaning of a word.",
+  "label-test": "Try it out",
+  "request-description": "We invite you to test the API. Enter your request in the text field. Use articles for the nouns. For example:",
+  "random-label":"Random words",
+  "test-label": "Test",
+  "unexpected-error": "Something went wrong, we are sorry. Please try refreshing the website page and repeat the operation.",
+  "placeholder1": "Enter the prompt",
+  "placeholder2": "The result will be displayed here",
+  "author-info": "This page is created as part of exploring digital services in Norway. We would be happy to hear your opinion if you have any suggestions for improvement or questions.",
+  "contact-us": "Contact us"
+
+}
