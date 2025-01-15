@@ -90,7 +90,6 @@ export async function GET(request: Request) {
     }
 
     const data: CityResponse = await response.json()
-    console.log(data.adresser[0]?.poststed)
     const formatedCity = formatCity(data.adresser[0]?.poststed || null)
 
     return NextResponse.json({ city: formatedCity })
