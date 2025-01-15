@@ -41,6 +41,16 @@ export type CityResponse = {
 }
 
 export async function GET(request: Request) {
+  
+  const formatCity = (city: string | null): string | null => {
+    if (city && city.length ) {
+      return city
+      .toLowerCase()
+      .replace(/^\p{L}/u, (char) => char.toUpperCase());
+    }
+    return null;
+  };
+
   try {
     // Get the query parameters from the request, e.g. /api/city?lat=59.911491&lon=10.757933
     const url = new URL(request.url)
@@ -67,13 +77,9 @@ export async function GET(request: Request) {
     }
 
     const data: CityResponse = await response.json()
-    let poststed = data.adresser[0]?.poststed || null
-    if (poststed) {
-      // Capitalize the first letter of each word in the city name
-      poststed = poststed.toLowerCase().replace(/\b\w/g, char => char.toUpperCase())
-    }
+    const formatedCity = formatCity(data.adresser[0]?.poststed || null)
 
-    return NextResponse.json({ city: poststed })
+    return NextResponse.json({ city: formatedCity })
   } catch (error: any) {
     console.error(error)
     // Handle and forward error to the client
