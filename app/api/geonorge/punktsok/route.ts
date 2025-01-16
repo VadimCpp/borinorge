@@ -41,6 +41,29 @@ export type CityResponse = {
 }
 
 export async function GET(request: Request) {
+  
+  const formatCity = (city: string | null): string | null => {
+    // Converts string into title case, where the first letter of each word is capitalized. 
+    // Prepositions as "i" and "pa," remain lowercase unless they are the first word in the string.
+
+    const prepositions = ['i', 'ved', 'på']; // List of prepositions used in city names
+
+    if (city && city.length ) {
+      return city
+        .toLowerCase()
+        .split(' ')
+        .map((word, index) => {
+          if (index > 0 && prepositions.includes(word)) {
+            // Do not capitalize if the word is in the exceptions list and not the first word
+            return word; 
+          }
+          return word.charAt(0).toUpperCase() + word.slice(1);
+        })
+        .join(' ');
+    }
+    return null;
+  };
+
   try {
     // Get the query parameters from the request, e.g. /api/city?lat=59.911491&lon=10.757933
     const url = new URL(request.url)
@@ -67,13 +90,9 @@ export async function GET(request: Request) {
     }
 
     const data: CityResponse = await response.json()
-    let poststed = data.adresser[0]?.poststed || null
-    if (poststed) {
-      // Capitalize the first letter of each word in the city name
-      poststed = poststed.toLowerCase().replace(/\b\w/g, char => char.toUpperCase())
-    }
+    const formatedCity = formatCity(data.adresser[0]?.poststed || null)
 
-    return NextResponse.json({ city: poststed })
+    return NextResponse.json({ city: formatedCity })
   } catch (error: any) {
     console.error(error)
     // Handle and forward error to the client
