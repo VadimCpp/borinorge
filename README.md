@@ -4,7 +4,7 @@
 
 ## Features
 
-- i18n internationalization (no, uk, en, ru) for the new version of Next.js 13/14 app directory. Check out this [blog post](https://locize.com/blog/next-app-dir-i18n/);
+- i18n internationalization (nb, nn, uk, en, ru) for the new version of Next.js 13/14 app directory. Check out this [blog post](https://locize.com/blog/next-app-dir-i18n/);
 - [Metadata API](https://nextjs.org/docs/app/building-your-application/optimizing/metadata) for the new version of Next.js 13/14 app directory, opengraph and favicon support;
 - custom fonts support [with Tailwind CSS](https://nextjs.org/docs/app/building-your-application/optimizing/fonts#with-tailwind-css);
 - use ChatGPT 4 for image generation and text translation.
