@@ -131,8 +131,15 @@
 
   /* Filter */
   .filter-button {
-    @apply shadow-lg border border-gray-200 p-2 bg-white rounded-md cursor-pointer h-12 w-12 text-gray-300 duration-200 transition relative hover:top-[-2px] hover:shadow-xl
-  } 
+    @apply shadow-lg border border-gray-200 p-2 bg-white rounded-md cursor-pointer h-12 w-12 text-gray-300 duration-200 transition relative hover:top-[-2px] hover:shadow-xl;
+    margin-right: 16px;
+  }
+
+  @media (max-width: 356px) {
+    .filter-button {
+      margin-right: 2px;
+    }
+  }
 
   .filter-button--active {
     @apply shadow-sm shadow-inner hover:top-[0px] hover:shadow-inner
