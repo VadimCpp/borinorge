@@ -92,7 +92,7 @@ const Sources: React.FC<SourcesProps> = ({ resources, labels }) => {
     <div className='container mx-auto px-4'>
       <div className='mx-6 p-4'>
         <span className='font-thin'>{labels["filter-description"]}</span>
-        <p className="pt-2 flex flex-wrap gap-2">
+        <div className="pt-2 flex flex-wrap gap-2">
           <div className="flex items-center">
             <ReadingIcon className='w-4 h-4 text-gray-600 inline'/>
             <span className='font-thin pl-1 pr-2'>
@@ -117,7 +117,7 @@ const Sources: React.FC<SourcesProps> = ({ resources, labels }) => {
               - {labels["oral"]}
             </span>
           </div>
-        </p>
+        </div>
       </div>
       <Filter onChange={onFilterChange}/>
       <div className='mx-6 p-4 mb-6'>
