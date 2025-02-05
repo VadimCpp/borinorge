@@ -92,24 +92,32 @@ const Sources: React.FC<SourcesProps> = ({ resources, labels }) => {
     <div className='container mx-auto px-4'>
       <div className='mx-6 p-4'>
         <span className='font-thin'>{labels["filter-description"]}</span>
-        <p className='pt-2'>
-          <ReadingIcon className='w-4 h-4 text-gray-600 inline'/>
-          <span className='font-thin pl-1 pr-2'>
-            - {labels["reading"]}, 
-          </span>
-          <ListeningIcon className='w-4 h-4 text-gray-600 inline'/>
-          <span className='font-thin pl-1 pr-2'>  
-            - {labels["listening"]},
-          </span>
-          <WritingIcon className='w-4 h-4 text-gray-600 inline'/>
-          <span className='font-thin pl-1 pr-2'>
-            - {labels["writing"]},
-          </span>
-          <SpeakingIcon className='w-4 h-4 text-gray-600 inline'/>
-          <span className='font-thin pl-1 pr-2'>
-            - {labels["oral"]}
-          </span>
-        </p>
+        <div className="pt-2 flex flex-wrap gap-2">
+          <div className="flex items-center">
+            <ReadingIcon className='w-4 h-4 text-gray-600 inline'/>
+            <span className='font-thin pl-1 pr-2'>
+              - {labels["reading"]}, 
+            </span>
+          </div>
+          <div className="flex items-center">
+            <ListeningIcon className='w-4 h-4 text-gray-600 inline'/>
+            <span className='font-thin pl-1 pr-2'>  
+              - {labels["listening"]},
+            </span>
+          </div>
+          <div className="flex items-center">
+            <WritingIcon className='w-4 h-4 text-gray-600 inline'/>
+            <span className='font-thin pl-1 pr-2'>
+              - {labels["writing"]},
+            </span>
+          </div>
+          <div className="flex items-center">
+            <SpeakingIcon className='w-4 h-4 text-gray-600 inline'/>
+            <span className='font-thin pl-1 pr-2'>
+              - {labels["oral"]}
+            </span>
+          </div>
+        </div>
       </div>
       <Filter onChange={onFilterChange}/>
       <div className='mx-6 p-4 mb-6'>

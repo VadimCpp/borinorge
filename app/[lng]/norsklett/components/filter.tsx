@@ -77,25 +77,25 @@ const Filter = ({ onChange }: FilterProps) => {
       <div className='flex flex-wrap'>
         <div className='flex m-2 mt-4'>
           <button
-            className={ a1 ? "filter-button filter-button--active mr-4" : "filter-button mr-4" }
+            className={ a1 ? "filter-button filter-button--active" : "filter-button" }
             onClick={() => setA1(!a1)}
           >
             <span className='text-gray-900'>A1</span>
           </button>
           <button
-            className={ a2 ? "filter-button filter-button--active mr-4" : "filter-button mr-4" }
+            className={ a2 ? "filter-button filter-button--active" : "filter-button" }
             onClick={() => setA2(!a2)}
           >
             <span className='text-gray-900'>A2</span>
           </button>
           <button
-            className={ b1 ? "filter-button filter-button--active mr-4" : "filter-button mr-4" }
+            className={ b1 ? "filter-button filter-button--active" : "filter-button" }
             onClick={() => setB1(!b1)}
           >
             <span className='text-gray-900'>B1</span>
           </button>
           <button
-            className={ b2 ? "filter-button filter-button--active mr-4" : "filter-button mr-4" }
+            className={ b2 ? "filter-button filter-button--active" : "filter-button" }
             onClick={() => setB2(!b2)}
           >
             <span className='text-gray-900'>B2</span>
@@ -109,25 +109,25 @@ const Filter = ({ onChange }: FilterProps) => {
         </div>
         <div className='flex m-2 mt-4'>
           <button
-            className={ reading ? "filter-button filter-button--active mr-4" : "filter-button mr-4" }
+            className={ reading ? "filter-button filter-button--active" : "filter-button" }
             onClick={() => setReading(!reading)} 
           >
             <ReadingIcon />
           </button>
           <button
-            className={ listening ? "filter-button filter-button--active mr-4" : "filter-button mr-4" }
+            className={ listening ? "filter-button filter-button--active" : "filter-button" }
             onClick={() => setListening(!listening)}
           >
             <ListeningIcon />
           </button>
           <button
-            className={ writing ? "filter-button filter-button--active mr-4" : "filter-button mr-4" }
+            className={ writing ? "filter-button filter-button--active" : "filter-button" }
             onClick={() => setWriting(!writing)}
           >
             <WritingIcon />
           </button>
           <button
-            className={ speaking ? "filter-button filter-button--active mr-4" : "filter-button mr-4" }
+            className={ speaking ? "filter-button filter-button--active" : "filter-button" }
             onClick={() => setSpeaking(!speaking)}
           >
            <SpeakingIcon />
