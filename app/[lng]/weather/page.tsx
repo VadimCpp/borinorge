@@ -55,6 +55,7 @@ export default async function Weather({ params: { lng } }: { params: { lng: stri
               enter_location_manually: t("weather.enter_location_manually"),
               enter_norwegian_address: t("weather.enter_norwegian_address"),
               manual_location_error: t("weather.manual_location_error"),
+              read_the_ukr_newspaper: t("weather.read_the_ukr_newspaper"),
             }}
           />
         </div>

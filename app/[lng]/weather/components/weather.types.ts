@@ -84,4 +84,5 @@ export type WeatherLocales = {
   enter_location_manually: string
   enter_norwegian_address: string
   manual_location_error: string
+  read_the_ukr_newspaper: string
 }

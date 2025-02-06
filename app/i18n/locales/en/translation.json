@@ -197,7 +197,8 @@
     "detect_my_location": "Detect my location",
     "enter_location_manually": "Enter location manually",
     "enter_norwegian_address": "Enter a city name",
-    "manual_location_error": "Could not retrieve locations. Please check your connection and refresh the page."
+    "manual_location_error": "Could not retrieve locations. Please check your connection and refresh the page.",
+    "read_the_ukr_newspaper": "Follow the main news in Norway in Ukrainian on our Telegram:"
   },
   "footer": {
     "weather_data": "Weather data",

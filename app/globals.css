@@ -1,6 +1,12 @@
+@import "tailwindcss";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@theme {
+  --breakpoint-xs: 390px;
+}
 
 /* BEM styles */
 @layer components {
@@ -131,21 +137,14 @@
 
   /* Filter */
   .filter-button {
-    @apply shadow-lg border border-gray-200 p-2 bg-white rounded-md cursor-pointer h-12 w-12 text-gray-300 duration-200 transition relative hover:top-[-2px] hover:shadow-xl;
-    margin-right: 16px;
-  }
-
-  @media (max-width: 356px) {
-    .filter-button {
-      margin-right: 2px;
-    }
+    @apply mr-1 xs:mr-4 shadow-lg border border-gray-200 p-2 bg-white rounded-md cursor-pointer h-12 w-12 text-gray-300 duration-200 transition relative hover:top-[-2px] hover:shadow-xl; 
   }
 
   .filter-button--active {
-    @apply shadow-sm shadow-inner hover:top-[0px] hover:shadow-inner
+    @apply shadow-none hover:top-[0px] hover:shadow-inner inset-shadow-sm inset-shadow-green-500 bg-green-100 text-white
   }
 
   .filter-button--reset {
-    @apply border-none bg-transparent shadow-none hover:top-[-2px] hover:shadow-none
+    @apply border-none bg-transparent shadow-none hover:top-[-2px] hover:shadow-none inset-shadow-none bg-transparent text-gray-300
   }
 }

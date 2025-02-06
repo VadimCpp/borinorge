@@ -197,7 +197,8 @@
     "detect_my_location": "Oppdag min posisjon",
     "enter_location_manually": "Skriv inn posisjon manuelt",
     "enter_norwegian_address": "Skriv inn et bynavn",
-    "manual_location_error": "Kunne ikke hente steder. Vennligst sjekk tilkoblingen din og oppdater siden."
+    "manual_location_error": "Kunne ikke hente steder. Vennligst sjekk tilkoblingen din og oppdater siden.",
+    "read_the_ukr_newspaper": "Følg med på de viktigste nyhetene i Norge på ukrainsk på vår Telegram:"
   },
   "footer": {
     "weather_data": "Værdata",

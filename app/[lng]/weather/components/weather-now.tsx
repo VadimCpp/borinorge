@@ -148,6 +148,19 @@ const WeatherNow: React.FC<WeatherNowProps> = ({ units, locales, serie, city, re
           </span>
         </div>
       </div>
+      <div className="mt-8 text-sm text-gray-600">
+        <span className="pr-1">{locales.read_the_ukr_newspaper}</span>
+        <a href="https://t.me/denukrainskeavisa">
+          <Image
+            src="/images/weather/denukrainskeavisa.png"
+            width={20}
+            height={20}
+            alt="Telegram icon"
+            className="inline pr-1"
+          />
+          <span className="text-blue-600 border-b border-blue-600">Den Ukraїnske Avisa</span>
+        </a>
+      </div>
     </div>
   )
 }

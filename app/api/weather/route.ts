@@ -1,6 +1,7 @@
 // app/api/weather/route.ts
 import { NextResponse } from 'next/server'
-import testWeather from './example.json'
+// NOTE! Uncomment for testing
+// import testWeather from './example.json'
 
 // This function handles GET requests to /api/hello
 export async function GET(request: Request) {
