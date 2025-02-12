@@ -12,7 +12,8 @@ export const NORSK_RESOURCE_NAMES = [
   "hkdir",
   "lexin",
   "grammatikk",
-  "nrk-nyinorge"
+  "nrk-nyinorge",
+  "norsk-lett-channel"
 ]
 
 export const NORSK_RESOURCE_LEVELS = [
@@ -84,6 +85,10 @@ export const NORSK_RESOURCE_ATTRIBUTES = {
   },
   "nrk-nyinorge": {
     levels: [ "A2", "B1", "B2" ],
+    skills: [ "listening", "speaking" ]
+  },
+  "norsk-lett-channel": {
+    levels: [ "A1", "A2"],
     skills: [ "listening", "speaking" ]
   },
 }

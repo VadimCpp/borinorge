@@ -117,6 +117,12 @@
       "description": "Nyhetsspilletliste på YouTube med ukrainske undertekster.",
       "link": "https://www.youtube.com/playlist?list=PL8al_vLUTXD2_egLzdq7qbB0O4UOEJibm",
       "author": "NRK"
+    },
+    "norsk-lett-channel": {
+      "title": "Norsk? Lett!",
+      "description": "YouTube-kanal med opptak av webinarer og sosiale seminarer for ukrainere i Norge og alle som trenger hjelp med norsk.",
+      "link": "https://www.youtube.com/@NorskLett",
+      "author": "NorskLett"
     }
   },
   "folk": {
