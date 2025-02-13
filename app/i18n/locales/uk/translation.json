@@ -117,6 +117,12 @@
       "description": "Новинний плейлист на YouTube з українськими субтитрами.",
       "link": "https://www.youtube.com/playlist?list=PL8al_vLUTXD2_egLzdq7qbB0O4UOEJibm",
       "author": "NRK"
+    },
+    "norsk-lett-channel": {
+      "title": "Норвезька? Легко!",
+      "description": "YouTube-канал із записами вебінарів і соцінарів для українців у Норвегії та всіх, кому потрібна допомога з норвезькою мовою.",
+      "link": "https://www.youtube.com/@NorskLett",
+      "author": "NorskLett"
     }
   },
   "folk": {

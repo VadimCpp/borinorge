@@ -10,14 +10,16 @@ export default async function ChatNorsklett({ params: { lng } }: { params: { lng
   const { t } = await useTranslation(lng)
 
   const resources: Array<NorskResource> = []
-  NORSK_RESOURCE_NAMES.map((item) => {
-    resources.push({
-      slug: item,
-      title: t(`norsklett.${item}.title`),
-      description: t(`norsklett.${item}.description`),
-      link: t(`norsklett.${item}.link`),
-      author: t(`norsklett.${item}.author`)
-    })
+  NORSK_RESOURCE_NAMES
+  .filter((item) => t(`norsklett.${item}.title`) != `norsklett.${item}.title`)
+  .map((item) => {
+      resources.push({
+        slug: item,
+        title: t(`norsklett.${item}.title`),
+        description: t(`norsklett.${item}.description`),
+        link: t(`norsklett.${item}.link`),
+        author: t(`norsklett.${item}.author`)
+      })
   })
 
   return (
