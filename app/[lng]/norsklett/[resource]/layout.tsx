@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
-import { metadataTranslation } from '../../i18n'
-import { NORSK_RESOURCE_NAMES } from './constants'
+import { metadataTranslation } from '../../../i18n'
+import { NORSK_RESOURCE_NAMES } from './../constants'
 
 interface MetadataProps {
   params: { lng: string, resource: string }

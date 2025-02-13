@@ -1,6 +1,6 @@
 "use client"
 import { useEffect, useCallback, useState, use } from 'react'
-import Link from 'next/link'
+// import Link from 'next/link'
 import { NorskResource } from '../types'
 import {
   NORSK_RESOURCE_ATTRIBUTES,
@@ -12,6 +12,7 @@ import ListeningIcon from '../icons/listening'
 import WritingIcon from '../icons/writing'
 import SpeakingIcon from '../icons/speaking'
 import Filter from './filter'
+import Cards from './cards'
 
 
 /**
@@ -141,7 +142,11 @@ const Sources: React.FC<SourcesProps> = ({ resources, labels }) => {
         )}
       </div>
       <div className='md:columns-2 lg:columns-3 gap-2 pb-40'>
-        {filteredResources.map((item, index) => {
+        <Cards
+          items={filteredResources}
+          labels={labels}
+        />
+        {/* {filteredResources.map((item, index) => {
           const title = item.title
           const description = item.description
           const link = item.link
@@ -167,7 +172,7 @@ const Sources: React.FC<SourcesProps> = ({ resources, labels }) => {
               </section>
             </div>
           )
-        })}
+        })} */}
       </div>
     </div>
   )

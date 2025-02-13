@@ -131,6 +131,10 @@
     @apply relative bg-white shadow-lg rounded-sm overflow-hidden mx-4 mb-8 p-4 cursor-pointer transition duration-200 transform hover:top-[-5px] hover:shadow-xl
   }
 
+  .card--highlighted {
+    @apply border-2 border-yellow-500
+  }
+
   .card__title {
     @apply text-3xl font-thin
   }
