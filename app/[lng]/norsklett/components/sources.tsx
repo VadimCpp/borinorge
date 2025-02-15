@@ -1,6 +1,5 @@
 "use client"
 import { useEffect, useCallback, useState, use } from 'react'
-// import Link from 'next/link'
 import { NorskResource } from '../types'
 import {
   NORSK_RESOURCE_ATTRIBUTES,
@@ -146,33 +145,6 @@ const Sources: React.FC<SourcesProps> = ({ resources, labels }) => {
           items={filteredResources}
           labels={labels}
         />
-        {/* {filteredResources.map((item, index) => {
-          const title = item.title
-          const description = item.description
-          const link = item.link
-          const author = item.author
-
-          return (
-            <div key={index} className='break-inside-avoid'>
-              <section id={item.slug} className='card'>
-                <Link href={link}>
-                  <h3 className="card__title py-4">
-                    <span className='pl-2'> {title}</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6 inline ml-2">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-                    </svg>
-                  </h3>
-                  <hr className="mt-2 mb-4" />
-                  <p className="project__paragraph pb-2 mb-0 font-thin">{description}</p>
-                  <p className="project__paragraph pt-1 mt-0">
-                    <span className='font-thin'>{labels["created-by"]}:</span>
-                    <span className="font-bold"> {author}</span>
-                  </p>
-                </Link>
-              </section>
-            </div>
-          )
-        })} */}
       </div>
     </div>
   )

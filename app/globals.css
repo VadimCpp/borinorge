@@ -128,16 +128,29 @@
 
   /* Card */
   .card {
-    @apply relative bg-white shadow-lg rounded-sm overflow-hidden mx-4 mb-8 p-4 cursor-pointer transition duration-200 transform hover:top-[-5px] hover:shadow-xl
+    @apply relative bg-white shadow-lg rounded-sm overflow-hidden mx-4 mb-8 p-4 cursor-pointer transition duration-200 transform hover:top-[-5px] hover:shadow-xl;
   }
 
   .card--highlighted {
-    @apply border-2 border-yellow-500
+    @apply border-2 border-yellow-500;
   }
 
   .card__title {
     @apply text-3xl font-thin
   }
+
+  .card__arrowicon {
+    @apply w-6 h-6;
+    transform: rotate(90deg);
+    transition: transform 300ms;
+  }
+
+  .card__arrowicon--left {
+    @apply w-6 h-6;
+    transform: rotate(0);
+    transition: transform 300ms;
+  }
+
 
   /* Filter */
   .filter-button {
@@ -150,5 +163,15 @@
 
   .filter-button--reset {
     @apply border-none bg-transparent shadow-none hover:top-[-2px] hover:shadow-none inset-shadow-none bg-transparent text-gray-300
+  }
+
+  /* Scroll up button */
+  .scrollup-button {
+    @apply shadow-lg border border-gray-200 p-2 bg-white rounded-md cursor-pointer h-12 w-12 duration-200 transition fixed bottom-6 right-6 hover:shadow-xl;
+  }
+
+  .scrollup-button__icon {
+    @apply w-6 h-6 mx-auto;
+    transform: rotate(270deg);
   }
 }

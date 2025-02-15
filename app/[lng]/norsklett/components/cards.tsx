@@ -20,7 +20,7 @@ interface CardsProps {
 export default function Cards({ items, labels }: CardsProps) {
   const pathname = usePathname()
 
-  // `resourceParam` = e.g. "my-resource" if URL is `?resource=my-resource`
+  // `resourceParam` = e.g. "my-resource" if URL path ends with "my-resource"
   const getLastWordAfterSlash = (path: string) => {
     const parts = path.split('/')
     return parts[parts.length - 1]
@@ -31,8 +31,27 @@ export default function Cards({ items, labels }: CardsProps) {
   // Keep track of which slug was "clicked" first to handle double-click logic
   const [clickedSlug, setClickedSlug] = useState<string | null>(null)
 
+  // Track whether to show the "scroll to top" button
+  const [showButton, setShowButton] = useState(false)
+
+  // Listen for scroll to decide if button should appear
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setShowButton(true)
+      } else {
+        setShowButton(false)
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+    }
+  }, [])
+
   /**
-   * If `?resource=XYZ` is present on page load (or changes),
+   * If `?resource=XYZ` or /XYZ is present on page load (or changes),
    * smoothly scroll to that `<section id="XYZ">`.
    */
   useEffect(() => {
@@ -55,7 +74,11 @@ export default function Cards({ items, labels }: CardsProps) {
       document.querySelectorAll(".card--highlighted").forEach((highlightedEl) => {
         highlightedEl.classList.remove("card--highlighted")
       })
+      document.querySelectorAll(".card__arrowicon--left").forEach((highlightedEl) => {
+        highlightedEl.classList.remove("card__arrowicon--left")
+      })
       el.classList.add("card--highlighted")
+      el.querySelector(".card__arrowicon")?.classList.add("card__arrowicon--left")
     }
   }, [resourceParam])
 
@@ -68,7 +91,7 @@ export default function Cards({ items, labels }: CardsProps) {
     e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
     slug: string
   ) => {
-    // If user is cmd-clicking or middle-clicking, let the default behavior happen:
+    // If user is cmd-clicking or middle-clicking, let the default behavior happen
     if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) {
       return
     }
@@ -76,12 +99,11 @@ export default function Cards({ items, labels }: CardsProps) {
     if (clickedSlug !== slug) {
       e.preventDefault()
 
-      // Update the current URL to include "?resource=slug" without rerendering.
-      // Use the history API to change the URL without causing a page reload.
+      // Update the current URL to include "/slug" without rerendering
       if (resourceParam === "norsklett") {
         window.history.pushState({}, '', `${pathname}/${slug}`)
       } else {
-        // Replace the current URL with the new slug without rerendering the page
+        // Replace the last segment with new slug
         const newUrl = pathname.replace(/\/[^/]*$/, `/${slug}`)
         window.history.pushState({}, '', newUrl)
       }
@@ -89,6 +111,35 @@ export default function Cards({ items, labels }: CardsProps) {
       setClickedSlug(slug)
     }
     // Otherwise, it is the second click => let the normal link navigation occur.
+  }
+
+  /**
+   * Scroll to top, remove highlights, deselect slug, and
+   * remove last path segment from the URL.
+   */
+  const handleScrollTopAndDeselect = () => {
+    // Remove highlight from any card
+    document.querySelectorAll(".card--highlighted").forEach((el) => {
+      el.classList.remove("card--highlighted")
+    })
+    document.querySelectorAll(".card__arrowicon--left").forEach((el) => {
+      el.classList.remove("card__arrowicon--left")
+    })
+    setClickedSlug(null)
+
+    // Remove the last path segment from the URL if there is one
+    // e.g., if pathname is "/somepage/someslug", go back to "/somepage"
+    const newUrl = pathname.replace(/\/[^/]*$/, "")
+    // Only pushState if there's actually a change
+    if (newUrl !== pathname) {
+      window.history.pushState({}, '', newUrl)
+    }
+
+    // Scroll to top smoothly
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    })
   }
 
   return (
@@ -99,22 +150,24 @@ export default function Cards({ items, labels }: CardsProps) {
           <section id={sectionId} key={sectionId} className="card">
             <Link href={item.link} onClick={(e) => handleClick(e, sectionId)}>
               <h3 className="card__title py-4 flex items-center gap-2">
-                {item.title}
-                {/* optional icon */}
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="w-6 h-6"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
-                  />
-                </svg>
+                <span className="block w-full">
+                  {item.title}
+                </span>
+                <span className="card__arrowicon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+                    />
+                  </svg>
+                </span>
               </h3>
               <hr className="mt-2 mb-4" />
               <p className="project__paragraph pb-2 mb-0 font-thin">
@@ -128,6 +181,31 @@ export default function Cards({ items, labels }: CardsProps) {
           </section>
         )
       })}
+
+      {/* Fixed button at bottom-right to scroll up and deselect card.
+          It only appears if the user has scrolled more than 100px. */}
+      {showButton && (
+        <button
+          className="scrollup-button"
+          onClick={handleScrollTopAndDeselect}
+          aria-label="Scroll to top and clear selection"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="scrollup-button__icon"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+            />
+          </svg>
+        </button>
+      )}
     </div>
   )
 }
