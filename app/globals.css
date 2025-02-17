@@ -54,7 +54,7 @@
   }
 
   .dropdown-content {
-    @apply absolute py-2 text-left bg-white border-gray-200 border right-0
+    @apply absolute py-2 text-left bg-white border-gray-200 border right-0 z-10
   }
   
   /* Project */
@@ -154,11 +154,11 @@
 
   /* Filter */
   .filter-button {
-    @apply mr-1 xs:mr-4 shadow-lg border border-gray-200 p-2 bg-white rounded-md cursor-pointer h-12 w-12 text-gray-300 duration-200 transition relative hover:top-[-2px] hover:shadow-xl; 
+    @apply mr-1 h-10 w-10 sm:h-12 sm:w-12 xs:mr-2 sm:mr-4 p-2 shadow-lg border border-gray-200 bg-white rounded-md cursor-pointer text-gray-300 duration-200 transition relative hover:top-[-2px] hover:shadow-xl; 
   }
 
   .filter-button--active {
-    @apply shadow-none hover:top-[0px] hover:shadow-inner inset-shadow-sm inset-shadow-green-500 bg-green-100 text-white
+    @apply shadow-none hover:top-[0px] hover:shadow-inner inset-shadow-sm inset-shadow-blue-500 bg-blue-100 text-white
   }
 
   .filter-button--reset {

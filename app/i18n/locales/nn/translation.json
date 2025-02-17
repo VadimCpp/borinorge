@@ -25,15 +25,8 @@
   "norsklett": {
     "norsklett": "Lær norsk lett",
     "description": "Det beste språklæringsmateriell til deg.",
-    "filter-description": "Bruk knappene nede for å filtrere data.",
-    "reading": "Lesing",
-    "listening": "Lytting",
-    "writing": "Skriving",
-    "oral": "Munnleg praksis",
+    "show-filter-instructions": "Filteret er gøymt. Trykk på tannhjulet til høgre for å vise filteret.",
     "created-by": "Laget av",
-    "total-resources": "Antall ressursar til å lære norsk:",
-    "found-resources": "Ressursar funnet:",
-    "out-of": "av",
     "bildetema": {
       "title": "Bildetema",
       "description": "Bildetema er ei fleirspråkleg biletordbok med bilete, tekst og lyd delt inn etter tema. Biletordboka kan vere eit utgangspunkt for arbeid med språk i barnehage, skule og vaksenopplæring. Ho inneheld eit grunnleggjande ordforråd som hovudsakleg består av substantiv og adjektiv.",

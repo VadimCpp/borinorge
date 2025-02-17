@@ -1,4 +1,4 @@
-export const NORSK_RESOURCE_NAMES = [
+export const NORSK_RESOURCE_NAMES: Array<string> = [
   "ordbokene",
   "snl",
   "naob",
@@ -24,76 +24,99 @@ export const NORSK_RESOURCE_LEVELS = [
   "B2"
 ]
 
-export const NORSK_RESOURCE_SKILLS = [
-  "reading",
-  "listening",
-  "writing",
-  "speaking"
+export const NORSK_RESOURCE_LANGUAGES = [
+  "nb",
+  "nn",
+  "en",
+  "uk",
+  "ru"
+]
+
+export const NORSK_RESOURCE_PLATFORMS = [
+  "website",
+  "app",
+  "youtube"
 ]
 
 export const NORSK_RESOURCE_ATTRIBUTES = {
   "ordbokene": {
     levels: [ "A1", "A2", "B1", "B2" ],
-    skills: [ "reading", "writing" ]
+    languages: [ "nb", "nn", "en", "uk" ],
+    platforms: ["website"],
   },
   "snl": {
     levels: [ "B1", "B2" ],
-    skills: [ "reading", "writing" ]
+    languages: [ "nb" ],
+    platforms: ["website"],
   },
   "naob": {
     levels: [ "B1", "B2" ],
-    skills: [ "reading", "writing" ]
+    languages: [ "nb" ],
+    platforms: ["website"],
   },
   "norskappen": {
     levels: [ "A1", "A2", "B1", "B2" ],
-    skills: [ "reading", "listening", "writing", "speaking" ]
+    languages: [ "en" ],
+    platforms: [ "website", "app" ],
   },
   "klartale": {
     levels: [ "B1", "B2" ],
-    skills: [ "reading", "listening", "writing", "speaking" ]
+    languages: [ "nb" ],
+    platforms: [ "website" ],
   },
   "laernorsknaa": {
     levels: [ "B1", "B2" ],
-    skills: [ "reading", "listening", "writing", "speaking" ]
+    languages: [ "nb" ],
+    platforms: [ "website" ],
   },
   "bildetema": {
     levels: [ "A1", "A2", "B1", "B2" ],
-    skills: [ "reading", "listening", "writing", "speaking" ]
+    languages: [ "nb", "nn", "en", "uk", "ru" ],
+    platforms: [ "website" ],
   },
   "now": {
     levels: [ "A1", "A2", "B1", "B2" ],
-    skills: [ "reading", "listening", "writing", "speaking" ]
+    languages: [ "en", "uk" ],
+    platforms: [ "website" ],
   },
   "now2": {
     levels: [ "A1", "A2", "B1", "B2" ],
-    skills: [ "reading", "listening", "writing", "speaking" ]
+    languages: [ "nb" ],
+    platforms: [ "website" ],
   },
   "igin": {
     levels: [ "B1", "B2" ],
-    skills: [ "reading", "writing" ]
+    languages: [ "nb", "nn" ],
+    platforms: [ "website" ],
   },
   "hkdir": {
     levels: [ "A1", "A2", "B1", "B2" ],
-    skills: [ "reading", "listening", "writing", "speaking" ]
+    languages: [ "nb", "nn", "en" ],
+    platforms: [ "website" ],
   },
   "lexin": {
     levels: [ "A1", "A2", "B1", "B2" ],
-    skills: [ "reading", "listening", "writing", "speaking" ]
+    languages: [ "nb", "nn", "en" ],
+    platforms: [ "website" ],
   },
   "grammatikk": {
     levels: [ "A1", "A2", "B1", "B2" ],
-    skills: [ "reading", "listening", "writing", "speaking" ]
+    languages: [ "nb", "en" ],
+    platforms: [ "website" ],
   },
   "nrk-nyinorge": {
     levels: [ "A2", "B1", "B2" ],
-    skills: [ "listening", "speaking" ]
+    languages: [ "nb", "uk" ],
+    platforms: [ "youtube" ],
   },
   "norsk-lett-channel": {
     levels: [ "A1", "A2"],
-    skills: [ "listening", "speaking" ]
+    languages: [ "nb", "ru" ],
+    platforms: [ "youtube" ],
   },
   "prosprak": {
     levels: [ "A1", "A2", "B1"],
-    skills: [ "listening", "speaking" ]
+    languages: [ "nb", "uk" ],
+    platforms: [ "youtube" ],
   },
 }

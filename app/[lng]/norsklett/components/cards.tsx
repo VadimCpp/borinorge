@@ -3,45 +3,51 @@
 import { useEffect, useState } from "react"
 import { usePathname } from "next/navigation"
 import Link from "next/link"
+import { GlobeIcon, MobileIcon, VideoIcon, PaperPlaneIcon } from '@radix-ui/react-icons'
+import { NorskResource } from "../types"
 
-type CardItem = {
-  slug: string
-  title: string
-  description: string
-  author: string
-  link: string
+interface FilterState {
+  levels: string[]
+  languages: string[]
+  platforms: string[]
+}
+
+type CardItem = NorskResource
+
+interface CardsLocales {
+  created_by: string
 }
 
 interface CardsProps {
   items: CardItem[]
-  labels: Record<string, string>
+  filter: FilterState
+  locales: CardsLocales
 }
 
-export default function Cards({ items, labels }: CardsProps) {
+// Map each platform to its corresponding Radix Icon
+const platformIcons: Record<string, JSX.Element> = {
+  website: <GlobeIcon className="inline h-4 w-4" />,
+  app: <MobileIcon className="inline h-4 w-4" />,
+  youtube: <VideoIcon className="inline h-4 w-4" />,
+  telegram: <PaperPlaneIcon className="inline h-4 w-4" />,
+}
+
+export default function Cards({ items, filter, locales }: CardsProps) {
   const pathname = usePathname()
 
-  // `resourceParam` = e.g. "my-resource" if URL path ends with "my-resource"
+  // Get last part of the URL path (used to scroll to a card if needed)
   const getLastWordAfterSlash = (path: string) => {
     const parts = path.split('/')
     return parts[parts.length - 1]
   }
 
   const resourceParam = getLastWordAfterSlash(pathname)
-
-  // Keep track of which slug was "clicked" first to handle double-click logic
   const [clickedSlug, setClickedSlug] = useState<string | null>(null)
-
-  // Track whether to show the "scroll to top" button
   const [showButton, setShowButton] = useState(false)
 
-  // Listen for scroll to decide if button should appear
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 100) {
-        setShowButton(true)
-      } else {
-        setShowButton(false)
-      }
+      setShowButton(window.scrollY > 100)
     }
 
     window.addEventListener("scroll", handleScroll)
@@ -50,10 +56,6 @@ export default function Cards({ items, labels }: CardsProps) {
     }
   }, [])
 
-  /**
-   * If `?resource=XYZ` or /XYZ is present on page load (or changes),
-   * smoothly scroll to that `<section id="XYZ">`.
-   */
   useEffect(() => {
     if (!resourceParam) return
 
@@ -70,7 +72,7 @@ export default function Cards({ items, labels }: CardsProps) {
         behavior: "smooth"
       })
 
-      // Highlight the selection, e.g. add a CSS class
+      // Highlight the card
       document.querySelectorAll(".card--highlighted").forEach((highlightedEl) => {
         highlightedEl.classList.remove("card--highlighted")
       })
@@ -83,34 +85,27 @@ export default function Cards({ items, labels }: CardsProps) {
   }, [resourceParam])
 
   /**
-   * Handle the link click behavior:
-   *  - On first click, just set `?resource=slug` and highlight
-   *  - On second click, do the normal navigation
+   * Handle click: On first click, update URL (without navigating) and highlight.
+   * On second click, let the normal link navigation occur.
    */
   const handleClick = (
     e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
     slug: string
   ) => {
-    // If user is cmd-clicking or middle-clicking, let the default behavior happen
     if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) {
       return
     }
 
     if (clickedSlug !== slug) {
       e.preventDefault()
-
-      // Update the current URL to include "/slug" without rerendering
       if (resourceParam === "norsklett") {
         window.history.pushState({}, '', `${pathname}/${slug}`)
       } else {
-        // Replace the last segment with new slug
         const newUrl = pathname.replace(/\/[^/]*$/, `/${slug}`)
         window.history.pushState({}, '', newUrl)
       }
-
       setClickedSlug(slug)
     }
-    // Otherwise, it is the second click => let the normal link navigation occur.
   }
 
   /**
@@ -145,7 +140,7 @@ export default function Cards({ items, labels }: CardsProps) {
   return (
     <div>
       {items.map((item) => {
-        const sectionId = item.slug // we'll scroll to <section id={sectionId}>
+        const sectionId = item.slug
         return (
           <section id={sectionId} key={sectionId} className="card">
             <Link href={item.link} onClick={(e) => handleClick(e, sectionId)}>
@@ -169,12 +164,36 @@ export default function Cards({ items, labels }: CardsProps) {
                   </svg>
                 </span>
               </h3>
-              <hr className="mt-2 mb-4" />
+              <p className="project__paragraph mt-0 mb-0 pb-2 pt-0 font-thin text-sm text-gray-300">
+                {item.levels.map((level, index) => (
+                  <span key={index}>
+                    <span className={filter.levels.includes(level) ? 'text-blue-800 font-normal' : ''} >{level}</span>
+                    {index < item.levels.length - 1 && ', '}
+                  </span>
+                ))}
+                <span>,&nbsp;</span>
+                {item.languages.map((lang, index) => (
+                  <span key={index}>
+                    <span className={filter.languages.includes(lang) ? 'text-blue-800 font-normal' : ''}>{lang.toUpperCase()}</span>
+                    {index < item.languages.length - 1 && ', '}
+                  </span>
+                ))}
+                <span>,&nbsp;</span>
+                {item.platforms.map((platform, index) => (
+                  <span key={index}>
+                    <span className={`inline flex items-center ${filter.platforms.includes(platform) ? 'text-blue-800 font-normal' : ''}`}>
+                      {platformIcons[platform]}
+                    </span>
+                    {index < item.platforms.length - 1 && ', '}
+                  </span>
+                ))}
+              </p>
+              <hr className="mt-0 pt-0 mb-4" />
               <p className="project__paragraph pb-2 mb-0 font-thin">
                 {item.description}
               </p>
               <p className="project__paragraph pt-1 mt-0">
-                <span className="font-thin">{labels["created-by"]}:</span>
+                <span className="font-thin">{locales.created_by}:</span>
                 <span className="font-bold"> {item.author}</span>
               </p>
             </Link>
@@ -182,8 +201,6 @@ export default function Cards({ items, labels }: CardsProps) {
         )
       })}
 
-      {/* Fixed button at bottom-right to scroll up and deselect card.
-          It only appears if the user has scrolled more than 100px. */}
       {showButton && (
         <button
           className="scrollup-button"

@@ -25,15 +25,8 @@
   "norsklett": {
     "norsklett": "Norsk? Easy!",
     "description": "The best language learning materials for you.",
-    "filter-description": "Use the buttons below to filter the data.",
-    "reading": "Reading",
-    "listening": "Listening",
-    "writing": "Writing",
-    "oral-test": "Speaking",
+    "show-filter-instructions": "The filter is hidden. Click the gear on the right to show the filter.",
     "created-by": "Created by",
-    "total-resources": "Total resources for learning Norwegian:",
-    "found-resources": "Resources found:",
-    "out-of": "out of",
     "bildetema": {
       "title": "Bildetema",
       "description": "Bildetema is a multilingual picture dictionary with images, text, and sound divided by themes. The picture dictionary can be a starting point for language work in kindergarten, school, and adult education. It contains a basic vocabulary consisting mainly of nouns and adjectives.",

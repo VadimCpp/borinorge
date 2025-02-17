@@ -4,4 +4,7 @@ export type NorskResource = {
   description: string
   link: string
   author: string
+  levels: string[]
+  languages: string[]
+  platforms: string[]
 }
