@@ -1,3 +1,5 @@
+// NOTE! This is legacy
+// TODO: use Card component instead, remove this
 
 import Image from "next/image"
 

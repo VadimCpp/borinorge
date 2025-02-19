@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { useTranslation } from '../../i18n'
 import { languages, verboseLanguages } from '../../i18n/settings'
 import Dropdown from '../components/dropdown'
+import { Breadcrumbs } from '../components/breadcrumbs'
 import Sources from './components/sources'
 import { NorskResource } from './types'
 import { NORSK_RESOURCE_NAMES, NORSK_RESOURCE_ATTRIBUTES } from './constants'
@@ -33,12 +34,15 @@ export default async function ChatNorsklett({ params: { lng } }: { params: { lng
     <>
       <header className="header">
         <div className="container mx-auto px-4">
-          <h1 className="header__title header__title--home text-left pb-0 mb-4">{t("norsklett.norsklett")}</h1>
+          <h1 className="header__title header__title--home text-3xl md:text-5xl text-left  pt-0 mt-0 pb-0 mb-4">{t("norsklett.norsklett")}</h1>
           <p className="font-thin text-left pt-0 mt-0 relative">{t("norsklett.description")}</p>
-          <div className='mb-4 pt-4'>
+          <div className='mb-4 pt-4 flex justify-between items-center'>
+            <Link href={`/${lng}`} className="border-b border-white">
+              Borinorge
+            </Link>
             <Dropdown
               title={`${lng.toUpperCase()} ↓`}
-              titleClassName="float-right"
+              titleClassName="text-white"
             >
               {languages.filter((l) => lng !== l).map((l) => (
                 <div key={l} className="p-2 hover:bg-gray-100">

@@ -12,7 +12,12 @@ export type FolkData = {
   }
   openGraph: {
     url: string
-  } 
+  },
+  projects: {
+    id: string
+    titleSlug: string
+    imageUrl: string
+  }[] 
 }
 
 export const folksMapping: {[K in Folk]: FolkData } = {
@@ -26,7 +31,24 @@ export const folksMapping: {[K in Folk]: FolkData } = {
     },
     openGraph: {
       url: "/images/preview/folk/olena_varlamova_1200_630.jpeg"
-    }
+    },
+    projects: [
+      {
+        id: 'projects/ordbokene',
+        titleSlug: 'project-ordbokene',
+        imageUrl: '/images/preview/ordbokene_1200_630_v3.jpeg',
+      },
+      {
+        id: 'norsklett',
+        titleSlug: 'project-norsklett',
+        imageUrl: '/images/preview/norsklett_1200_630.jpeg',
+      },
+      {
+        id: 'alias',
+        titleSlug: 'project-alias',
+        imageUrl: '/images/preview/alias_1200_630.jpeg',
+      },
+    ]
   },
   oksana: {
     image: {
@@ -38,7 +60,24 @@ export const folksMapping: {[K in Folk]: FolkData } = {
     } ,
     openGraph: {
       url: "/images/preview/folk/oksana_donets_1200_630.jpeg"
-    }
+    },
+    projects: [
+      {
+        id: 'projects/ordbokene',
+        titleSlug: 'project-ordbokene',
+        imageUrl: '/images/preview/ordbokene_1200_630_v3.jpeg',
+      },
+      {
+        id: 'norsklett',
+        titleSlug: 'project-norsklett',
+        imageUrl: '/images/preview/norsklett_1200_630.jpeg',
+      },
+      {
+        id: 'alias',
+        titleSlug: 'project-alias',
+        imageUrl: '/images/preview/alias_1200_630.jpeg',
+      },
+    ]
   },
   iryna: {
     image: {
@@ -50,7 +89,24 @@ export const folksMapping: {[K in Folk]: FolkData } = {
     },
     openGraph: {
       url: "/images/preview/folk/iryna_nepotenko_1200_630.jpeg"
-    }
+    },
+    projects: [
+      {
+        id: 'projects/ordbokene',
+        titleSlug: 'project-ordbokene',
+        imageUrl: '/images/preview/ordbokene_1200_630_v3.jpeg',
+      },
+      {
+        id: 'norsklett',
+        titleSlug: 'project-norsklett',
+        imageUrl: '/images/preview/norsklett_1200_630.jpeg',
+      },
+      {
+        id: 'alias',
+        titleSlug: 'project-alias',
+        imageUrl: '/images/preview/alias_1200_630.jpeg',
+      },
+    ]
   },
   vadym: {
     image: {
@@ -62,6 +118,13 @@ export const folksMapping: {[K in Folk]: FolkData } = {
     },
     openGraph: {
       url: "/images/preview/folk/vadym_kaninskyi_1200_630.jpeg"
-    }
+    },
+    projects: [
+      {
+        id: 'direkte-stotte',
+        titleSlug: 'project-direkte-stotte',
+        imageUrl: '/images/preview/direkte_stotte_1200_630.jpeg',
+      }
+    ]
   }
 }

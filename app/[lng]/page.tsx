@@ -4,7 +4,7 @@ import { useTranslation } from '../i18n'
 import { languages } from '../i18n/settings'
 import { Footer } from './components/footer'
 import Dropdown from './components/dropdown'
-import { ProjectCard, type Project } from './components/project-card'
+import { Card } from './components/card'
 
 export default async function Page({ params: { lng } }: { params: { lng: string } }) {
   const { t } = await useTranslation(lng)
@@ -58,26 +58,31 @@ export default async function Page({ params: { lng } }: { params: { lng: string 
                 id: 'projects/nettverk',
                 title: "Nettverk",
                 imageUrl: '/images/preview/nettverk_1200_630.jpeg',
+                linkUrl: `/${lng}/projects/nettverk`,
               },
               {
                 id: 'norsklett',
                 title: t('project-norsklett'),
                 imageUrl: '/images/preview/norsklett_1200_630.jpeg',
+                linkUrl: `/${lng}/norsklett`,
               },
               {
                 id: 'projects/ordbokene',
                 title: t('project-ordbokene'),
                 imageUrl: '/images/preview/ordbokene_1200_630_v3.jpeg',
+                linkUrl: `/${lng}/projects/ordbokene`,
               },
+              // TODO: return IT Kunnskap project
   //            {
   //              id: 'it-kunnskap',
   //              title: t('project-it-kunnskap'),
   //              imageUrl: '/images/preview/it_kunnskap_1200_630.jpeg',
   //            },
-            ].map((p: Project) => (
-              <Link key={p.id} href={`/${lng}/${p.id}`}>
-                <ProjectCard project={p} />
-              </Link>
+            ].map((project) => (
+              <Card
+                key={project.id}
+                project={project}
+              />
             ))}
           </div>
         </section>
@@ -91,26 +96,31 @@ export default async function Page({ params: { lng } }: { params: { lng: string 
                 id: 'oksana',
                 title: t('oksana-donets'),
                 imageUrl: '/images/preview/folk/oksana_donets_1200_630.jpeg',
+                linkUrl: `/${lng}/folk/oksana`,
               },
               {
                 id: 'iryna',
                 title: t('folk.iryna.name'),
                 imageUrl: '/images/preview/folk/iryna_nepotenko_1200_630.jpeg',
+                linkUrl: `/${lng}/folk/iryna`,
               },
               {
                 id: 'olena',
                 title: t('olena-varlamova'),
                 imageUrl: '/images/preview/folk/olena_varlamova_1200_630.jpeg',
+                linkUrl: `/${lng}/folk/olena`,
               },
               {
                 id: 'vadym',
                 title: t('vadym-kaninskyi'),
                 imageUrl: '/images/preview/folk/vadym_kaninskyi_1200_630.jpeg',
+                linkUrl: `/${lng}/folk/vadym`,
               }
-            ].map((p: Project) => (
-              <Link key={p.id} href={`/${lng}/folk/${p.id}`}>
-                <ProjectCard project={p} />
-              </Link>
+            ].map((project) => (
+              <Card
+                key={project.id}
+                project={project}
+              />
             ))}
           </div>
         </section>
@@ -123,21 +133,25 @@ export default async function Page({ params: { lng } }: { params: { lng: string 
                 id: 'alias',
                 title: t('project-alias'),
                 imageUrl: '/images/preview/alias_1200_630.jpeg',
+                linkUrl: `/${lng}/projects/alias`,
               },
               {
                 id: 'redaksjon',
                 title: t('project-redaksjon'),
                 imageUrl: '/images/preview/redaksjon_1200_630.jpeg',
+                linkUrl: `/${lng}/projects/redaksjon`,
               },
               {
                 id: 'direkte-stotte',
                 title: t('project-direkte-stotte'),
                 imageUrl: '/images/preview/direkte_stotte_1200_630.jpeg',
+                linkUrl: `/${lng}/projects/direkte-stotte`,
               }
-            ].map((p: Project) => (
-              <Link key={p.id} href={`/${lng}/projects/${p.id}`}>
-                <ProjectCard project={p} />
-              </Link>
+            ].map((project) => (
+              <Card
+                key={project.id}
+                project={project}
+              />
             ))}
           </div>
         </section>

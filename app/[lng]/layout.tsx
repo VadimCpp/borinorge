@@ -79,7 +79,7 @@ export default function RootLayout({
   return (
     <html lang={lng} dir={dir(lng)} className="scroll-smooth">
       <head />
-      <body>
+      <body className='bg-sky-50'>
         {children}
         <Analytics />
       </body>

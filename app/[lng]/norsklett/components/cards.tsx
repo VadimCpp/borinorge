@@ -109,11 +109,9 @@ export default function Cards({ items, filter, locales }: CardsProps) {
   }
 
   /**
-   * Scroll to top, remove highlights, deselect slug, and
-   * remove last path segment from the URL.
+   * Scroll to top and clear any card highlights.
    */
   const handleScrollTopAndDeselect = () => {
-    // Remove highlight from any card
     document.querySelectorAll(".card--highlighted").forEach((el) => {
       el.classList.remove("card--highlighted")
     })
@@ -122,15 +120,11 @@ export default function Cards({ items, filter, locales }: CardsProps) {
     })
     setClickedSlug(null)
 
-    // Remove the last path segment from the URL if there is one
-    // e.g., if pathname is "/somepage/someslug", go back to "/somepage"
     const newUrl = pathname.replace(/\/[^/]*$/, "")
-    // Only pushState if there's actually a change
     if (newUrl !== pathname) {
       window.history.pushState({}, '', newUrl)
     }
 
-    // Scroll to top smoothly
     window.scrollTo({
       top: 0,
       behavior: "smooth",
