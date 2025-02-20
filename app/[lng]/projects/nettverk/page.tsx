@@ -1,12 +1,32 @@
-import Image from 'next/image'
-import Link from 'next/link'
 import { greatVibes } from '../../../fonts'
 import { useTranslation } from '../../../i18n'
 import { Breadcrumbs } from '../../components/breadcrumbs'
+import { Card } from '../../components/card'
 import { Footer } from '../../components/footer'
 
 export default async function Nettverk({ params: { lng } }: { params: { lng: string } }) {
   const { t } = await useTranslation(lng)
+
+  const chatCards = [
+    {
+      id: 'haldenuk',
+      linkUrl: 'https://t.me/haldenuk',
+      imageUrl: '/images/nettverk/halden.jpeg',
+      title: t('nettverk.chat_halden'),
+    },
+    {
+      id: 'oslouk',
+      linkUrl: 'https://t.me/oslouk',
+      imageUrl: '/images/nettverk/oslo.jpeg',
+      title: t('nettverk.chat_oslo'),
+    },
+    {
+      id: 'bergenvolonterchat',
+      linkUrl: 'https://t.me/bergenvolonterchat',
+      imageUrl: '/images/nettverk/bergen.jpeg',
+      title: t('nettverk.chat_bergen'),
+    },
+  ]
 
   return (
     <>
@@ -27,53 +47,9 @@ export default async function Nettverk({ params: { lng } }: { params: { lng: str
         </ul>
 
         <div className="projects__grid">
-          <div className='break-inside-avoid'>
-            <section className='card'>
-              <Link href="https://t.me/oslouk">
-                <div className="h-44 rounded overflow-hidden flex justify-center items-center"> 
-                  <Image
-                    className="w-full"
-                    src={"/images/nettverk/oslo.jpeg"}
-                    alt="Nettverk i Oslo"
-                    width={1200}
-                    height={1200}
-                    priority
-                  />
-                </div>
-                <hr className="mt-4 mb-2" />
-                <h3 className="card__title py-2">
-                  <span className='pl-2'>{t('nettverk.chat_oslo')}</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6 inline ml-2">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-                  </svg>
-                </h3>
-              </Link>
-            </section>
-          </div>
-
-          <div className='break-inside-avoid'>
-            <section className='card'>
-              <Link href="https://t.me/bergenvolonterchat">
-                <div className="h-44 rounded overflow-hidden flex justify-center items-center"> 
-                  <Image
-                    className="w-full"
-                    src={"/images/nettverk/bergen.jpeg"}
-                    alt="Nettverk i Bergen"
-                    width={1200}
-                    height={1200}
-                    priority
-                  />
-                </div>
-                <hr className="mt-4 mb-2" />
-                <h3 className="card__title py-2">
-                  <span className='pl-2'>{t('nettverk.chat_bergen')}</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6 inline ml-2">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-                  </svg>
-                </h3>
-              </Link>
-            </section>
-          </div>
+          {chatCards.map((project) => (
+            <Card key={project.id} project={project} imageClassName="h-44" />
+          ))}
         </div>
       </main>
       <Footer />

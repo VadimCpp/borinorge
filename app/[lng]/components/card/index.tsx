@@ -10,16 +10,17 @@ export interface Project {
 
 interface CardProps {
   project: Project
+  imageClassName?: string
 }
 
-export function Card({ project }: CardProps) {
+export function Card({ project, imageClassName }: CardProps) {
   return (
     <div className="break-inside-avoid">
       <section className="card">
         <Link href={project.linkUrl}>
-          <div className="rounded overflow-hidden flex justify-center items-center">
+          <div className={`rounded overflow-hidden flex justify-center items-center `}>
             <Image
-              className="w-full mb-4 mt-2 rounded-xs"
+              className={`w-full mb-4 mt-2 rounded-xs ${imageClassName}`}
               src={project.imageUrl}
               alt={project.title}
               width={1200}
