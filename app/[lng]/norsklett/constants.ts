@@ -12,6 +12,7 @@ export const NORSK_RESOURCE_NAMES: Array<string> = [
   "hkdir",
   "lexin",
   "grammatikk",
+  "svitlana",
   "nrk-nyinorge",
   "norsk-lett-channel",
   "prosprak"
@@ -107,6 +108,11 @@ export const NORSK_RESOURCE_ATTRIBUTES = {
   "nrk-nyinorge": {
     levels: [ "A2", "B1", "B2" ],
     languages: [ "nb", "uk" ],
+    platforms: [ "youtube" ],
+  },
+  "svitlana": {
+    levels: [ "A2", "B1", "B2" ],
+    languages: [ "nb", "ru" ],
     platforms: [ "youtube" ],
   },
   "norsk-lett-channel": {
