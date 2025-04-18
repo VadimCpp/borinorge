@@ -30,6 +30,11 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: '/iryna',
+        destination: '/folk/iryna',
+        permanent: true,
+      },
+      {
         source: '/kazka',
         destination: '/',
         permanent: true,

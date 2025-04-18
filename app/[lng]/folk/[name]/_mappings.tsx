@@ -92,14 +92,14 @@ export const folksMapping: {[K in Folk]: FolkData } = {
     },
     projects: [
       {
+        id: 'nettverk',
+        titleSlug: 'project-nettverk',
+        imageUrl: '/images/preview/nettverk_1200_630.jpeg',
+      },
+      {
         id: 'projects/ordbokene',
         titleSlug: 'project-ordbokene',
         imageUrl: '/images/preview/ordbokene_1200_630_v3.jpeg',
-      },
-      {
-        id: 'norsklett',
-        titleSlug: 'project-norsklett',
-        imageUrl: '/images/preview/norsklett_1200_630.jpeg',
       },
       {
         id: 'alias',

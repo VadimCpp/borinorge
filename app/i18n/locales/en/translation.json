@@ -14,14 +14,13 @@
   "project-it-kunnskap": "IT marathon",
   "project-redaksjon": "Redaction",
   "project-direkte-stotte": "Direct support",
+  "project-nettverk": "Nettverk",
   "about-us": "About us",
-  "about-us-description-part-1": "Vi bor i Norge is an Urban common project that is operated through volunteer work on a non-profit basis. The initiator is Vadym Kaninskyi who started the website in 2022. Below you will find more information about who we are.",
+  "about-us-description-part-1": "Vi bor i Norge is an Urban common project that is operated through volunteer work on a non-profit basis. Below you will find more information about who we are.",
   "about-us-description-part-2": "Do you have feedback for the website? Please feel free to contact one of us:",
   "oksana-donets": "Oksana Donets",
   "olena-varlamova": "Olena Varlamova",
   "vadym-kaninskyi": "Vadym Kaninskyi",
-  "history": "History",
-  "history-info": "This section of the website tells about projects that have been completed before. The work on them is finished, but they remain important to us.",
   "norsklett": {
     "norsklett": "Norsk? Easy!",
     "description": "The best language learning materials for you.",
@@ -130,6 +129,9 @@
       "author": "ProSpråk – Ljuba & Anja"
     }
   },
+  "contacts": "Contacts",
+  "integration": "Integration",
+  "conclusion": "Conclusion",
   "folk": {
     "oksana": {
       "name": "Oksana Donets",
@@ -149,7 +151,6 @@
         "Collaboration with a number of leading media outlets in Ukraine and abroad",
         "Dozens of successful interviews with influential public figures"
       ],
-      "contactsTitle": "Contacts",
       "supportTitle": "Buy me a coffee",
       "supportDescription": "If you value thoroughly researched and professionally prepared content, I am open to collaboration and new opportunities. And your support, even in the form of a symbolic “cup of coffee,” will help me develop my independent projects and continue creating quality media products.",
       "otherProjectsTitle": "Other Projects in Norway"
@@ -160,7 +161,14 @@
     },
     "iryna": {
       "name": "Iryna Nepotenko",
-      "quote": "My name is Irina Nepotenko, and I work as an Accounting Assistant in Norway. I am a positive person and find the good in any situation. This helps me both in everyday life and at work. I have realized that I am not afraid of challenges and that I see every situation as a lesson and guidance. I am disciplined and responsible. My colleagues know they can rely on me. My work experience has taught me to work both in a team and independently. This helps me handle tasks of varying complexity. At work, I value discipline, accuracy, and self-organization. I am always open to new ideas and opportunities."
+      "introduction": "I came to Norway in March 2022. For me, it was a completely new and unfamiliar country with unknown rules, behavioral norms, laws, and social morals. I encountered many things that were entirely new to me. Nevertheless, the local population's outlook on life, relationships between people, and within families strongly resonated with me. Norwegian society feels close to my inner experiences, and I decided to rebuild my life here.",
+      "integration": "Over time, I began to better understand how life is organized here, and I realized the main problem for many foreigners. It is the local diaspora environment. Yes, it provides support and assistance from 'your own people,' an opportunity to speak your native language, share experiences, and find answers to your questions. But it also has a significant disadvantage. The human brain tends to seek easy paths and those who are also struggling, uncomfortable, and uninterested, to feel less unhappy. This is an opportunity to stagnate. But it's important to overcome this obstacle to move forward.",
+      "projects": "That's why all the projects of the \"Living in Norway\" team are aimed at adaptation in a new country. Adaptation is the process of accepting a new social environment, culture, lifestyle, and ways of thinking. Therefore, our projects help foreigners understand and accept Norway while maintaining connections with their cultural roots.",
+      "projects_details": {
+        "nettverk": "The \"Nettverk\" project is linked to the \"Ukrainian Newspaper\" project, where we, as foreigners, learn about the latest news in Norway in our own language. This way, we get information about the society we live in.",
+        "samfunnskunnskap": "In the Samfunnskunnskap marathon, we learn about Norwegian society, the country's history, culture, traditions, and local rules. The marathon is conducted in the native language, but each post provides a link to the text in Norwegian. Information read in one's own language is then much easier to understand in Norwegian and remains in memory for a long time. Anyone who decides to take the Samfunnskunnskap exam for a residence permit will easily pass it after our course."
+      },
+      "conclusion": "For me, learning about Norway means showing respect for the people, society, and values of Norwegian society. Only in this way can one successfully integrate."
     },
     "vadym": {
       "name": "Vadym Kaninskyi",
@@ -209,8 +217,7 @@
     "detect_my_location": "Detect my location",
     "enter_location_manually": "Enter location manually",
     "enter_norwegian_address": "Enter a city name",
-    "manual_location_error": "Could not retrieve locations. Please check your connection and refresh the page.",
-    "read_the_ukr_newspaper": "Follow the main news in Norway in Ukrainian on our Telegram:"
+    "manual_location_error": "Could not retrieve locations. Please check your connection and refresh the page."
   },
   "footer": {
     "weather_data": "Weather data",

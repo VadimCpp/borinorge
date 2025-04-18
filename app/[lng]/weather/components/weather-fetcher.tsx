@@ -35,7 +35,7 @@ function findTimeSeries(timeseries: TimeSerie[], currentTime: Date): { current: 
   // Handle case where current time is beyond the last time in the series
   const lastSeriesTimeMillis = new Date(timeseries[timeseries.length - 1].time).getTime();
   if (currentTimeMillis >= lastSeriesTimeMillis) {
-    return { current: timeseries[timeseries.length - 1], nextHours: []};
+    return { current: timeseries[timeseries.length - 1], nextHours: [] };
   }
 
   // If no match is found
@@ -177,19 +177,21 @@ const WeatherFetcher: FC<WeatherFetcherProps> = ({ locales }) => {
   return (
     <>
       <WeatherNow
-          units={weather.properties.meta.units}
-          locales={locales}
-          serie={weatherNow}
-          city={verboseLocation}
-          resetLocation={() => {
-            resetLocation()
-            setLocationSecectorVisible(true)
-          }}
+        units={weather.properties.meta.units}
+        locales={locales}
+        serie={weatherNow}
+        city={verboseLocation}
+        resetLocation={() => {
+          resetLocation()
+          setLocationSecectorVisible(true)
+        }}
       />
-      <WeatherNext
+      {weatherNext && (
+        <WeatherNext
           locales={locales}
           series={weatherNext}
-      />
+        />
+      )}
     </>
   )
 }

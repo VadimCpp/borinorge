@@ -78,6 +78,24 @@ export default async function Page({ params: { lng } }: { params: { lng: string 
   //              title: t('project-it-kunnskap'),
   //              imageUrl: '/images/preview/it_kunnskap_1200_630.jpeg',
   //            },
+                {
+                id: 'alias',
+                title: t('project-alias'),
+                imageUrl: '/images/preview/alias_1200_630.jpeg',
+                linkUrl: `/${lng}/projects/alias`,
+              },
+              {
+                id: 'redaksjon',
+                title: t('project-redaksjon'),
+                imageUrl: '/images/preview/redaksjon_1200_630.jpeg',
+                linkUrl: `/${lng}/projects/redaksjon`,
+              },
+              {
+                id: 'direkte-stotte',
+                title: t('project-direkte-stotte'),
+                imageUrl: '/images/preview/direkte_stotte_1200_630.jpeg',
+                linkUrl: `/${lng}/projects/direkte-stotte`,
+              },
             ].map((project) => (
               <Card
                 key={project.id}
@@ -115,37 +133,6 @@ export default async function Page({ params: { lng } }: { params: { lng: string 
                 title: t('vadym-kaninskyi'),
                 imageUrl: '/images/preview/folk/vadym_kaninskyi_1200_630.jpeg',
                 linkUrl: `/${lng}/folk/vadym`,
-              }
-            ].map((project) => (
-              <Card
-                key={project.id}
-                project={project}
-              />
-            ))}
-          </div>
-        </section>
-        <section id="history">
-          <h2 className="project__subtitle">{t('history')}</h2>
-          <p className="project__paragraph">{t('history-info')}</p>
-          <div className="projects__grid">
-            {[
-              {
-                id: 'alias',
-                title: t('project-alias'),
-                imageUrl: '/images/preview/alias_1200_630.jpeg',
-                linkUrl: `/${lng}/projects/alias`,
-              },
-              {
-                id: 'redaksjon',
-                title: t('project-redaksjon'),
-                imageUrl: '/images/preview/redaksjon_1200_630.jpeg',
-                linkUrl: `/${lng}/projects/redaksjon`,
-              },
-              {
-                id: 'direkte-stotte',
-                title: t('project-direkte-stotte'),
-                imageUrl: '/images/preview/direkte_stotte_1200_630.jpeg',
-                linkUrl: `/${lng}/projects/direkte-stotte`,
               }
             ].map((project) => (
               <Card

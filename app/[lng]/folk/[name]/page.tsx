@@ -34,7 +34,7 @@ export default async function FolkPage({ params: { lng, name } }: Props) {
       </header>
       <main className="project">
         <Breadcrumbs currentPage={t(`folk.${name}.name`)} lng={lng} path={`folk/${name}`} />
-        { dude !== 'oksana' && (
+        { dude !== 'oksana' && dude !== 'iryna' && (
           <>
             <Image
               className="project__image"
@@ -48,8 +48,80 @@ export default async function FolkPage({ params: { lng, name } }: Props) {
               {t(`folk.${name}.quote`)}
             </p>
             <section className='mb-8'>
-              {/* TODO: create 'contacts' in i18n and use it instead of 'folk.oksana.contactsTitle' */}
-              <h2 className="project__subtitle">{t('folk.oksana.contactsTitle')}</h2>
+              <h2 className="project__subtitle">{t('contacts')}</h2>
+              <Contacts
+                lng={lng}
+                nameSlug={t(`folk.${name}.name`)}
+                instagram={folksMapping[dude].contacts.instagram} 
+                linkedin={folksMapping[dude].contacts.linkedin}
+                isHome={false}
+              />
+            </section>
+            <section>
+              <h2 className="project__subtitle">{t('projects')}</h2>
+              <div className="projects__grid mt-4">
+                {folksMapping[dude].projects.map(project => {
+                  return {
+                    id: project.id,
+                    title: t(project.titleSlug),
+                    imageUrl: project.imageUrl,
+                    linkUrl: `/${lng}/${project.id}`,
+                  }
+                }).map((project) => (
+                  <Card
+                    key={project.id}
+                    project={project}
+                  />
+                ))}
+              </div>
+            </section>
+          </>
+        )}
+        { dude === 'iryna' && (
+          <>
+            <section>
+              <Image
+                className="project__image"
+                src={folksMapping[dude].image.src}
+                alt={t(`folk.${name}.name`)}
+                width={640}
+                height={640}
+                priority
+              />
+              <p className="project__paragraph mt-2">
+                {t('folk.iryna.introduction')}
+              </p>
+            </section>
+            <section>
+              <h2 className="project__subtitle">{t('integration')}</h2>
+              <p className="project__paragraph">
+                {t('folk.iryna.integration')}
+              </p>
+            </section>
+            <section>
+              <h2 className="project__subtitle">{t('projects')}</h2>
+              <p className="project__paragraph">
+                {t('folk.iryna.projects')}
+              </p>
+              <div className="mt-4">
+                <h3 className="font-semibold text-lg">Nettverk</h3>
+                <p className="project__paragraph">
+                  {t('folk.iryna.projects_details.nettverk')}
+                </p>
+                <h3 className="font-semibold text-lg mt-4">Samfunnskunnskap</h3>
+                <p className="project__paragraph">
+                  {t('folk.iryna.projects_details.samfunnskunnskap')}
+                </p>
+              </div>
+            </section>
+            <section>
+              <h2 className="project__subtitle">{t('conclusion')}</h2>
+              <p className="project__paragraph">
+                {t('folk.iryna.conclusion')}
+              </p>
+            </section>
+            <section className='mb-8'>
+              <h2 className="project__subtitle">{t('contacts')}</h2>
               <Contacts
                 lng={lng}
                 nameSlug={t(`folk.${name}.name`)}
@@ -144,7 +216,7 @@ export default async function FolkPage({ params: { lng, name } }: Props) {
               </ol>
             </section>
             <section className='mb-8'>
-              <h2 className="project__subtitle">{t('folk.oksana.contactsTitle')}</h2>
+              <h2 className="project__subtitle">{t('contacts')}</h2>
               <Contacts
                 lng={lng}
                 nameSlug={t(`folk.${name}.name`)}

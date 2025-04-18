@@ -14,14 +14,13 @@
   "project-it-kunnskap": "IT-kunnskapsmaraton",
   "project-redaksjon": "Redaksjon",
   "project-direkte-stotte": "Direkte støtte",
+  "project-nettverk": "Nettverk",
   "about-us": "Om oss",
-  "about-us-description-part-1": "Vi bur i Noreg er eit Urban common-prosjekt som blir drive gjennom frivillig arbeid på ideell basis. Initiativtakar er Vadym Kaninskyj som starta nettsida i 2022. Nedanfor finn du meir informasjon om kven vi er.",
+  "about-us-description-part-1": "Vi bur i Noreg er eit Urban common-prosjekt som blir drive gjennom frivillig arbeid på ideell basis. Nedanfor finn du meir informasjon om kven vi er.",
   "about-us-description-part-2": "Har du innspel til nettsida? Ta gjerne kontakt med ein av oss:",
   "oksana-donets": "Oksana Donets",
   "olena-varlamova": "Olena Varlamova",
   "vadym-kaninskyi": "Vadym Kaninskyj", 
-  "history": "Historie",
-  "history-info": "Denne delen av nettsida handlar om prosjekt som er fullførte tidlegare. Arbeidet med dei er avslutta, men dei er framleis viktige for oss.",
   "norsklett": {
     "norsklett": "Lær norsk lett",
     "description": "Det beste språklæringsmateriell til deg.",
@@ -130,6 +129,9 @@
       "author": "ProSpråk – Ljuba og Anja"
     }
   },
+  "contacts": "Kontakt",
+  "integration": "Integrasjon",
+  "conclusion": "Konklusjon",
   "folk": {
     "oksana": {
       "name": "Oksana Donets",
@@ -149,7 +151,6 @@
         "Samarbeid med ei rekkje leiande medium i Ukraina og internasjonalt",
         "Dusinvis av vellukka intervju med innverknadsrike samfunnsaktørar"
       ],
-      "contactsTitle": "Kontakt",
       "supportTitle": "Kjøp ein kaffi",
       "supportDescription": "Dersom du set pris på grundig gjennomarbeidd og profesjonelt førebudd innhald, er eg open for samarbeid og nye høve. Og di støtte, sjølv i form av ein symbolsk «kopp kaffi», vil hjelpe meg å vidareutvikle dei uavhengige prosjekta mine og halde fram med å skape kvalitetsmedieprodukt.",
       "otherProjectsTitle": "Andre prosjekt i Noreg"
@@ -160,7 +161,14 @@
     },
     "iryna": {
       "name": "Iryna Nepotenko",
-      "quote": "Mitt namn er Irina Nepotenko, og eg jobbar som rekneskapsmedarbeidar i Noreg. Eg er ein positivt innstilt person og ser det gode i kvar situasjon. Dette hjelper meg både i kvardagen og på jobben. Eg har forstått at eg ikkje er redd for utfordringar, og eg ser på kvar situasjon som ei læring og ei rettleiing. Eg er disiplinert og ansvarleg. Kollegaene veit at dei kan stole på meg. Arbeidserfaringa har lært meg å jobbe både i team og sjølvstendig. Dette hjelper meg med å takle oppgåver av ulik kompleksitet. På jobben verdset eg disiplin, nøyaktigheit og sjølvorganisering. Eg er alltid open for nye idear og moglegheiter."
+      "introduction": "Eg kom til Noreg i mars 2022. For meg var det eit heilt nytt og framandt land med ukjende reglar, normer for åtferd, lover og samfunnet sin moral. Eg møtte mange ting som var heilt nye for meg. Likevel resonerte lokalbefolkninga sitt syn på livet, forhold mellom menneske og innan familien sterkt i meg. Det norske samfunnet kjennest nært for mine indre opplevingar, og eg bestemte meg for å byggje livet mitt på nytt her.",
+      "integration": "Etter kvart byrja eg å forstå betre korleis livet er organisert her, og eg innsåg hovudproblemet for mange utlendingar. Det er det lokale diasporamiljøet. Ja, det er ei støtte og støtte frå «sine eigne», ein moglegheit til å snakke sitt eige språk, dele erfaringar og finne svar på sine spørsmål. Men det er også ei stor ulempe. Den menneskelege hjernen har ein tendens til å søkje enkle vegar og søkje dei som også har det vanskeleg, ubehagelege og uinteressant, for å kjenne seg mindre ulykkeleg. Dette er ein moglegheit til å stoppe opp. Men det er viktig å overvinne dette hinderet for å gå vidare.",
+      "projects": "Det er difor alle prosjekta til teamet \"Bor i Norge\" er retta mot tilpassing i eit nytt land. Tilpassing er prosessen med å akseptere eit nytt sosialt miljø, kultur, livsstil og tankemåtar. Difor hjelper våre prosjekt utlendingar å forstå og akseptere Noreg, samstundes som dei opprettheld sambandet med sine kulturelle røter.",
+      "projects_details": {
+        "nettverk": "Prosjektet \"Nettverk\" er knytt til prosjektet \"Den ukraїnske avisa\", kor vi, utlendingar, lærer alt om dei siste nyheitene i Noreg på vårt eige språk. På denne måten får vi informasjon om samfunnet vi lever i.",
+        "samfunnskunnskap": "På maratonet Samfunnskunnskap lærer vi det norske samfunnet, landet si historie, kultur, tradisjonar og lokale reglar. Maratonet vert halde på morsmål, men kvar post gjev ei lenkje til teksten på norsk. Informasjonen som vert lesen på eige språk, vert deretter mykje lettare oppfatta på norsk og vert verande lenge i minnet. Alle som bestemmer seg for å ta eksamen i Samfunnskunnskap for å få opphaldsløyve, vil enkelt bestå den etter kurset vårt."
+      },
+      "conclusion": "For meg tyder det å lære om Noreg å vise respekt for folk, samfunnet og verdiane til det norske samfunnet. Berre slik kan ein integrere seg vellukka."
     },
     "vadym": {
       "name": "Vadym Kaninskyi",
@@ -209,8 +217,7 @@
     "detect_my_location": "Oppdag posisjonen min",
     "enter_location_manually": "Skriv inn posisjonen manuelt",
     "enter_norwegian_address": "Skriv inn eit bynamn",
-    "manual_location_error": "Klarte ikkje hente stader. Ver venleg å sjå over tilkoplinga di og oppdater sida.",
-    "read_the_ukr_newspaper": "Følg med på dei viktigaste nyheitene i Noreg på ukrainsk på vår Telegram:"
+    "manual_location_error": "Klarte ikkje hente stader. Ver venleg å sjå over tilkoplinga di og oppdater sida."
   },
   "footer": {
     "weather_data": "Verdata",

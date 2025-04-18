@@ -30,7 +30,7 @@ export default async function Weather({ params: { lng } }: { params: { lng: stri
           </div>
         </div>
       </header>
-      <main className='min-h-96 relative'>
+      <main className='min-h-96 relative bg-white'>
         <div className='bg-gradient-to-b from-blue-200 to-white w-full h-56 absolute top-0 left-0 z-0'>
           {/* Empty block */}
         </div>
@@ -55,7 +55,6 @@ export default async function Weather({ params: { lng } }: { params: { lng: stri
               enter_location_manually: t("weather.enter_location_manually"),
               enter_norwegian_address: t("weather.enter_norwegian_address"),
               manual_location_error: t("weather.manual_location_error"),
-              read_the_ukr_newspaper: t("weather.read_the_ukr_newspaper"),
             }}
           />
         </div>
