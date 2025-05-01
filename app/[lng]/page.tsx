@@ -78,7 +78,7 @@ export default async function Page({ params: { lng } }: { params: { lng: string 
   //              title: t('project-it-kunnskap'),
   //              imageUrl: '/images/preview/it_kunnskap_1200_630.jpeg',
   //            },
-                {
+              {
                 id: 'alias',
                 title: t('project-alias'),
                 imageUrl: '/images/preview/alias_1200_630.jpeg',

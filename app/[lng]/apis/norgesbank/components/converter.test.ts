@@ -5,7 +5,10 @@ import {
   getServiceName,
   getCurrencyList,
   getExchangeRate,
-  roundCurrency
+  roundCurrency,
+  convert,
+  ExchangeRates,
+  CurrencyRateTowardsNok
 } from './converter'
 import mockApiResponseAll from './json-data/mock-api-response-all.json'
 import mockApiResponseDkk from './json-data/mock-api-response-dkk.json'
@@ -195,24 +198,279 @@ describe('getServiceName', () => {
 
 describe('getCurrencyList', () => {
   beforeEach(() => {
-    global.fetch = jest.fn(() =>
-      Promise.resolve({
-        json: () => Promise.resolve({ ...mockApiResponseAll }),
-      }) as Promise<Response>
-    )
+    global.fetch = jest.fn() as jest.MockedFunction<typeof fetch>
   })
 
   afterEach(() => {
     jest.restoreAllMocks()
   })
 
-  it('should return correct object', async () => {
+  it('should return correct object with valid data', async () => {
+    (global.fetch as jest.MockedFunction<typeof fetch>).mockImplementationOnce(() =>
+      Promise.resolve({
+        json: () => Promise.resolve({ ...mockApiResponseAll }),
+      }) as Promise<Response>
+    )
+
     const list = await getCurrencyList()
+    
+    // Check that NOK is always present
+    expect(list['NOK']).toEqual('Norwegian krone')
+    
+    // Check format of other currencies
     for (const key in list) {
-      expect(typeof key).toEqual("string")
-      expect(key.length).toEqual(3)
-      expect(typeof list[key]).toEqual("string")
+      if (key !== 'NOK') {
+        expect(typeof key).toEqual("string")
+        expect(key.length).toEqual(3)
+        expect(typeof list[key]).toEqual("string")
+      }
     }
+  })
+
+  it('should handle API errors gracefully', async () => {
+    (global.fetch as jest.MockedFunction<typeof fetch>).mockImplementationOnce(() =>
+      Promise.reject(new Error('API Error'))
+    )
+
+    const list = await getCurrencyList()
+    expect(list).toEqual({ 'NOK': 'Norwegian krone' })
+  })
+
+  it('should handle empty data sets', async () => {
+    (global.fetch as jest.MockedFunction<typeof fetch>).mockImplementationOnce(() =>
+      Promise.resolve({
+        json: () => Promise.resolve({
+          data: {
+            dataSets: [],
+            structure: {
+              dimensions: {
+                series: []
+              }
+            }
+          }
+        }),
+      }) as Promise<Response>
+    )
+
+    const list = await getCurrencyList()
+    expect(list).toEqual({ 'NOK': 'Norwegian krone' })
+  })
+
+  it('should handle invalid rate values', async () => {
+    const mockResponse = {
+      data: {
+        dataSets: [{
+          action: '',
+          reportingBegin: '',
+          reportingEnd: '',
+          series: {
+            '0:0:0:0': {
+              attributes: [],
+              observations: {
+                '0': ['invalid']
+              }
+            }
+          }
+        }],
+        structure: {
+          name: '',
+          description: '',
+          dimensions: {
+            series: [{
+              id: 'BASE_CUR',
+              name: 'US Dollar',
+              values: [{
+                id: 'USD',
+                name: 'US Dollar'
+              }]
+            }]
+          },
+          attributes: {
+            series: []
+          }
+        }
+      }
+    } as ExchangeRates
+
+    (global.fetch as jest.MockedFunction<typeof fetch>).mockImplementationOnce(() =>
+      Promise.resolve({
+        json: () => Promise.resolve(mockResponse),
+      }) as Promise<Response>
+    )
+
+    const list = await getCurrencyList()
+    expect(list).toEqual({ 'NOK': 'Norwegian krone' })
+  })
+
+  it('should handle undefined or empty serie values', async () => {
+    const mockResponse = {
+      data: {
+        dataSets: [{
+          action: '',
+          reportingBegin: '',
+          reportingEnd: '',
+          series: {
+            '0:0:0:0': {
+              attributes: [],
+              observations: {
+                '0': ['1.0']
+              }
+            }
+          }
+        }],
+        structure: {
+          name: '',
+          description: '',
+          dimensions: {
+            series: [{
+              id: 'BASE_CUR',
+              name: '',
+              values: undefined // Testing undefined values
+            }]
+          },
+          attributes: {
+            series: []
+          }
+        }
+      }
+    } as ExchangeRates
+
+    (global.fetch as jest.MockedFunction<typeof fetch>).mockImplementationOnce(() =>
+      Promise.resolve({
+        json: () => Promise.resolve(mockResponse),
+      }) as Promise<Response>
+    )
+
+    const list = await getCurrencyList()
+    expect(list).toEqual({ 'NOK': 'Norwegian krone' })
+  })
+
+  it('should handle empty serie values array', async () => {
+    const mockResponse = {
+      data: {
+        dataSets: [{
+          action: '',
+          reportingBegin: '',
+          reportingEnd: '',
+          series: {
+            '0:0:0:0': {
+              attributes: [],
+              observations: {
+                '0': ['1.0']
+              }
+            }
+          }
+        }],
+        structure: {
+          name: '',
+          description: '',
+          dimensions: {
+            series: [{
+              id: 'BASE_CUR',
+              name: '',
+              values: [] // Testing empty values array
+            }]
+          },
+          attributes: {
+            series: []
+          }
+        }
+      }
+    } as ExchangeRates
+
+    (global.fetch as jest.MockedFunction<typeof fetch>).mockImplementationOnce(() =>
+      Promise.resolve({
+        json: () => Promise.resolve(mockResponse),
+      }) as Promise<Response>
+    )
+
+    const list = await getCurrencyList()
+    expect(list).toEqual({ 'NOK': 'Norwegian krone' })
+  })
+
+  it('should handle undefined serie', async () => {
+    const mockResponse = {
+      data: {
+        dataSets: [{
+          action: '',
+          reportingBegin: '',
+          reportingEnd: '',
+          series: {
+            '0:0:0:0': {
+              attributes: [],
+              observations: {
+                '0': ['1.0']
+              }
+            }
+          }
+        }],
+        structure: {
+          name: '',
+          description: '',
+          dimensions: {
+            series: [{
+              id: 'WRONG_ID', // This will make find() return undefined
+              name: '',
+              values: [{
+                id: 'USD',
+                name: 'US Dollar'
+              }]
+            }]
+          },
+          attributes: {
+            series: []
+          }
+        }
+      }
+    } as ExchangeRates
+
+    (global.fetch as jest.MockedFunction<typeof fetch>).mockImplementationOnce(() =>
+      Promise.resolve({
+        json: () => Promise.resolve(mockResponse),
+      }) as Promise<Response>
+    )
+
+    const list = await getCurrencyList()
+    expect(list).toEqual({ 'NOK': 'Norwegian krone' })
+  })
+
+  it('should handle empty series array', async () => {
+    const mockResponse = {
+      data: {
+        dataSets: [{
+          action: '',
+          reportingBegin: '',
+          reportingEnd: '',
+          series: {
+            '0:0:0:0': {
+              attributes: [],
+              observations: {
+                '0': ['1.0']
+              }
+            }
+          }
+        }],
+        structure: {
+          name: '',
+          description: '',
+          dimensions: {
+            series: [] // Empty series array
+          },
+          attributes: {
+            series: []
+          }
+        }
+      }
+    } as ExchangeRates
+
+    (global.fetch as jest.MockedFunction<typeof fetch>).mockImplementationOnce(() =>
+      Promise.resolve({
+        json: () => Promise.resolve(mockResponse),
+      }) as Promise<Response>
+    )
+
+    const list = await getCurrencyList()
+    expect(list).toEqual({ 'NOK': 'Norwegian krone' })
   })
 })
 
@@ -262,8 +520,576 @@ describe('getExchangeRate', () => {
       expect(typeof rate.actualRate).toEqual("number")
     })
   })
-})
 
+  describe('Error handling', () => {
+    beforeEach(() => {
+      global.fetch = jest.fn() as jest.MockedFunction<typeof fetch>
+    })
+
+    afterEach(() => {
+      jest.restoreAllMocks()
+    })
+
+    it('should handle fetch errors', async () => {
+      (global.fetch as jest.MockedFunction<typeof fetch>).mockImplementationOnce(() => Promise.reject(new Error('Network error')))
+      
+      const rate = await getExchangeRate('USD')
+      expect(rate).toEqual({
+        id: "",
+        name: "",
+        rate: "",
+        exponent: 0,
+        actualRate: 0
+      })
+    })
+
+    it('should handle empty data sets', async () => {
+      (global.fetch as jest.MockedFunction<typeof fetch>).mockImplementationOnce(() =>
+        Promise.resolve({
+          json: () => Promise.resolve({
+            data: {
+              dataSets: [],
+              structure: {
+                dimensions: {
+                  series: []
+                },
+                attributes: {
+                  series: []
+                }
+              }
+            }
+          }),
+        }) as Promise<Response>
+      )
+
+      const rate = await getExchangeRate('USD')
+      expect(rate).toEqual({
+        id: "",
+        name: "",
+        rate: "",
+        exponent: 0,
+        actualRate: 0
+      })
+    })
+
+    it('should handle missing rate value', async () => {
+      (global.fetch as jest.MockedFunction<typeof fetch>).mockImplementationOnce(() =>
+        Promise.resolve({
+          json: () => Promise.resolve({
+            data: {
+              dataSets: [{
+                series: {
+                  '0:0:0:0': {
+                    observations: {
+                      '0': [null]
+                    }
+                  }
+                }
+              }],
+              structure: {
+                dimensions: {
+                  series: [{
+                    id: 'BASE_CUR',
+                    values: [{
+                      id: 'USD',
+                      name: 'US Dollar'
+                    }]
+                  }]
+                },
+                attributes: {
+                  series: [{
+                    id: 'UNIT_MULT',
+                    values: [{
+                      id: '0'
+                    }]
+                  }]
+                }
+              }
+            }
+          }),
+        }) as Promise<Response>
+      )
+
+      const rate = await getExchangeRate('USD')
+      expect(rate.actualRate).toEqual(0)
+    })
+
+    it('should handle invalid rate value', async () => {
+      (global.fetch as jest.MockedFunction<typeof fetch>).mockImplementationOnce(() =>
+        Promise.resolve({
+          json: () => Promise.resolve({
+            data: {
+              dataSets: [{
+                series: {
+                  '0:0:0:0': {
+                    observations: {
+                      '0': ['invalid']
+                    }
+                  }
+                }
+              }],
+              structure: {
+                dimensions: {
+                  series: [{
+                    id: 'BASE_CUR',
+                    values: [{
+                      id: 'USD',
+                      name: 'US Dollar'
+                    }]
+                  }]
+                },
+                attributes: {
+                  series: [{
+                    id: 'UNIT_MULT',
+                    values: [{
+                      id: '0'
+                    }]
+                  }]
+                }
+              }
+            }
+          }),
+        }) as Promise<Response>
+      )
+
+      const rate = await getExchangeRate('USD')
+      expect(rate.actualRate).toEqual(0)
+    })
+
+    it('should handle missing currency information', async () => {
+      (global.fetch as jest.MockedFunction<typeof fetch>).mockImplementationOnce(() =>
+        Promise.resolve({
+          json: () => Promise.resolve({
+            data: {
+              dataSets: [{
+                series: {
+                  '0:0:0:0': {
+                    observations: {
+                      '0': ['1.0']
+                    }
+                  }
+                }
+              }],
+              structure: {
+                dimensions: {
+                  series: [{
+                    id: 'WRONG_ID',
+                    values: [{
+                      id: 'USD',
+                      name: 'US Dollar'
+                    }]
+                  }]
+                },
+                attributes: {
+                  series: [{
+                    id: 'UNIT_MULT',
+                    values: [{
+                      id: '0'
+                    }]
+                  }]
+                }
+              }
+            }
+          }),
+        }) as Promise<Response>
+      )
+
+      const rate = await getExchangeRate('USD')
+      expect(rate.id).toEqual("")
+      expect(rate.name).toEqual("")
+    })
+
+    it('should handle missing multiplier information', async () => {
+      (global.fetch as jest.MockedFunction<typeof fetch>).mockImplementationOnce(() =>
+        Promise.resolve({
+          json: () => Promise.resolve({
+            data: {
+              dataSets: [{
+                series: {
+                  '0:0:0:0': {
+                    observations: {
+                      '0': ['1.0']
+                    }
+                  }
+                }
+              }],
+              structure: {
+                dimensions: {
+                  series: [{
+                    id: 'BASE_CUR',
+                    values: [{
+                      id: 'USD',
+                      name: 'US Dollar'
+                    }]
+                  }]
+                },
+                attributes: {
+                  series: [{
+                    id: 'WRONG_ID',
+                    values: [{
+                      id: '0'
+                    }]
+                  }]
+                }
+              }
+            }
+          }),
+        }) as Promise<Response>
+      )
+
+      const rate = await getExchangeRate('USD')
+      expect(rate.exponent).toEqual(0)
+    })
+
+    it('should handle invalid multiplier value', async () => {
+      (global.fetch as jest.MockedFunction<typeof fetch>).mockImplementationOnce(() =>
+        Promise.resolve({
+          json: () => Promise.resolve({
+            data: {
+              dataSets: [{
+                series: {
+                  '0:0:0:0': {
+                    observations: {
+                      '0': ['1.0']
+                    }
+                  }
+                }
+              }],
+              structure: {
+                dimensions: {
+                  series: [{
+                    id: 'BASE_CUR',
+                    values: [{
+                      id: 'USD',
+                      name: 'US Dollar'
+                    }]
+                  }]
+                },
+                attributes: {
+                  series: [{
+                    id: 'UNIT_MULT',
+                    values: [{
+                      id: 'invalid'
+                    }]
+                  }]
+                }
+              }
+            }
+          }),
+        }) as Promise<Response>
+      )
+
+      const rate = await getExchangeRate('USD')
+      expect(rate.exponent).toEqual(0)
+    })
+
+    it('should handle rate calculations with different exponents', async () => {
+      const testCases = [
+        { rate: '1000', exponent: 3, expected: 1 },
+        { rate: '100', exponent: 2, expected: 1 },
+        { rate: '10', exponent: 1, expected: 1 },
+        { rate: '1', exponent: 0, expected: 1 },
+        { rate: '0.1', exponent: -1, expected: 1 },
+        { rate: '0.01', exponent: -2, expected: 1 },
+        { rate: '0.001', exponent: -3, expected: 1 }
+      ]
+
+      for (const testCase of testCases) {
+        (global.fetch as jest.MockedFunction<typeof fetch>).mockImplementationOnce(() =>
+          Promise.resolve({
+            json: () => Promise.resolve({
+              data: {
+                dataSets: [{
+                  series: {
+                    '0:0:0:0': {
+                      observations: {
+                        '0': [testCase.rate]
+                      }
+                    }
+                  }
+                }],
+                structure: {
+                  dimensions: {
+                    series: [{
+                      id: 'BASE_CUR',
+                      values: [{
+                        id: 'USD',
+                        name: 'US Dollar'
+                      }]
+                    }]
+                  },
+                  attributes: {
+                    series: [{
+                      id: 'UNIT_MULT',
+                      values: [{
+                        id: testCase.exponent.toString()
+                      }]
+                    }]
+                  }
+                }
+              }
+            }),
+          }) as Promise<Response>
+        )
+
+        const rate = await getExchangeRate('USD')
+        expect(rate.actualRate).toBeCloseTo(testCase.expected, 10)
+      }
+    })
+
+    describe('rate extraction from observations', () => {
+      it('should handle missing observations object', async () => {
+        (global.fetch as jest.MockedFunction<typeof fetch>).mockImplementationOnce(() =>
+          Promise.resolve({
+            json: () => Promise.resolve({
+              data: {
+                dataSets: [{
+                  series: {
+                    '0:0:0:0': {
+                      // No observations property
+                    }
+                  }
+                }],
+                structure: {
+                  dimensions: {
+                    series: [{
+                      id: 'BASE_CUR',
+                      values: [{
+                        id: 'USD',
+                        name: 'US Dollar'
+                      }]
+                    }]
+                  },
+                  attributes: {
+                    series: [{
+                      id: 'UNIT_MULT',
+                      values: [{
+                        id: '0'
+                      }]
+                    }]
+                  }
+                }
+              }
+            }),
+          }) as Promise<Response>
+        )
+
+        const rate = await getExchangeRate('USD')
+        expect(rate.rate).toEqual("")
+      })
+
+      it('should handle missing observations array', async () => {
+        (global.fetch as jest.MockedFunction<typeof fetch>).mockImplementationOnce(() =>
+          Promise.resolve({
+            json: () => Promise.resolve({
+              data: {
+                dataSets: [{
+                  series: {
+                    '0:0:0:0': {
+                      observations: {
+                        // No '0' key
+                      }
+                    }
+                  }
+                }],
+                structure: {
+                  dimensions: {
+                    series: [{
+                      id: 'BASE_CUR',
+                      values: [{
+                        id: 'USD',
+                        name: 'US Dollar'
+                      }]
+                    }]
+                  },
+                  attributes: {
+                    series: [{
+                      id: 'UNIT_MULT',
+                      values: [{
+                        id: '0'
+                      }]
+                    }]
+                  }
+                }
+              }
+            }),
+          }) as Promise<Response>
+        )
+
+        const rate = await getExchangeRate('USD')
+        expect(rate.rate).toEqual("")
+      })
+
+      it('should handle empty observations array', async () => {
+        (global.fetch as jest.MockedFunction<typeof fetch>).mockImplementationOnce(() =>
+          Promise.resolve({
+            json: () => Promise.resolve({
+              data: {
+                dataSets: [{
+                  series: {
+                    '0:0:0:0': {
+                      observations: {
+                        '0': [] // Empty array
+                      }
+                    }
+                  }
+                }],
+                structure: {
+                  dimensions: {
+                    series: [{
+                      id: 'BASE_CUR',
+                      values: [{
+                        id: 'USD',
+                        name: 'US Dollar'
+                      }]
+                    }]
+                  },
+                  attributes: {
+                    series: [{
+                      id: 'UNIT_MULT',
+                      values: [{
+                        id: '0'
+                      }]
+                    }]
+                  }
+                }
+              }
+            }),
+          }) as Promise<Response>
+        )
+
+        const rate = await getExchangeRate('USD')
+        expect(rate.rate).toEqual("")
+      })
+
+      it('should handle undefined observation value', async () => {
+        (global.fetch as jest.MockedFunction<typeof fetch>).mockImplementationOnce(() =>
+          Promise.resolve({
+            json: () => Promise.resolve({
+              data: {
+                dataSets: [{
+                  series: {
+                    '0:0:0:0': {
+                      observations: {
+                        '0': [undefined] // Undefined value
+                      }
+                    }
+                  }
+                }],
+                structure: {
+                  dimensions: {
+                    series: [{
+                      id: 'BASE_CUR',
+                      values: [{
+                        id: 'USD',
+                        name: 'US Dollar'
+                      }]
+                    }]
+                  },
+                  attributes: {
+                    series: [{
+                      id: 'UNIT_MULT',
+                      values: [{
+                        id: '0'
+                      }]
+                    }]
+                  }
+                }
+              }
+            }),
+          }) as Promise<Response>
+        )
+
+        const rate = await getExchangeRate('USD')
+        expect(rate.rate).toEqual("")
+      })
+
+      it('should handle null observation value', async () => {
+        (global.fetch as jest.MockedFunction<typeof fetch>).mockImplementationOnce(() =>
+          Promise.resolve({
+            json: () => Promise.resolve({
+              data: {
+                dataSets: [{
+                  series: {
+                    '0:0:0:0': {
+                      observations: {
+                        '0': [null] // Null value
+                      }
+                    }
+                  }
+                }],
+                structure: {
+                  dimensions: {
+                    series: [{
+                      id: 'BASE_CUR',
+                      values: [{
+                        id: 'USD',
+                        name: 'US Dollar'
+                      }]
+                    }]
+                  },
+                  attributes: {
+                    series: [{
+                      id: 'UNIT_MULT',
+                      values: [{
+                        id: '0'
+                      }]
+                    }]
+                  }
+                }
+              }
+            }),
+          }) as Promise<Response>
+        )
+
+        const rate = await getExchangeRate('USD')
+        expect(rate.rate).toEqual("")
+      })
+
+      it('should handle successful rate extraction', async () => {
+        (global.fetch as jest.MockedFunction<typeof fetch>).mockImplementationOnce(() =>
+          Promise.resolve({
+            json: () => Promise.resolve({
+              data: {
+                dataSets: [{
+                  series: {
+                    '0:0:0:0': {
+                      observations: {
+                        '0': ['1.2345'] // Valid rate
+                      }
+                    }
+                  }
+                }],
+                structure: {
+                  dimensions: {
+                    series: [{
+                      id: 'BASE_CUR',
+                      values: [{
+                        id: 'USD',
+                        name: 'US Dollar'
+                      }]
+                    }]
+                  },
+                  attributes: {
+                    series: [{
+                      id: 'UNIT_MULT',
+                      values: [{
+                        id: '0'
+                      }]
+                    }]
+                  }
+                }
+              }
+            }),
+          }) as Promise<Response>
+        )
+
+        const rate = await getExchangeRate('USD')
+        expect(rate.rate).toEqual("1.2345")
+      })
+    })
+  })
+})
 
 describe('roundCurrency',() => {
   it('should round correct if less than 1', () => {
@@ -294,5 +1120,769 @@ describe('roundCurrency',() => {
     expect(roundCurrency(681859.9214455937)).toEqual(681860)
     expect(roundCurrency(2472229.974636386 )).toEqual(2472230)
     expect(roundCurrency(5800881.616173422)).toEqual(5800882)
+  })
+})
+
+describe('convert', () => {
+  const mockExchangeRates: Array<CurrencyRateTowardsNok> = [
+    {
+      id: 'USD',
+      name: 'US Dollar',
+      rate: '10.5',
+      exponent: 0,
+      actualRate: 10.5
+    },
+    {
+      id: 'EUR',
+      name: 'Euro',
+      rate: '11.2',
+      exponent: 0,
+      actualRate: 11.2
+    },
+    {
+      id: 'NOK',
+      name: 'Norwegian krone',
+      rate: '1',
+      exponent: 0,
+      actualRate: 1
+    }
+  ]
+
+  it('should convert NOK to other currencies', () => {
+    const result = convert('100 NOK to USD, EUR', mockExchangeRates)
+    expect(result).toContain('100 NOK = 9.524 USD')
+    expect(result).toContain('100 NOK = 8.929 EUR')
+  })
+
+  it('should convert other currencies to NOK', () => {
+    const result = convert('100 USD to NOK', mockExchangeRates)
+    expect(result).toContain('100 USD = 1050 NOK')
+  })
+
+  it('should convert between non-NOK currencies', () => {
+    const result = convert('100 USD to EUR', mockExchangeRates)
+    expect(result).toContain('100 USD = 93.75 EUR')
+  })
+
+  it('should handle multiple currency conversions', () => {
+    const result = convert('100 USD to EUR, NOK', mockExchangeRates)
+    expect(result).toContain('100 USD = 93.75 EUR')
+    expect(result).toContain('100 USD = 1050 NOK')
+  })
+
+  it('should handle decimal amounts', () => {
+    const result = convert('100.5 USD to EUR', mockExchangeRates)
+    expect(result).toContain('100.5 USD = 94.22 EUR')
+  })
+
+  it('should handle zero amounts', () => {
+    const result = convert('0 USD to EUR', mockExchangeRates)
+    expect(result).toContain('0 USD = 0 EUR')
+  })
+
+  it('should handle negative amounts', () => {
+    const result = convert('-100 USD to EUR', mockExchangeRates)
+    expect(result).toContain('-100 USD = -93 EUR')
+  })
+
+  it('should handle missing exchange rates', () => {
+    const result = convert('100 JPY to USD', mockExchangeRates)
+    expect(result).toEqual('Not enough data for currency exchange.')
+  })
+
+  it('should handle invalid input format', () => {
+    const result = convert('invalid input', mockExchangeRates)
+    expect(result).toEqual('Not enough data for currency exchange.')
+  })
+
+  it('should handle empty input', () => {
+    const result = convert('', mockExchangeRates)
+    expect(result).toEqual('Not enough data for currency exchange.')
+  })
+
+  it('should handle single currency input', () => {
+    const result = convert('100 USD', mockExchangeRates)
+    expect(result).toEqual('Not enough data for currency exchange.')
+  })
+
+  it('should handle duplicate currencies', () => {
+    const result = convert('100 USD to USD, USD', mockExchangeRates)
+    expect(result).toEqual('Not enough data for currency exchange.')
+  })
+
+  it('should handle case-insensitive currency codes', () => {
+    const result = convert('100 usd to eur', mockExchangeRates)
+    expect(result).toContain('100 USD = 93.75 EUR')
+  })
+
+  it('should handle currency synonyms', () => {
+    const result = convert('100 dollars to euros', mockExchangeRates)
+    expect(result).toContain('100 USD = 93.75 EUR')
+  })
+
+  it('should handle mixed currency formats', () => {
+    const result = convert('100 USD to euros, NOK', mockExchangeRates)
+    expect(result).toContain('100 USD = 93.75 EUR')
+    expect(result).toContain('100 USD = 1050 NOK')
+  })
+
+  it('should handle very large numbers', () => {
+    const result = convert('1000000 USD to EUR', mockExchangeRates)
+    expect(result).toContain('1000000 USD = 937500 EUR')
+  })
+
+  it('should handle very small numbers', () => {
+    const result = convert('0.0001 USD to EUR', mockExchangeRates)
+    expect(result).toContain('0.0001 USD = 0.0000937 EUR')
+  })
+
+  it('should handle unexpected errors gracefully', () => {
+    // Create a mock input that will cause an error in the conversion logic
+    const result = convert('100 USD to EUR', [])
+    expect(result).toEqual('Not enough data for currency exchange.')
+  })
+
+  describe('exchange rate calculations', () => {
+    it('should handle zero exchange rates', () => {
+      const zeroRates = [
+        {
+          id: 'USD',
+          name: 'US Dollar',
+          rate: '0',
+          exponent: 0,
+          actualRate: 0
+        },
+        {
+          id: 'EUR',
+          name: 'Euro',
+          rate: '0',
+          exponent: 0,
+          actualRate: 0
+        }
+      ]
+      const result = convert('100 USD to EUR', zeroRates)
+      expect(result).toContain('100 USD = 0 EUR')
+    })
+
+    it('should handle missing base currency rate', () => {
+      const missingBaseRate = [
+        {
+          id: 'EUR',
+          name: 'Euro',
+          rate: '11.2',
+          exponent: 0,
+          actualRate: 11.2
+        }
+      ]
+      const result = convert('100 USD to EUR', missingBaseRate)
+      expect(result).toEqual('Not enough data for currency exchange.')
+    })
+
+    it('should handle missing target currency rate', () => {
+      const missingTargetRate = [
+        {
+          id: 'USD',
+          name: 'US Dollar',
+          rate: '10.5',
+          exponent: 0,
+          actualRate: 10.5
+        }
+      ]
+      const result = convert('100 USD to EUR', missingTargetRate)
+      expect(result).toEqual('Not enough data for currency exchange.')
+    })
+
+    it('should handle NOK as base currency with missing target rate', () => {
+      const missingTargetRate = [
+        {
+          id: 'NOK',
+          name: 'Norwegian krone',
+          rate: '1',
+          exponent: 0,
+          actualRate: 1
+        }
+      ]
+      const result = convert('100 NOK to EUR', missingTargetRate)
+      expect(result).toEqual('Not enough data for currency exchange.')
+    })
+
+    it('should handle NOK as target currency with missing base rate', () => {
+      const missingBaseRate = [
+        {
+          id: 'NOK',
+          name: 'Norwegian krone',
+          rate: '1',
+          exponent: 0,
+          actualRate: 1
+        }
+      ]
+      const result = convert('100 USD to NOK', missingBaseRate)
+      expect(result).toEqual('Not enough data for currency exchange.')
+    })
+
+    it('should handle very large exchange rates', () => {
+      const largeRates = [
+        {
+          id: 'USD',
+          name: 'US Dollar',
+          rate: '1000000',
+          exponent: 0,
+          actualRate: 1000000
+        },
+        {
+          id: 'EUR',
+          name: 'Euro',
+          rate: '2000000',
+          exponent: 0,
+          actualRate: 2000000
+        }
+      ]
+      const result = convert('100 USD to EUR', largeRates)
+      expect(result).toContain('100 USD = 50 EUR')
+    })
+
+    it('should handle very small exchange rates', () => {
+      const smallRates = [
+        {
+          id: 'USD',
+          name: 'US Dollar',
+          rate: '0.000001',
+          exponent: 0,
+          actualRate: 0.000001
+        },
+        {
+          id: 'EUR',
+          name: 'Euro',
+          rate: '0.000002',
+          exponent: 0,
+          actualRate: 0.000002
+        }
+      ]
+      const result = convert('100 USD to EUR', smallRates)
+      expect(result).toContain('100 USD = 50 EUR')
+    })
+
+    it('should handle exchange rates with different exponents', () => {
+      const ratesWithExponents = [
+        {
+          id: 'USD',
+          name: 'US Dollar',
+          rate: '1050',
+          exponent: 2,
+          actualRate: 10.5
+        },
+        {
+          id: 'EUR',
+          name: 'Euro',
+          rate: '1120',
+          exponent: 2,
+          actualRate: 11.2
+        }
+      ]
+      const result = convert('100 USD to EUR', ratesWithExponents)
+      expect(result).toContain('100 USD = 93.75 EUR')
+    })
+
+    it('should handle exchange rates with negative exponents', () => {
+      const ratesWithNegativeExponents = [
+        {
+          id: 'USD',
+          name: 'US Dollar',
+          rate: '0.105',
+          exponent: -1,
+          actualRate: 10.5
+        },
+        {
+          id: 'EUR',
+          name: 'Euro',
+          rate: '0.112',
+          exponent: -1,
+          actualRate: 11.2
+        }
+      ]
+      const result = convert('100 USD to EUR', ratesWithNegativeExponents)
+      expect(result).toContain('100 USD = 93.75 EUR')
+    })
+
+    it('should handle undefined actualRate in exchange rates', () => {
+      const ratesWithUndefinedActualRate = [
+        {
+          id: 'USD',
+          name: 'US Dollar',
+          rate: '10.5',
+          exponent: 0,
+          actualRate: undefined
+        },
+        {
+          id: 'EUR',
+          name: 'Euro',
+          rate: '11.2',
+          exponent: 0,
+          actualRate: 11.2
+        }
+      ] as any
+      const result = convert('100 USD to EUR', ratesWithUndefinedActualRate)
+      expect(result).toContain('100 USD = 0 EUR')
+    })
+
+    it('should handle null actualRate in exchange rates', () => {
+      const ratesWithNullActualRate = [
+        {
+          id: 'USD',
+          name: 'US Dollar',
+          rate: '10.5',
+          exponent: 0,
+          actualRate: null
+        },
+        {
+          id: 'EUR',
+          name: 'Euro',
+          rate: '11.2',
+          exponent: 0,
+          actualRate: 11.2
+        }
+      ] as any
+      const result = convert('100 USD to EUR', ratesWithNullActualRate)
+      expect(result).toContain('100 USD = 0 EUR')
+    })
+
+    it('should handle non-existent currency code in exchange rates', () => {
+      const result = convert('100 XYZ to EUR', mockExchangeRates)
+      expect(result).toEqual('Not enough data for currency exchange.')
+    })
+
+    it('should handle multiple currencies with undefined actualRate', () => {
+      const ratesWithMultipleUndefined = [
+        {
+          id: 'USD',
+          name: 'US Dollar',
+          rate: '10.5',
+          exponent: 0,
+          actualRate: undefined
+        },
+        {
+          id: 'EUR',
+          name: 'Euro',
+          rate: '11.2',
+          exponent: 0,
+          actualRate: undefined
+        }
+      ] as any
+      const result = convert('100 USD to EUR', ratesWithMultipleUndefined)
+      expect(result).toContain('100 USD = 0 EUR')
+    })
+
+    it('should handle mix of valid and undefined actualRates', () => {
+      const mixedRates = [
+        {
+          id: 'USD',
+          name: 'US Dollar',
+          rate: '10.5',
+          exponent: 0,
+          actualRate: 10.5
+        },
+        {
+          id: 'EUR',
+          name: 'Euro',
+          rate: '11.2',
+          exponent: 0,
+          actualRate: undefined
+        },
+        {
+          id: 'GBP',
+          name: 'British Pound',
+          rate: '13.0',
+          exponent: 0,
+          actualRate: 13.0
+        }
+      ] as any
+      const result = convert('100 USD to EUR, GBP', mixedRates)
+      expect(result).toContain('100 USD = 0 EUR')
+      expect(result).toContain('100 USD = 80.77 GBP')
+    })
+
+    it('should handle NOK conversion with undefined actualRate', () => {
+      const ratesWithUndefinedNOK = [
+        {
+          id: 'USD',
+          name: 'US Dollar',
+          rate: '10.5',
+          exponent: 0,
+          actualRate: undefined
+        },
+        {
+          id: 'NOK',
+          name: 'Norwegian krone',
+          rate: '1',
+          exponent: 0,
+          actualRate: 1
+        }
+      ] as any
+      const result = convert('100 USD to NOK', ratesWithUndefinedNOK)
+      expect(result).toContain('100 USD = 0 NOK')
+    })
+
+    it('should handle conversion from NOK with undefined target rate', () => {
+      const ratesWithUndefinedTarget = [
+        {
+          id: 'USD',
+          name: 'US Dollar',
+          rate: '10.5',
+          exponent: 0,
+          actualRate: undefined
+        },
+        {
+          id: 'NOK',
+          name: 'Norwegian krone',
+          rate: '1',
+          exponent: 0,
+          actualRate: 1
+        }
+      ] as any
+      const result = convert('100 NOK to USD', ratesWithUndefinedTarget)
+      expect(result).toContain('100 NOK = 0 USD')
+    })
+
+    it('should handle when exchangeRates.find returns undefined for base currency', () => {
+      const rates = [
+        {
+          id: 'EUR',
+          name: 'Euro',
+          rate: '11.2',
+          exponent: 0,
+          actualRate: 11.2
+        }
+      ]
+      // USD is not in the rates array, so find() will return undefined
+      const result = convert('100 USD to EUR', rates)
+      expect(result).toEqual('Not enough data for currency exchange.')
+    })
+
+    it('should handle when exchangeRates.find returns undefined for target currency', () => {
+      const rates = [
+        {
+          id: 'USD',
+          name: 'US Dollar',
+          rate: '10.5',
+          exponent: 0,
+          actualRate: 10.5
+        }
+      ]
+      // EUR is not in the rates array, so find() will return undefined
+      const result = convert('100 USD to EUR', rates)
+      expect(result).toEqual('Not enough data for currency exchange.')
+    })
+
+    it('should handle when exchangeRates.find returns undefined for one of multiple target currencies', () => {
+      const rates = [
+        {
+          id: 'USD',
+          name: 'US Dollar',
+          rate: '10.5',
+          exponent: 0,
+          actualRate: 10.5
+        },
+        {
+          id: 'GBP',
+          name: 'British Pound',
+          rate: '13.0',
+          exponent: 0,
+          actualRate: 13.0
+        }
+      ]
+      // EUR is not in the rates array, but GBP is
+      const result = convert('100 USD to EUR, GBP', rates)
+      // Should return conversion for GBP only since EUR is not found
+      expect(result).toContain('100 USD = 80.77 GBP')
+      expect(result).not.toContain('EUR')
+    })
+
+    it('should handle when exchangeRates.find returns undefined for NOK conversion', () => {
+      const rates = [
+        {
+          id: 'EUR',
+          name: 'Euro',
+          rate: '11.2',
+          exponent: 0,
+          actualRate: 11.2
+        }
+      ]
+      // USD is not in the rates array
+      const result = convert('100 USD to NOK', rates)
+      expect(result).toEqual('Not enough data for currency exchange.')
+    })
+
+    it('should handle when exchangeRates.find returns undefined for conversion from NOK', () => {
+      const rates = [
+        {
+          id: 'GBP',
+          name: 'British Pound',
+          rate: '13.0',
+          exponent: 0,
+          actualRate: 13.0
+        }
+      ]
+      // EUR is not in the rates array
+      const result = convert('100 NOK to EUR', rates)
+      expect(result).toEqual('Not enough data for currency exchange.')
+    })
+
+    it('should handle empty exchangeRates array causing find to return undefined', () => {
+      const result = convert('100 USD to EUR', [])
+      expect(result).toEqual('Not enough data for currency exchange.')
+    })
+
+    it('should handle when exchangeRates array has no matching currencies', () => {
+      const rates = [
+        {
+          id: 'GBP',
+          name: 'British Pound',
+          rate: '13.0',
+          exponent: 0,
+          actualRate: 13.0
+        },
+        {
+          id: 'JPY',
+          name: 'Japanese Yen',
+          rate: '0.07',
+          exponent: 0,
+          actualRate: 0.07
+        }
+      ]
+      // Neither USD nor EUR are in the rates array
+      const result = convert('100 USD to EUR', rates)
+      expect(result).toEqual('Not enough data for currency exchange.')
+    })
+  })
+
+  describe('error handling', () => {
+    it('should handle invalid amount input', () => {
+      const result = convert('invalid USD to EUR', mockExchangeRates)
+      expect(result).toContain('0 USD = 0 EUR')
+    })
+
+    it('should handle missing amount', () => {
+      const result = convert('USD to EUR', mockExchangeRates)
+      expect(result).toContain('0 USD = 0 EUR')
+    })
+
+    it('should handle missing target currencies', () => {
+      const result = convert('100 USD', mockExchangeRates)
+      expect(result).toEqual('Not enough data for currency exchange.')
+    })
+
+    it('should handle invalid currency codes', () => {
+      const result = convert('100 XXX to YYY', mockExchangeRates)
+      expect(result).toEqual('Not enough data for currency exchange.')
+    })
+
+    it('should handle empty exchange rates array', () => {
+      const result = convert('100 USD to EUR', [])
+      expect(result).toEqual('Not enough data for currency exchange.')
+    })
+
+    it('should handle exchange rates with invalid actualRate', () => {
+      const invalidRates = [
+        {
+          id: 'USD',
+          name: 'US Dollar',
+          rate: 'invalid',
+          exponent: 0,
+          actualRate: NaN
+        },
+        {
+          id: 'EUR',
+          name: 'Euro',
+          rate: '11.2',
+          exponent: 0,
+          actualRate: 11.2
+        }
+      ]
+      const result = convert('100 USD to EUR', invalidRates)
+      expect(result).toContain('100 USD = 0 EUR')
+    })
+
+    it('should handle exchange rates with Infinity values', () => {
+      const infiniteRates = [
+        {
+          id: 'USD',
+          name: 'US Dollar',
+          rate: '10.5',
+          exponent: 0,
+          actualRate: Infinity
+        },
+        {
+          id: 'EUR',
+          name: 'Euro',
+          rate: '11.2',
+          exponent: 0,
+          actualRate: 11.2
+        }
+      ]
+      const result = convert('100 USD to EUR', infiniteRates)
+      expect(result).toContain('100 USD = Infinity EUR')
+    })
+
+    it('should handle exchange rates with negative values', () => {
+      const negativeRates = [
+        {
+          id: 'USD',
+          name: 'US Dollar',
+          rate: '-10.5',
+          exponent: 0,
+          actualRate: -10.5
+        },
+        {
+          id: 'EUR',
+          name: 'Euro',
+          rate: '11.2',
+          exponent: 0,
+          actualRate: 11.2
+        }
+      ]
+      const result = convert('100 USD to EUR', negativeRates)
+      expect(result).toContain('100 USD = -93 EUR')
+    })
+
+    it('should handle exchange rates with very small exponents', () => {
+      const smallExponentRates = [
+        {
+          id: 'USD',
+          name: 'US Dollar',
+          rate: '0.0000000001',
+          exponent: -10,
+          actualRate: 10.5
+        },
+        {
+          id: 'EUR',
+          name: 'Euro',
+          rate: '0.0000000002',
+          exponent: -10,
+          actualRate: 11.2
+        }
+      ]
+      const result = convert('100 USD to EUR', smallExponentRates)
+      expect(result).toContain('100 USD = 93.75 EUR')
+    })
+
+    it('should handle exchange rates with very large exponents', () => {
+      const largeExponentRates = [
+        {
+          id: 'USD',
+          name: 'US Dollar',
+          rate: '10000000000',
+          exponent: 10,
+          actualRate: 10.5
+        },
+        {
+          id: 'EUR',
+          name: 'Euro',
+          rate: '20000000000',
+          exponent: 10,
+          actualRate: 11.2
+        }
+      ]
+      const result = convert('100 USD to EUR', largeExponentRates)
+      expect(result).toContain('100 USD = 93.75 EUR')
+    })
+
+    it('should handle exchange rates with mixed exponents', () => {
+      const mixedExponentRates = [
+        {
+          id: 'USD',
+          name: 'US Dollar',
+          rate: '1050',
+          exponent: 2,
+          actualRate: 10.5
+        },
+        {
+          id: 'EUR',
+          name: 'Euro',
+          rate: '0.112',
+          exponent: -1,
+          actualRate: 11.2
+        }
+      ]
+      const result = convert('100 USD to EUR', mixedExponentRates)
+      expect(result).toContain('100 USD = 93.75 EUR')
+    })
+
+    it('should handle exchange rates with zero exponents', () => {
+      const zeroExponentRates = [
+        {
+          id: 'USD',
+          name: 'US Dollar',
+          rate: '10.5',
+          exponent: 0,
+          actualRate: 10.5
+        },
+        {
+          id: 'EUR',
+          name: 'Euro',
+          rate: '11.2',
+          exponent: 0,
+          actualRate: 11.2
+        }
+      ]
+      const result = convert('100 USD to EUR', zeroExponentRates)
+      expect(result).toContain('100 USD = 93.75 EUR')
+    })
+
+    it('should handle exchange rates with missing exponents', () => {
+      const missingExponentRates = [
+        {
+          id: 'USD',
+          name: 'US Dollar',
+          rate: '10.5',
+          actualRate: 10.5
+        },
+        {
+          id: 'EUR',
+          name: 'Euro',
+          rate: '11.2',
+          actualRate: 11.2
+        }
+      ] as any
+      const result = convert('100 USD to EUR', missingExponentRates)
+      expect(result).toContain('100 USD = 93.75 EUR')
+    })
+
+    it('should handle exchange rates with missing actualRate', () => {
+      const missingActualRate = [
+        {
+          id: 'USD',
+          name: 'US Dollar',
+          rate: '10.5',
+          exponent: 0
+        },
+        {
+          id: 'EUR',
+          name: 'Euro',
+          rate: '11.2',
+          exponent: 0
+        }
+      ] as any
+      const result = convert('100 USD to EUR', missingActualRate)
+      expect(result).toContain('100 USD = 0 EUR')
+    })
+
+    it('should handle exchange rates with missing rate', () => {
+      const missingRate = [
+        {
+          id: 'USD',
+          name: 'US Dollar',
+          exponent: 0,
+          actualRate: 10.5
+        },
+        {
+          id: 'EUR',
+          name: 'Euro',
+          exponent: 0,
+          actualRate: 11.2
+        }
+      ] as any
+      const result = convert('100 USD to EUR', missingRate)
+      expect(result).toContain('100 USD = 93.75 EUR')
+    })
   })
 })

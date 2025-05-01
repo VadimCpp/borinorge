@@ -112,7 +112,7 @@ export function getServiceName(currencyCodes: Array<string>): ServiceName | null
 }
 
 // Type of data returned by Norges Bank API in sdmx-json format
-type ExchangeRates = {
+export type ExchangeRates = {
   data: {
     dataSets: Array<{
       action: string
@@ -313,7 +313,7 @@ export function roundCurrency(amount: number): number {
   }
 }
 
-// Is used in UI, not covered by unit tests
+
 export function convert(input: string, exchangeRates: Array<CurrencyRateTowardsNok>): string {
   let result: string = ""
 
