@@ -121,7 +121,7 @@ export const folksMapping: {[K in Folk]: FolkData } = {
     },
     projects: [
       {
-        id: 'direkte-stotte',
+        id: 'projects/direkte-stotte',
         titleSlug: 'project-direkte-stotte',
         imageUrl: '/images/preview/direkte_stotte_1200_630.jpeg',
       }
