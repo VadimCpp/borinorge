@@ -20,7 +20,10 @@ export const ClockTimeIcon: React.FC<ClockTimeIconProps> = ({ time, className = 
     // Parse time string in format "HH:MM"
     try {
       const parts = time.split(':');
-      if (parts.length !== 2) return new Date(); // Invalid format, use current time
+      if (parts.length !== 2) {
+        console.warn('Invalid time format for ClockTimeIcon, using current time');
+        return new Date(); // Invalid format, use current time
+      }
       
       const hours = parseInt(parts[0], 10);
       const minutes = parseInt(parts[1], 10);
@@ -29,6 +32,7 @@ export const ClockTimeIcon: React.FC<ClockTimeIconProps> = ({ time, className = 
       if (isNaN(hours) || isNaN(minutes) || 
           hours < 0 || hours > 23 || 
           minutes < 0 || minutes > 59) {
+        console.warn('Invalid time format for ClockTimeIcon, using current time');
         return new Date(); // Invalid values, use current time
       }
       
@@ -58,7 +62,7 @@ export const ClockTimeIcon: React.FC<ClockTimeIconProps> = ({ time, className = 
   
   // Calculate coordinates for hour hand (shorter)
   const hourHandCoords = React.useMemo(() => {
-    const length = 5; // Shorter than minute hand
+    const length = 4;
     const angle = hourAngle * Math.PI / 180;
     return {
       x2: 12 + length * Math.sin(angle),
@@ -66,9 +70,9 @@ export const ClockTimeIcon: React.FC<ClockTimeIconProps> = ({ time, className = 
     };
   }, [hourAngle]);
   
-  // Calculate coordinates for minute hand (longer)
+  // Calculate coordinates for minute hand (longer with small gap from edge)
   const minuteHandCoords = React.useMemo(() => {
-    const length = 7; // Longer than hour hand
+    const length = 6.5;
     const angle = minuteAngle * Math.PI / 180;
     return {
       x2: 12 + length * Math.sin(angle),
@@ -89,14 +93,8 @@ export const ClockTimeIcon: React.FC<ClockTimeIconProps> = ({ time, className = 
       aria-hidden="true"
       data-testid="clock-time-icon"
     >
-      {/* Clock face */}
+      {/* Clock face - circle only, no ticks */}
       <circle cx="12" cy="12" r="9" />
-      
-      {/* Time markers (optional) */}
-      <line x1="12" y1="3" x2="12" y2="4" />
-      <line x1="12" y1="20" x2="12" y2="21" />
-      <line x1="3" y1="12" x2="4" y2="12" />
-      <line x1="20" y1="12" x2="21" y2="12" />
       
       {/* Hour hand */}
       <line
