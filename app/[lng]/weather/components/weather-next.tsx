@@ -2,7 +2,7 @@
 
 import React from "react"
 import Image from 'next/image'
-import { ClockIcon } from '@heroicons/react/24/outline'
+import { ClockTimeIcon } from './icons/ClockTimeIcon'
 
 import { type WeatherLocales, type TimeSerie, type TimeSerieData } from "./weather.types"
 
@@ -39,7 +39,7 @@ const WeatherNext: React.FC<WeatherNextProps> = ({ locales, series }) => {
         {series?.map((item, index) => (
           <div key={index} className="flex justify-between py-1">
             <div className="flex items-center text-sm text-gray-700 pr-4">
-              <ClockIcon className="w-4 h-4 mr-1 inline" />
+              <ClockTimeIcon time={new Date(item.time)} className="w-4 h-4 mr-1 inline" />
               <span className="align-middle">{formatTime(new Date(item.time))}</span>
             </div>
             <div className="flex">
