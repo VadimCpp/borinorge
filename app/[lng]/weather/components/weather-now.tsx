@@ -2,7 +2,8 @@
 
 import React from "react"
 import Image from 'next/image'
-import { MapPinIcon, ClockIcon, PencilIcon } from '@heroicons/react/24/outline'
+import { MapPinIcon, PencilIcon } from '@heroicons/react/24/outline'
+import { ClockTimeIcon } from './icons/ClockTimeIcon'
 
 import { type WeatherUnits, type WeatherLocales, type TimeSerie } from "./weather.types"
 
@@ -68,7 +69,7 @@ const WeatherNow: React.FC<WeatherNowProps> = ({ units, locales, serie, city, re
     <div className="p-6 max-w-md mx-auto pt-10">
       <div className="flex flex-row justify-between mb-4">
         <div className="text-sm text-gray-700">
-          <ClockIcon className="w-4 h-4 mr-1 inline" />
+          <ClockTimeIcon className="w-4 h-4 mr-1 inline" />
           <span className="align-middle">{formatTime(new Date())}</span>
         </div>
         <div className="text-sm text-gray-700">
