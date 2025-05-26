@@ -288,6 +288,7 @@ describe('useGeolocation Hook', () => {
     expect(result.current.latitude).toBeNull();
     expect(result.current.longitude).toBeNull();
     expect(result.current.accuracy).toBeNull();
+    expect(result.current.city).toBeNull();
     expect(result.current.geoError).toBeNull();
     expect(result.current.isLoadingPosition).toBe(false);
     

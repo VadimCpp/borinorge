@@ -177,6 +177,7 @@ export const useGeolocation = (): GeolocationData => {
       latitude: null,
       longitude: null,
       accuracy: null,
+      city: null,
       geoError: null,
       isLoadingPosition: false,
     }));
