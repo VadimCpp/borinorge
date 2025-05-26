@@ -137,8 +137,11 @@ const WeatherFetcher: FC<WeatherFetcherProps> = ({ locales }) => {
     />
   }
 
-  if (isLoadingPosition) {
-    return <LoadingIndicator label="Getting geolocation..." />;
+  const isFetching = isLoadingPosition || weatherLoading || (!weather && !weatherError && !geoError)
+
+  if (isFetching) {
+    const label = isLoadingPosition ? "Getting geolocation..." : "Getting weather..."
+    return <LoadingIndicator label={label} />
   }
 
   if (geoError) {
@@ -152,10 +155,6 @@ const WeatherFetcher: FC<WeatherFetcherProps> = ({ locales }) => {
         setLocationManualVisible(true)
       }}
     />
-  }
-
-  if (weatherLoading) {
-    return <LoadingIndicator label="Getting weather..." />;
   }
 
   if (weatherError) {
