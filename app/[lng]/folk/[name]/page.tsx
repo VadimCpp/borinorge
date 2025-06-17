@@ -97,11 +97,18 @@ export default async function FolkPage({ params: { lng, name } }: Props) {
               <p className="project__paragraph">
                 {t('folk.iryna.integration')}
               </p>
+              <p className="project__paragraph">
+                {t('folk.iryna.conclusion')}
+              </p>
             </section>
+
             <section>
               <h2 className="project__subtitle">{t('projects')}</h2>
               <p className="project__paragraph">
                 {t('folk.iryna.projects')}
+              </p>
+              <p className="project__paragraph">
+                {t('folk.iryna.projects-invitation-to-see')}
               </p>
               <div className="mt-4">
                 <h3 className="font-semibold text-lg">Nettverk</h3>
@@ -113,12 +120,6 @@ export default async function FolkPage({ params: { lng, name } }: Props) {
                   {t('folk.iryna.projects_details.samfunnskunnskap')}
                 </p>
               </div>
-            </section>
-            <section>
-              <h2 className="project__subtitle">{t('conclusion')}</h2>
-              <p className="project__paragraph">
-                {t('folk.iryna.conclusion')}
-              </p>
             </section>
             <section className='mb-8'>
               <h2 className="project__subtitle">{t('contacts')}</h2>

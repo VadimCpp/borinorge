@@ -15,6 +15,7 @@
   "project-redaksjon": "Redaction",
   "project-direkte-stotte": "Direct support",
   "project-nettverk": "Nettverk",
+  "project-samfunnskunnskap": "Social studies",
   "about-us": "About us",
   "about-us-description-part-1": "Vi bor i Norge is an Urban common project that is operated through volunteer work on a non-profit basis. Below you will find more information about who we are.",
   "about-us-description-part-2": "Do you have feedback for the website? Please feel free to contact one of us:",
@@ -164,6 +165,7 @@
       "introduction": "I came to Norway in March 2022. For me, it was a completely new and unfamiliar country with unknown rules, behavioral norms, laws, and social morals. I encountered many things that were entirely new to me. Nevertheless, the local population's outlook on life, relationships between people, and within families strongly resonated with me. Norwegian society feels close to my inner experiences, and I decided to rebuild my life here.",
       "integration": "Over time, I began to better understand how life is organized here, and I realized the main problem for many foreigners. It is the local diaspora environment. Yes, it provides support and assistance from 'your own people,' an opportunity to speak your native language, share experiences, and find answers to your questions. But it also has a significant disadvantage. The human brain tends to seek easy paths and those who are also struggling, uncomfortable, and uninterested, to feel less unhappy. This is an opportunity to stagnate. But it's important to overcome this obstacle to move forward.",
       "projects": "That's why all the projects of the \"Living in Norway\" team are aimed at adaptation in a new country. Adaptation is the process of accepting a new social environment, culture, lifestyle, and ways of thinking. Therefore, our projects help foreigners understand and accept Norway while maintaining connections with their cultural roots.",
+      "projects-invitation-to-see": "We invite you to see our projects:",
       "projects_details": {
         "nettverk": "The \"Nettverk\" project is linked to the \"Ukrainian Newspaper\" project, where we, as foreigners, learn about the latest news in Norway in our own language. This way, we get information about the society we live in.",
         "samfunnskunnskap": "In March 2025 we launched the Samfunnskunnskap marathon. It is a unique opportunity to learn about Norwegian society, the country's history, culture, traditions, local rules and laws in an easy and engaging way. Each day of the marathon covers a separate topic that brings new knowledge about Norway and brings foreigners closer to integration. We covered the following sections: Norway in the past and present (23 lessons), Family, health and everyday life (30 lessons), Education, qualifications and working life in Norway (19 lessons). The marathon brought together 736 foreigners from across Norway, 336 of whom were active participants. In June 2025, 318 people passed the Samfunnskunnskap exam required for a residence permit and later Norwegian citizenship. We are proud of this result!"
@@ -186,6 +188,19 @@
     "chat_halden": "Halden Chat",
     "chat_oslo": "Oslo Chat",
     "chat_bergen": "Bergen Chat"
+  },
+  "samfunnskunnskap": {
+    "meta-title": "Borinorge — Samfunnskunnskap",
+    "meta-description": "The Samfunnskunnskap Marathon offers engaging lessons on Norwegian society, history, culture, and local laws, helping participants integrate successfully.",
+    "title": "Samfunnskunnskap",
+    "intro": "In March 2025 we launched the Samfunnskunnskap marathon. It is a unique opportunity to learn about Norwegian society, the country's history, culture, traditions, local rules and laws in an easy and engaging way.",
+    "intro-details": "Each day of the marathon covers a separate topic that brings new knowledge about Norway and brings foreigners closer to integration.",
+    "curriculum-title": "We covered the following sections:",
+    "curriculum-history": "Norway in the past and present (23 lessons)",
+    "curriculum-family": "Family, health and everyday life (30 lessons)",
+    "curriculum-education": "Education, qualifications and working life in Norway (19 lessons)",
+    "statistics-participants": "The marathon brought together 736 foreigners from across Norway, 336 of whom were active participants. We consider this a great result because we helped 736 people better understand how Norwegian society functions.",
+    "statistics-exam-results": "In June 2025, 318 people passed the Samfunnskunnskap exam required for a residence permit and later Norwegian citizenship. We are proud of this result!"
   },
   "redaksjon": {
     "meta-title": "Borinorge — Redaction",

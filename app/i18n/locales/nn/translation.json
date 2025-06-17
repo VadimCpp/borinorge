@@ -15,12 +15,13 @@
   "project-redaksjon": "Redaksjon",
   "project-direkte-stotte": "Direkte støtte",
   "project-nettverk": "Nettverk",
+  "project-samfunnskunnskap": "Samfunnskunnskap",
   "about-us": "Om oss",
   "about-us-description-part-1": "Vi bur i Noreg er eit Urban common-prosjekt som blir drive gjennom frivillig arbeid på ideell basis. Nedanfor finn du meir informasjon om kven vi er.",
   "about-us-description-part-2": "Har du innspel til nettsida? Ta gjerne kontakt med ein av oss:",
   "oksana-donets": "Oksana Donets",
   "olena-varlamova": "Olena Varlamova",
-  "vadym-kaninskyi": "Vadym Kaninskyj",
+  "vadym-kaninskyi": "Vadym Kaninskyi", 
   "norsklett": {
     "norsklett": "Lær norsk lett",
     "description": "Det beste språklæringsmateriell til deg.",
@@ -161,9 +162,10 @@
     },
     "iryna": {
       "name": "Iryna Nepotenko",
-      "introduction": "Eg kom til Noreg i mars 2022. For meg var det eit heilt nytt og framandt land med ukjende reglar, normer for åtferd, lover og samfunnet sin moral. Eg møtte mange ting som var heilt nye for meg. Likevel resonerte lokalbefolkninga sitt syn på livet, forhold mellom menneske og innan familien sterkt i meg. Det norske samfunnet kjennest nært for mine indre opplevingar, og eg bestemte meg for å byggje livet mitt på nytt her.",
-      "integration": "Etter kvart byrja eg å forstå betre korleis livet er organisert her, og eg innsåg hovudproblemet for mange utlendingar. Det er det lokale diasporamiljøet. Ja, det er ei støtte og støtte frå «sine eigne», ein moglegheit til å snakke sitt eige språk, dele erfaringar og finne svar på sine spørsmål. Men det er også ei stor ulempe. Den menneskelege hjernen har ein tendens til å søkje enkle vegar og søkje dei som også har det vanskeleg, ubehagelege og uinteressant, for å kjenne seg mindre ulykkeleg. Dette er ein moglegheit til å stoppe opp. Men det er viktig å overvinne dette hinderet for å gå vidare.",
-      "projects": "Det er difor alle prosjekta til teamet \"Bor i Norge\" er retta mot tilpassing i eit nytt land. Tilpassing er prosessen med å akseptere eit nytt sosialt miljø, kultur, livsstil og tankemåtar. Difor hjelper våre prosjekt utlendingar å forstå og akseptere Noreg, samstundes som dei opprettheld sambandet med sine kulturelle røter.",
+      "introduction": "Eg kom til Noreg i mars 2022. For meg var det eit heilt nytt og ukjent land med ukjende reglar, atferdsnormer, lover og sosiale moralar. Eg møtte på mange ting som var heilt nye for meg. Likevel resonerte lokalbefolkninga sin livssyn, relasjonar mellom menneske og i familien sterkt med meg. Det norske samfunnet kjennest nært mine indre opplevingar, og eg bestemte meg for å byggje opp livet mitt her på nytt.",
+      "integration": "Over tid byrja eg å betre forstå korleis livet er organisert her, og eg innsåg hovudproblemet for mange utlendingar. Det er det lokale diaspora-miljøet. Ja, det gir støtte og hjelp frå «dine eigne», moglegheit til å snakke morsmålet ditt, dele erfaringar og finne svar på spørsmåla dine. Men det har òg ein vesentleg ulempe. Den menneskelege hjernen tenderer til å søkje enkle vegar og dei som òg kjempar, er ubehagelege og uinteresserte, for å kjenne seg mindre ulykkelege. Dette er ei moglegheit til å stå fast. Men det er viktig å overkome denne hindringen for å kome vidare.",
+      "projects": "Derfor er alle prosjekta til «Vi bor i Norge»-teamet retta mot tilpassing i eit nytt land. Tilpassing er prosessen med å akseptere eit nytt sosialt miljø, kultur, livsstil og tankesett. Difor hjelper prosjekta våre utlendingar med å forstå og akseptere Noreg medan dei held kontakt med sine kulturelle røter.",
+      "projects-invitation-to-see": "Vi inviterer deg til å sjå prosjekta våre:",
       "projects_details": {
         "nettverk": "Prosjektet \"Nettverk\" er knytt til prosjektet \"Den ukraїnske avisa\", kor vi, utlendingar, lærer alt om dei siste nyheitene i Noreg på vårt eige språk. På denne måten får vi informasjon om samfunnet vi lever i.",
         "samfunnskunnskap": "I mars 2025 starta vi maratonen Samfunnskunnskap. Dette er ein unik sjanse til å lære om det norske samfunnet, historia til landet, kultur, tradisjonar, lokale reglar og lover på ein enkel og interessant måte. Kvar dag av maratonen er eit eige tema som gir ny kunnskap om Noreg og fører utlendingar nærare integrering. Vi gjekk gjennom desse delane: Noreg før og no (23 leksjonar), Familie, helse og kvardagsliv (30 leksjonar), Utdanning, kvalifikasjonar og arbeidsliv i Noreg (19 leksjonar). Maratonen samla 736 utlendingar frå ulike delar av Noreg, 336 av dei var aktive deltakarar. I juni 2025 bestod 318 personar Samfunnskunnskap-eksamenen som trengst for å få opphaldsløyve og seinare norsk statsborgarskap. Vi er stolte av eit slikt resultat!"
@@ -186,6 +188,19 @@
     "chat_halden": "Nettverk i Halden",
     "chat_oslo": "Nettverk i Oslo",
     "chat_bergen": "Nettverk i Bergen"
+  },
+  "samfunnskunnskap": {
+    "meta-title": "Borinorge — Samfunnskunnskap",
+    "meta-description": "Samfunnskunnskap-maratonen tilbyr engasjerande leksjonar om det norske samfunnet, historia, kulturen og lokale lover, og hjelper deltakarane med å integrere seg på ein god måte.",
+    "title": "Samfunnskunnskap",
+    "intro": "I mars 2025 starta vi maratonet Samfunnskunnskap. Dette er ein unik sjanse til å lære om det norske samfunnet, landets historie, kultur, tradisjonar, lokale reglar og lover på ein enkel og interessant måte.",
+    "intro-details": "Kvar dag av maratonet er eit eige tema som gir ny kunnskap om Noreg og fører utlendingar nærare integrering.",
+    "curriculum-title": "Vi gjekk gjennom desse delane:",
+    "curriculum-history": "Noreg før og no (23 leksjonar)",
+    "curriculum-family": "Familie, helse og kvardagsliv (30 leksjonar)",
+    "curriculum-education": "Utdanning, kvalifikasjonar og arbeidsliv i Noreg (19 leksjonar)",
+    "statistics-participants": "Maratonet samla 736 utlendingar frå ulike delar av Noreg, 336 av dei var aktive deltakarar. Vi ser på dette som eit flott resultat, fordi vi har hjelpt 736 menneske å betre forstå korleis det norske samfunnet fungerer.",
+    "statistics-exam-results": "I juni 2025 bestod 318 personar eksamen i Samfunnskunnskap, nødvendig for å få opphaldsløyve og seinare norsk statsborgarskap. Vi er stolte av eit slikt resultat!"
   },
   "redaksjon": {
     "meta-title": "Burinoreg — Redaksjon",

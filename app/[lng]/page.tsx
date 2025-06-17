@@ -55,6 +55,12 @@ export default async function Page({ params: { lng } }: { params: { lng: string 
           <div className="projects__grid">
             {[
               {
+                id: 'projects/samfunnskunnskap',
+                title: t('project-samfunnskunnskap'),
+                imageUrl: '/images/preview/samfunnskunnskap_1200_630.jpeg',
+                linkUrl: `/${lng}/projects/samfunnskunnskap`,
+              },
+              {
                 id: 'projects/nettverk',
                 title: "Nettverk",
                 imageUrl: '/images/preview/nettverk_1200_630.jpeg',
