@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { greatVibes } from '../../../fonts'
 import { useTranslation } from '../../../i18n'
 import { Breadcrumbs } from '../../components/breadcrumbs'
@@ -25,6 +26,14 @@ export default async function Samfunnskunnskap({ params: { lng } }: { params: { 
         </ul>
         <p className="project__paragraph">{t('samfunnskunnskap.statistics-participants')}</p>
         <p className="project__paragraph">{t('samfunnskunnskap.statistics-exam-results')}</p>
+        <Link
+          href="https://t.me/samfunnskunnskap"
+          className="project__link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Telegram
+        </Link>
       </main>
       <Footer />
     </>
