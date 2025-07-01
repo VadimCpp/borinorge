@@ -5,6 +5,7 @@ import { languages } from '../i18n/settings'
 import { Footer } from './components/footer'
 import Dropdown from './components/dropdown'
 import { Card } from './components/card'
+import AuthButton from './components/auth-button'
 
 export default async function Page({ params: { lng } }: { params: { lng: string } }) {
   const { t } = await useTranslation(lng)
@@ -42,6 +43,7 @@ export default async function Page({ params: { lng } }: { params: { lng: string 
               ))}
             </Dropdown>
           </div>
+          <AuthButton lng={lng} />
         </nav>
       </header>
       <main className="project">
