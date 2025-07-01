@@ -3,6 +3,7 @@ import { useTranslation } from '../../../i18n'
 import { Breadcrumbs } from '../../components/breadcrumbs'
 import { Footer } from '../../components/footer'
 import SignInForm from './signin-form'
+import Link from 'next/link'
 
 export default async function SignIn({ params: { lng } }: { params: { lng: string } }) {
   const { t } = await useTranslation(lng, 'signin')
@@ -24,6 +25,11 @@ export default async function SignIn({ params: { lng } }: { params: { lng: strin
             submit: t('submit'),
           }}
         />
+        <div className="target-action mt-4">
+          <Link href={`/${lng}/user/signup`} className="target-action__link">
+            {t('sign-up')}
+          </Link>
+        </div>
       </main>
       <Footer lng={lng} />
     </>
