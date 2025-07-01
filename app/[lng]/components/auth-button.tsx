@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
-import { ArrowRightOnRectangleIcon, UserCircleIcon } from '@heroicons/react/24/outline'
+import { ArrowRightEndOnRectangleIcon, UserCircleIcon } from '@heroicons/react/24/outline'
 
 export default function AuthButton({ lng }: { lng: string }) {
   const [authorized, setAuthorized] = useState(false)
@@ -24,7 +24,7 @@ export default function AuthButton({ lng }: { lng: string }) {
 
   return (
     <Link href={`/${lng}/signin`} className="header__nav-link">
-      <ArrowRightOnRectangleIcon className="w-6 h-6" aria-label="Sign In" />
+      <ArrowRightEndOnRectangleIcon className="w-6 h-6" aria-label="Sign In" />
     </Link>
   )
 }
