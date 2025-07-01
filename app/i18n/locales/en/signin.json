@@ -4,5 +4,6 @@
   "title": "Sign in",
   "username": "Username",
   "password": "Password",
-  "submit": "Sign in"
+  "submit": "Sign in",
+  "sign-up": "New user? Sign up"
 }

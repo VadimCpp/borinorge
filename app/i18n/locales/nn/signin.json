@@ -4,5 +4,6 @@
   "title": "Logg inn",
   "username": "Brukarnamn",
   "password": "Passord",
-  "submit": "Logg inn"
+  "submit": "Logg inn",
+  "sign-up": "Ny brukar? Registrer deg"
 }
