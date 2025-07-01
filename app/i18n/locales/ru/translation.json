@@ -238,5 +238,12 @@
     "weather_data": "Данные о погоде",
     "icons": "Иконки",
     "under_the": "на условиях"
+  },
+  "user": {
+    "profile": {
+      "meta-title": "Borinorge — Профиль",
+      "title": "Профиль пользователя",
+      "sign-out": "Выйти"
+    }
   }
 }

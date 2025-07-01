@@ -238,5 +238,12 @@
     "weather_data": "Verdata",
     "icons": "Ikon",
     "under_the": "under"
+  },
+  "user": {
+    "profile": {
+      "meta-title": "Borinorge — Profil",
+      "title": "Brukarprofil",
+      "sign-out": "Logg ut"
+    }
   }
 }
