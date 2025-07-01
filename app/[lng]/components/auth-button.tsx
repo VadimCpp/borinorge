@@ -16,14 +16,14 @@ export default function AuthButton({ lng }: { lng: string }) {
 
   if (authorized) {
     return (
-      <Link href={`/${lng}/profile`} className="header__nav-link">
+      <Link href={`/${lng}/user/profile`} className="header__nav-link">
         <UserCircleIcon className="w-6 h-6" aria-label="User profile" />
       </Link>
     )
   }
 
   return (
-    <Link href={`/${lng}/signin`} className="header__nav-link">
+    <Link href={`/${lng}/user/signin`} className="header__nav-link">
       <ArrowRightEndOnRectangleIcon className="w-6 h-6" aria-label="Sign In" />
     </Link>
   )
