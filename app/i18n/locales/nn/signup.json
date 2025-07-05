@@ -2,8 +2,14 @@
   "meta-title": "Borinorge — Registrer deg",
   "meta-description": "Registrer deg på Vi bur i Noreg",
   "title": "Registrer deg",
-  "username": "Brukarnamn",
+  "email": "E-post",
   "password": "Passord",
+  "confirm-password": "Stadfest passord",
   "submit": "Registrer deg",
-  "sign-in": "Allereie registrert? Logg inn"
+  "confirm-registration": "Stadfest registrering",
+  "confirmation-code": "Skriv inn stadfestingskode",
+  "sign-in": "Allereie registrert? Logg inn",
+  "passwords-not-match": "Passorda matcher ikkje",
+  "signup-success": "Brukar registrert. Sjekk e-posten din for stadfestingskode.",
+  "confirmation-success": "Brukar stadfesta"
 }

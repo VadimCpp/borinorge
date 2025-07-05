@@ -2,8 +2,14 @@
   "meta-title": "Borinorge — Sign up",
   "meta-description": "Create an account on Vi bor i Norge",
   "title": "Sign up",
-  "username": "Username",
+  "email": "Email",
   "password": "Password",
+  "confirm-password": "Confirm Password",
   "submit": "Sign up",
-  "sign-in": "Already registered? Sign in"
+  "confirm-registration": "Confirm Registration",
+  "confirmation-code": "Enter confirmation code",
+  "sign-in": "Already registered? Sign in",
+  "passwords-not-match": "Passwords do not match",
+  "signup-success": "User registered successfully. Please check your email for confirmation code.",
+  "confirmation-success": "User confirmed successfully"
 }

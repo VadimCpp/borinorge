@@ -20,9 +20,15 @@ export default async function SignUp({ params: { lng } }: { params: { lng: strin
         <SignUpForm
           lng={lng}
           labels={{
-            username: t('username'),
+            email: t('email'),
             password: t('password'),
+            'confirm-password': t('confirm-password'),
             submit: t('submit'),
+            'confirm-registration': t('confirm-registration'),
+            'confirmation-code': t('confirmation-code'),
+            'passwords-not-match': t('passwords-not-match'),
+            'signup-success': t('signup-success'),
+            'confirmation-success': t('confirmation-success'),
           }}
         />
         <div className="target-action mt-4">
