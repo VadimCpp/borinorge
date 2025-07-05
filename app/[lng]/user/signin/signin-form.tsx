@@ -18,6 +18,7 @@ export default function SignInForm({ lng, labels }: { lng: string; labels: Label
     e.preventDefault()
     if (typeof window !== 'undefined') {
       localStorage.setItem('authorized', 'true')
+      localStorage.setItem('username', username)
     }
     router.push(`/${lng}`)
   }

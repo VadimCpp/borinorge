@@ -4,6 +4,7 @@ export default function SignOutButton({ label, lng }: { label: string, lng: stri
   const handleClick = () => {
     if (typeof window !== 'undefined') {
       localStorage.setItem('authorized', 'false')
+      localStorage.removeItem('username')
       window.location.href = `/${lng}`
     }
   }

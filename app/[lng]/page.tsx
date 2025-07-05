@@ -6,6 +6,7 @@ import { Footer } from './components/footer'
 import Dropdown from './components/dropdown'
 import { Card } from './components/card'
 import AuthButton from './components/auth-button'
+import PersonalizedWelcome from './components/personalized-welcome'
 
 export default async function Page({ params: { lng } }: { params: { lng: string } }) {
   const { t } = await useTranslation(lng)
@@ -47,11 +48,7 @@ export default async function Page({ params: { lng } }: { params: { lng: string 
         </nav>
       </header>
       <main className="project">
-        <section id="welcome">
-          <h2 className="project__subtitle">{t('hello')}</h2>
-          <p className="project__paragraph">{t('description-part-1')}</p>
-          <p className="project__paragraph">{t('description-part-2')}</p>
-        </section>
+        <PersonalizedWelcome lng={lng} />
         <section id="projects">
           <h2 className="project__subtitle">{t('projects')}</h2>
           <div className="projects__grid">
